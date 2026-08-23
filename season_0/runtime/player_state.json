@@ -1,0 +1,62 @@
+{
+  "revision": 21,
+  "clock": {
+    "day": "Friday",
+    "minutes": 1190
+  },
+  "characters": {
+    "mara_voss": {
+      "locationId": "ruths_diner",
+      "status": "arrived"
+    },
+    "elias_reed": {
+      "locationId": "grain_elevator",
+      "status": "arrived"
+    }
+  },
+  "latestEvent": {
+    "id": "interaction-0021",
+    "type": "npc_interaction",
+    "characterIds": [
+      "mara_voss"
+    ],
+    "npcId": "ruth_harker",
+    "locationId": "ruths_diner",
+    "clock": {
+      "day": "Friday",
+      "minutes": 1190
+    },
+    "recordedAt": "2026-08-22T13:05:08.327Z"
+  },
+  "board": {
+    "positions": {
+      "case_briefing": {
+        "x": 80,
+        "y": 70
+      },
+      "c879f378-1eb7-4d80-8411-550f0b444738": {
+        "x": 502,
+        "y": 452
+      },
+      "damaged_microcassette_recorder": {
+        "x": 824,
+        "y": 60
+      }
+    },
+    "notes": [
+      {
+        "id": "c879f378-1eb7-4d80-8411-550f0b444738",
+        "title": "Investigator note",
+        "text": "I think John did it"
+      }
+    ],
+    "connections": [
+      {
+        "id": "597d65c6-8759-4b0e-a98c-db80ef8fdc2a",
+        "from": "case_briefing",
+        "to": "c879f378-1eb7-4d80-8411-550f0b444738",
+        "label": "Friend"
+      }
+    ]
+  }
+}

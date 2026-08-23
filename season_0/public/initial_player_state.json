@@ -1,0 +1,28 @@
+{
+  "revision": 0,
+  "clock": {
+    "day": "Friday",
+    "minutes": 1160
+  },
+  "characters": {
+    "mara_voss": {
+      "locationId": "sheriffs_annex",
+      "status": "arrived"
+    },
+    "elias_reed": {
+      "locationId": "sheriffs_annex",
+      "status": "arrived"
+    }
+  },
+  "latestEvent": null,
+  "board": {
+    "positions": {
+      "case_briefing": {
+        "x": 80,
+        "y": 70
+      }
+    },
+    "notes": [],
+    "connections": []
+  }
+}

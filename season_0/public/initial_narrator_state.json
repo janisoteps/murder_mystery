@@ -1,0 +1,26 @@
+{
+  "revision": 0,
+  "lastProcessedEventId": null,
+  "statusMessage": "The case is open. Choose where the investigators will begin.",
+  "peopleAtLocations": {
+    "ruths_diner": [
+      {
+        "id": "ruth_harker",
+        "name": "Ruth Harker",
+        "description": "Owner of Ruth's Diner. Broad-shouldered, guarded, and difficult to hurry.",
+        "image": "/assets/shared/characters/ruth_harker.png"
+      }
+    ]
+  },
+  "items": [],
+  "evidence": [
+    {
+      "id": "case_briefing",
+      "type": "Case file",
+      "title": "Death at Harker Elevator",
+      "summary": "Cal Mercer, the elevator's night electrician, was found dead inside an empty grain dryer shortly before 7:00 p.m.",
+      "source": "Sheriff's Annex"
+    }
+  ],
+  "locationUpdates": {}
+}

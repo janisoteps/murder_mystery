@@ -1,0 +1,34 @@
+{
+  "revision": 2,
+  "lastProcessedEventId": "interaction-0021",
+  "statusMessage": "Mara Voss began questioning Ruth Harker at the diner while Elias Reed remained at the grain elevator.",
+  "peopleAtLocations": {
+    "ruths_diner": [
+      {
+        "id": "ruth_harker",
+        "name": "Ruth Harker",
+        "description": "Owner of Ruth's Diner. Broad-shouldered, guarded, and difficult to hurry.",
+        "image": "/assets/shared/characters/ruth_harker.png"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "damaged_microcassette_recorder",
+      "name": "Damaged microcassette recorder",
+      "description": "A dust-caked pocket recorder found wedged beneath the grain dryer housing. Its casing is cracked, but a tape remains inside.",
+      "image": "/assets/season_0/items/damaged_microcassette_recorder.svg",
+      "foundAtLocationId": "grain_elevator"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "case_briefing",
+      "type": "Case file",
+      "title": "Death at Harker Elevator",
+      "summary": "Cal Mercer, the elevator's night electrician, was found dead inside an empty grain dryer shortly before 7:00 p.m.",
+      "source": "Sheriff's Annex"
+    }
+  ],
+  "locationUpdates": {}
+}

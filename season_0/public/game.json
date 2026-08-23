@@ -1,0 +1,136 @@
+{
+  "id": "season_0",
+  "title": "The Bellwether Test Case",
+  "subtitle": "A small technical rehearsal in Bellwether, Iowa",
+  "rules": {
+    "travelMinutes": 10,
+    "dayLabels": ["Friday", "Saturday", "Sunday"]
+  },
+  "investigators": [
+    {
+      "id": "mara_voss",
+      "name": "Mara Voss",
+      "gender": "female",
+      "role": "State investigator",
+      "initials": "MV",
+      "color": "#bd4b5d",
+      "description": "A patient interviewer with old ties to Bellwether County."
+    },
+    {
+      "id": "elias_reed",
+      "name": "Elias Reed",
+      "gender": "male",
+      "role": "Forensic consultant",
+      "initials": "ER",
+      "color": "#4d7896",
+      "description": "A methodical scene reader who notices what people try to clean away."
+    }
+  ],
+  "locations": [
+    {
+      "id": "sheriffs_annex",
+      "name": "Sheriff's Annex",
+      "kind": "Civic",
+      "x": 190,
+      "y": 180,
+      "description": "A cramped brick annex that smells of radiator dust and burnt coffee.",
+      "knownPeople": ["Deputy Warren Sloane"],
+      "images": [
+        {
+          "src": "/assets/season_0/locations/sheriffs_annex/exterior.png",
+          "label": "Exterior",
+          "alt": "The Sheriff's Annex on a wet Bellwether street at dusk."
+        },
+        {
+          "src": "/assets/season_0/locations/sheriffs_annex/interior.png",
+          "label": "Records office",
+          "alt": "A cramped records office with worn desks, filing cabinets, and burnt coffee."
+        }
+      ]
+    },
+    {
+      "id": "ruths_diner",
+      "name": "Ruth's Diner",
+      "kind": "Business",
+      "x": 465,
+      "y": 245,
+      "description": "A chrome-sided diner where the pie case glows long after the rest of town sleeps.",
+      "knownPeople": ["Ruth Harker"],
+      "images": [
+        {
+          "src": "/assets/season_0/locations/ruths_diner/exterior.png",
+          "label": "Exterior",
+          "alt": "An isolated chrome diner glowing beside a wet county road at night."
+        },
+        {
+          "src": "/assets/season_0/locations/ruths_diner/interior.png",
+          "label": "Dining room",
+          "alt": "The diner's worn counter, pie case, red stools, and shadowed booths."
+        }
+      ]
+    },
+    {
+      "id": "grain_elevator",
+      "name": "Harker Grain Elevator",
+      "kind": "Crime scene",
+      "x": 790,
+      "y": 170,
+      "description": "The elevator's concrete silos loom above the cornfields like pale, windowless towers.",
+      "knownPeople": [],
+      "images": [
+        {
+          "src": "/assets/season_0/locations/grain_elevator/exterior.png",
+          "label": "Exterior",
+          "alt": "The Harker Grain Elevator looming above harvested fields after sunset."
+        },
+        {
+          "src": "/assets/season_0/locations/grain_elevator/interior.png",
+          "label": "Machinery floor",
+          "alt": "The dark machinery floor and open cylindrical grain dryer."
+        }
+      ]
+    },
+    {
+      "id": "st_orisons",
+      "name": "St. Orison's Chapel",
+      "kind": "Church",
+      "x": 300,
+      "y": 510,
+      "description": "A black-steepled chapel surrounded by leaning stones and wind-flattened grass.",
+      "knownPeople": ["Reverend Abel Croft"],
+      "images": [
+        {
+          "src": "/assets/season_0/locations/st_orisons/exterior.png",
+          "label": "Exterior",
+          "alt": "St. Orison's Chapel beyond leaning cemetery stones at nightfall."
+        },
+        {
+          "src": "/assets/season_0/locations/st_orisons/interior.png",
+          "label": "Nave",
+          "alt": "The chapel nave with old pews, candles, bell rope, and dark stained glass."
+        }
+      ]
+    },
+    {
+      "id": "north_star_motel",
+      "name": "North Star Motor Court",
+      "kind": "Lodging",
+      "x": 700,
+      "y": 505,
+      "description": "Eight motel rooms curl around an empty pool full of rainwater and dead leaves.",
+      "knownPeople": ["Iris Bell"],
+      "images": [
+        {
+          "src": "/assets/season_0/locations/north_star_motel/exterior.png",
+          "label": "Exterior",
+          "alt": "The North Star Motor Court surrounding its rain-filled abandoned pool."
+        },
+        {
+          "src": "/assets/season_0/locations/north_star_motel/interior.png",
+          "label": "Room 6",
+          "alt": "A decaying motel room lit by a bedside lamp and cold neon through blinds."
+        }
+      ]
+    }
+  ]
+}
