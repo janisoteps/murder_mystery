@@ -1,0 +1,27 @@
+{
+  "revision": 0,
+  "clock": {
+    "day": "Friday",
+    "minutes": 1250
+  },
+  "characters": {
+    "nora_mercer": {
+      "locationId": "sheriff_coroner_annex",
+      "status": "arrived",
+      "condition": "unharmed"
+    },
+    "isaac_ward": {
+      "locationId": "sheriff_coroner_annex",
+      "status": "arrived",
+      "condition": "unharmed"
+    }
+  },
+  "latestEvent": null,
+  "board": {
+    "positions": {
+      "case_briefing": { "x": 80, "y": 75 }
+    },
+    "notes": [],
+    "connections": []
+  }
+}

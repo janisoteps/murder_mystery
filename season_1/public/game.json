@@ -1,0 +1,197 @@
+{
+  "id": "season_1",
+  "title": "Blackwater Static",
+  "subtitle": "A murder in Hollowfield, Iowa",
+  "setting": "Friday, October 18, 1996",
+  "rules": {
+    "travelMinutes": 12,
+    "dayLabels": ["Friday", "Saturday", "Sunday"],
+    "investigatorsCannotDie": true
+  },
+  "investigators": [
+    {
+      "id": "nora_mercer",
+      "name": "Nora Mercer",
+      "gender": "female",
+      "role": "State major-crimes investigator",
+      "initials": "NM",
+      "color": "#ad4c63",
+      "portrait": "/assets/season_1/characters/nora_mercer.png",
+      "description": "A disciplined interviewer who notices the emotional cost of a lie.",
+      "strength": "Rapport — Nora can press a reluctant witness without automatically turning them hostile."
+    },
+    {
+      "id": "isaac_ward",
+      "name": "Isaac Ward",
+      "gender": "male",
+      "role": "Forensic scene specialist",
+      "initials": "IW",
+      "color": "#507f9b",
+      "portrait": "/assets/season_1/characters/isaac_ward.png",
+      "description": "A patient reconstructionist who reads machinery, traces, and damaged spaces.",
+      "strength": "Reconstruction — Isaac can establish a physical sequence from incomplete scene evidence."
+    }
+  ],
+  "locations": [
+    {
+      "id": "sheriff_coroner_annex",
+      "name": "Sheriff-Coroner Annex",
+      "shortName": "Sheriff & Coroner",
+      "kind": "Case headquarters",
+      "district": "Civic Square",
+      "x": 480,
+      "y": 330,
+      "description": "A soot-dark courthouse annex where the sheriff's desks share a wall with the county morgue.",
+      "image": "/assets/season_1/locations/sheriff_coroner_annex.png",
+      "imageAlt": "The brick Sheriff-Coroner Annex beneath cold evening rain in Hollowfield.",
+      "images": [
+        { "src": "/assets/season_1/locations/sheriff_coroner_annex.png", "label": "Exterior", "alt": "The brick Sheriff-Coroner Annex beneath cold evening rain in Hollowfield." },
+        { "src": "/assets/season_1/locations/sheriff_coroner_annex_interior.png", "label": "Squad room and morgue", "alt": "The annex squad room opening into the fluorescent county morgue corridor." }
+      ]
+    },
+    {
+      "id": "saint_orra_packing",
+      "name": "Saint Orra Packing House",
+      "shortName": "Saint Orra Packing",
+      "kind": "Primary crime scene",
+      "district": "Old Works",
+      "x": 1115,
+      "y": 250,
+      "description": "A dead meatpacking complex of rusted rails, tiled kill rooms, and windowless brick towers.",
+      "image": "/assets/season_1/locations/saint_orra_packing.png",
+      "imageAlt": "The abandoned Saint Orra Packing House under storm clouds.",
+      "images": [
+        { "src": "/assets/season_1/locations/saint_orra_packing.png", "label": "Exterior", "alt": "The abandoned Saint Orra Packing House under storm clouds." },
+        { "src": "/assets/season_1/locations/saint_orra_packing_interior.png", "label": "Kill floor", "alt": "The abandoned tiled kill floor with rusted overhead rails and a brine-room doorway." }
+      ]
+    },
+    {
+      "id": "woh_radio",
+      "name": "WOHF Radio 1090",
+      "shortName": "WOHF Radio",
+      "kind": "Broadcast studio",
+      "district": "North Ridge",
+      "x": 690,
+      "y": 145,
+      "description": "A low cinderblock station beneath a red transmitter mast, its tape library still turning after midnight.",
+      "image": "/assets/season_1/locations/woh_radio.png",
+      "imageAlt": "WOHF Radio and its tall transmitter mast in blue late-afternoon light.",
+      "images": [
+        { "src": "/assets/season_1/locations/woh_radio.png", "label": "Exterior", "alt": "WOHF Radio and its tall transmitter mast in blue late-afternoon light." },
+        { "src": "/assets/season_1/locations/woh_radio_interior.png", "label": "Control room", "alt": "The analog WOHF control room with mixing console, microphones, and reel-to-reel tape decks." }
+      ]
+    },
+    {
+      "id": "blackwater_pump_house",
+      "name": "Blackwater Pump House",
+      "shortName": "Blackwater Pumps",
+      "kind": "Reservoir works",
+      "district": "Blackwater Shore",
+      "x": 1180,
+      "y": 675,
+      "description": "Concrete pumps and aeration basins crouch beside a reservoir darkened by peat and iron.",
+      "image": "/assets/season_1/locations/blackwater_pump_house.png",
+      "imageAlt": "The isolated Blackwater Pump House beside a dark reservoir in daylight.",
+      "images": [
+        { "src": "/assets/season_1/locations/blackwater_pump_house.png", "label": "Exterior", "alt": "The isolated Blackwater Pump House beside a dark reservoir in daylight." },
+        { "src": "/assets/season_1/locations/blackwater_pump_house_interior.png", "label": "Pump hall", "alt": "The wet concrete pump hall with red valve wheels, control cabinets, and stairs toward the sluice works." }
+      ]
+    },
+    {
+      "id": "town_hall",
+      "name": "Hollowfield Town Hall",
+      "shortName": "Town Hall",
+      "kind": "Municipal offices",
+      "district": "Civic Square",
+      "x": 600,
+      "y": 400,
+      "description": "A limestone municipal hall decorated for First Frost Week with wheat sheaves and fading bunting.",
+      "image": "/assets/season_1/locations/town_hall.png",
+      "imageAlt": "Hollowfield Town Hall in gray daylight with restrained festival decorations.",
+      "images": [
+        { "src": "/assets/season_1/locations/town_hall.png", "label": "Exterior", "alt": "Hollowfield Town Hall in gray daylight with restrained festival decorations." },
+        { "src": "/assets/season_1/locations/town_hall_interior.png", "label": "Mayor's office", "alt": "The formal mayor's office with oak desk, municipal records, wardrobe, and tall windows." }
+      ]
+    },
+    {
+      "id": "mercy_diner",
+      "name": "Mercy Diner",
+      "shortName": "Mercy Diner",
+      "kind": "Diner",
+      "district": "Mercy Junction",
+      "x": 780,
+      "y": 480,
+      "description": "A narrow railcar diner at the highway junction, bright enough that everyone sees who passes.",
+      "image": "/assets/season_1/locations/mercy_diner.png",
+      "imageAlt": "The stainless-steel Mercy Diner at a busy rural junction near sunset.",
+      "images": [
+        { "src": "/assets/season_1/locations/mercy_diner.png", "label": "Exterior", "alt": "The stainless-steel Mercy Diner at a busy rural junction near sunset." },
+        { "src": "/assets/season_1/locations/mercy_diner_interior.png", "label": "Dining room", "alt": "The diner counter and red stools facing broad windows toward the highway and rail crossing." }
+      ]
+    },
+    {
+      "id": "bell_farm",
+      "name": "Bell Farm & Veterinary Barn",
+      "shortName": "Bell Farm",
+      "kind": "Farm and clinic",
+      "district": "West Fields",
+      "x": 175,
+      "y": 625,
+      "description": "A wind-stripped hog farm whose veterinary barn smells of iodine, feed, and cold iron.",
+      "image": "/assets/season_1/locations/bell_farm.png",
+      "imageAlt": "Bell Farm and its veterinary barn beneath clear late-morning autumn light.",
+      "images": [
+        { "src": "/assets/season_1/locations/bell_farm.png", "label": "Exterior", "alt": "Bell Farm and its veterinary barn beneath clear late-morning autumn light." },
+        { "src": "/assets/season_1/locations/bell_farm_interior.png", "label": "Treatment barn", "alt": "The veterinary treatment bay with crush gate, examination table, medicine cabinets, and barn aisle." }
+      ]
+    },
+    {
+      "id": "saint_ledas_archive",
+      "name": "St. Leda's Church & Archive",
+      "shortName": "St. Leda's",
+      "kind": "Church archive",
+      "district": "Founders' Hill",
+      "x": 345,
+      "y": 170,
+      "description": "A black-stone church with a basement archive of strikes, funerals, and sealed confessions.",
+      "image": "/assets/season_1/locations/saint_ledas_archive.png",
+      "imageAlt": "St. Leda's black-stone church among bright autumn trees during the day.",
+      "images": [
+        { "src": "/assets/season_1/locations/saint_ledas_archive.png", "label": "Exterior", "alt": "St. Leda's black-stone church among bright autumn trees during the day." },
+        { "src": "/assets/season_1/locations/saint_ledas_archive_interior.png", "label": "Labor archive", "alt": "The church basement archive with dark stone walls, document boxes, old ledgers, and reading lamps." }
+      ]
+    },
+    {
+      "id": "northline_motel",
+      "name": "Northline Motor Lodge",
+      "shortName": "Northline Motel",
+      "kind": "Motor lodge",
+      "district": "County Line",
+      "x": 890,
+      "y": 735,
+      "description": "Twelve rooms curve around an empty pool, each door visible from the manager's office.",
+      "image": "/assets/season_1/locations/northline_motel.png",
+      "imageAlt": "The Northline Motor Lodge around an empty pool in rose-colored dusk.",
+      "images": [
+        { "src": "/assets/season_1/locations/northline_motel.png", "label": "Exterior", "alt": "The Northline Motor Lodge around an empty pool in rose-colored dusk." },
+        { "src": "/assets/season_1/locations/northline_motel_interior.png", "label": "Room 8", "alt": "A worn motel room with floral coverlet, bedside telephone, vanity, and exterior walkway beyond the blinds." }
+      ]
+    },
+    {
+      "id": "dredge_funeral_home",
+      "name": "Dredge Funeral Home",
+      "shortName": "Dredge Funeral",
+      "kind": "Funeral home",
+      "district": "Elm Quarter",
+      "x": 375,
+      "y": 500,
+      "description": "A Victorian house converted into a funeral parlor, with its preparation-room windows painted white.",
+      "image": "/assets/season_1/locations/dredge_funeral_home.png",
+      "imageAlt": "Dredge Funeral Home beneath overcast afternoon light and bare elm branches.",
+      "images": [
+        { "src": "/assets/season_1/locations/dredge_funeral_home.png", "label": "Exterior", "alt": "Dredge Funeral Home beneath overcast afternoon light and bare elm branches." },
+        { "src": "/assets/season_1/locations/dredge_funeral_home_interior.png", "label": "Parlor and preparation room", "alt": "The dark consultation parlor opening into a clean white preparation room." }
+      ]
+    }
+  ]
+}

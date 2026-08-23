@@ -1,0 +1,302 @@
+{
+  "revision": 140,
+  "clock": {
+    "day": "Friday",
+    "minutes": 1430
+  },
+  "characters": {
+    "nora_mercer": {
+      "locationId": "sheriff_coroner_annex",
+      "status": "arrived",
+      "condition": "unharmed"
+    },
+    "isaac_ward": {
+      "locationId": "blackwater_pump_house",
+      "status": "arrived",
+      "condition": "unharmed"
+    }
+  },
+  "latestEvent": {
+    "id": "arrival-0139",
+    "type": "arrival",
+    "characterIds": [
+      "isaac_ward"
+    ],
+    "fromLocations": {
+      "isaac_ward": "sheriff_coroner_annex"
+    },
+    "destinationId": "blackwater_pump_house",
+    "clock": {
+      "day": "Friday",
+      "minutes": 1430
+    },
+    "recordedAt": "2026-08-22T18:40:49.487Z"
+  },
+  "board": {
+    "positions": {
+      "case_briefing": {
+        "x": 80,
+        "y": 75
+      },
+      "7819423c-b13b-4096-b041-422a9c2cf9da": {
+        "x": 750,
+        "y": 187
+      },
+      "8e6ca1db-3298-47b1-a460-95dd878d26ee": {
+        "x": 1065,
+        "y": 323
+      },
+      "463861ed-d8dc-4776-a601-16867b2172cd": {
+        "x": 1337,
+        "y": 203
+      },
+      "retained_inspection_key": {
+        "x": 1077,
+        "y": 597
+      },
+      "81663926-0fb2-4fe2-863f-233843649aac": {
+        "x": 678,
+        "y": 674
+      },
+      "04572753-74d9-4b58-ab0c-ad001fe502ce": {
+        "x": 308,
+        "y": 495
+      },
+      "red_rain_records_packet": {
+        "x": 290,
+        "y": 723
+      },
+      "a86f23a5-f2d5-48e9-948c-e8fe01bb9158": {
+        "x": 104,
+        "y": 1059
+      },
+      "3adfba1b-c852-4dd2-875e-340730c3555e": {
+        "x": 643,
+        "y": 1066
+      },
+      "248662c3-d394-4b12-bdff-31b489ddb8b3": {
+        "x": 1162,
+        "y": 1403
+      },
+      "3c16fe83-4e61-4177-981a-da686c688ca9": {
+        "x": 1370,
+        "y": 1526
+      },
+      "6bec1320-07fa-421f-9302-95b099f2b236": {
+        "x": 446,
+        "y": 16
+      },
+      "final_broadcast_script": {
+        "x": 70,
+        "y": 1377
+      },
+      "confession_reel": {
+        "x": 79,
+        "y": 1926
+      },
+      "recovered_confession_fragment": {
+        "x": 514,
+        "y": 1872
+      },
+      "94b30460-40c6-4ce0-b0d3-56a01a47b9a7": {
+        "x": 1034,
+        "y": 998
+      },
+      "vera_vehicle_sighting": {
+        "x": 1300,
+        "y": 982
+      },
+      "pump_house_blood": {
+        "x": 769,
+        "y": 1999
+      },
+      "gold_threaded_button": {
+        "x": 1037,
+        "y": 1942
+      },
+      "blackwater_sample_vial": {
+        "x": 1360,
+        "y": 1953
+      },
+      "blackwater_diatoms": {
+        "x": 595,
+        "y": 250
+      },
+      "xylazine_toxicology": {
+        "x": 865,
+        "y": 250
+      },
+      "missing_xylazine_vial": {
+        "x": 1135,
+        "y": 250
+      },
+      "falsified_1988_minutes": {
+        "x": 55,
+        "y": 445
+      },
+      "cade_1988_admission": {
+        "x": 327,
+        "y": 299
+      },
+      "june_blackwater_admission": {
+        "x": 595,
+        "y": 445
+      }
+    },
+    "notes": [
+      {
+        "id": "7819423c-b13b-4096-b041-422a9c2cf9da",
+        "title": "Gideon Rusk",
+        "text": "keeps the packing plant from collapsing or filling with teenagers. Former union steward. Knows every lock, tunnel, and machine in that plant. He’s also the man who found Wren."
+      },
+      {
+        "id": "8e6ca1db-3298-47b1-a460-95dd878d26ee",
+        "title": "South loading door",
+        "text": "Was slightly open that day even though should be fully closed.\nWhoever used it either knew how to nurse that mechanism—or had a key."
+      },
+      {
+        "id": "463861ed-d8dc-4776-a601-16867b2172cd",
+        "title": "Car noise heard before the body was found",
+        "text": "I heard an engine earlier. Seven-thirty, thereabouts. Didn’t see the vehicle."
+      },
+      {
+        "id": "81663926-0fb2-4fe2-863f-233843649aac",
+        "title": "June Kessler - the mayor",
+        "text": "Told us about 1988 Saint Orra chemical accident—the incident people here call the Red Rain. Six night workers died in a service tunnel."
+      },
+      {
+        "id": "04572753-74d9-4b58-ab0c-ad001fe502ce",
+        "title": "Accusation",
+        "text": "ask Hollis Cade why his original incident log has never been found."
+      },
+      {
+        "id": "a86f23a5-f2d5-48e9-948c-e8fe01bb9158",
+        "title": "Naomi Venn - Celia's colleague",
+        "text": "Works at the radio station as the producer."
+      },
+      {
+        "id": "3adfba1b-c852-4dd2-875e-340730c3555e",
+        "title": "Dr. Amos Bell",
+        "text": "threatened to break Celia's jaw after she started asking about livestock being buried off-record"
+      },
+      {
+        "id": "248662c3-d394-4b12-bdff-31b489ddb8b3",
+        "title": "Sheriff Cade",
+        "text": "Sheriff Cade called Celia a parasite in the radio room."
+      },
+      {
+        "id": "3c16fe83-4e61-4177-981a-da686c688ca9",
+        "title": "Father Pike",
+        "text": "Father Pike came to radio twice asking Celia not to broadcast something about Saint Orra."
+      },
+      {
+        "id": "6bec1320-07fa-421f-9302-95b099f2b236",
+        "title": "Celia's movement",
+        "text": "she left the station shortly before seven."
+      },
+      {
+        "id": "94b30460-40c6-4ce0-b0d3-56a01a47b9a7",
+        "title": "Trailer near the time of murder 19:30",
+        "text": "Cream-colored civic Buick. Woman behind the wheel.\ntown utility trailer past my windows toward Saint Orra Road around half past seven."
+      }
+    ],
+    "connections": [
+      {
+        "id": "ae4fc3e1-d5bc-40b8-8514-195db07bf0d6",
+        "from": "case_briefing",
+        "to": "7819423c-b13b-4096-b041-422a9c2cf9da",
+        "label": "Runs the packing plant"
+      },
+      {
+        "id": "cc2c3c7b-beff-4ba6-bc05-ff7f85cf97ee",
+        "from": "8e6ca1db-3298-47b1-a460-95dd878d26ee",
+        "to": "7819423c-b13b-4096-b041-422a9c2cf9da",
+        "label": "Said"
+      },
+      {
+        "id": "b4d9666d-ef22-475a-bf0c-1e524a25bb7a",
+        "from": "463861ed-d8dc-4776-a601-16867b2172cd",
+        "to": "7819423c-b13b-4096-b041-422a9c2cf9da",
+        "label": "said"
+      },
+      {
+        "id": "a13a9cff-3a4a-4d71-b07a-5cc29fe66019",
+        "from": "7819423c-b13b-4096-b041-422a9c2cf9da",
+        "to": "retained_inspection_key",
+        "label": "Gave us"
+      },
+      {
+        "id": "b27c3d18-a24d-4ce3-a62a-1bdd0c12c9c9",
+        "from": "retained_inspection_key",
+        "to": "81663926-0fb2-4fe2-863f-233843649aac",
+        "label": "didn't return key"
+      },
+      {
+        "id": "7e090569-7e86-4c7c-ab04-3d1b4e5c521f",
+        "from": "81663926-0fb2-4fe2-863f-233843649aac",
+        "to": "04572753-74d9-4b58-ab0c-ad001fe502ce",
+        "label": "said"
+      },
+      {
+        "id": "f425e525-e94c-4f88-a61a-79458c4ae23a",
+        "from": "81663926-0fb2-4fe2-863f-233843649aac",
+        "to": "red_rain_records_packet",
+        "label": "gave us"
+      },
+      {
+        "id": "f6c07ac8-6bb1-4e87-b518-0547009b39b7",
+        "from": "case_briefing",
+        "to": "a86f23a5-f2d5-48e9-948c-e8fe01bb9158",
+        "label": "colleague"
+      },
+      {
+        "id": "4870a874-b50a-4ce1-8c41-a3c0f933e2aa",
+        "from": "a86f23a5-f2d5-48e9-948c-e8fe01bb9158",
+        "to": "3adfba1b-c852-4dd2-875e-340730c3555e",
+        "label": "told us about"
+      },
+      {
+        "id": "f7d6147f-fa68-40d2-a200-8f3d6b4dcbc7",
+        "from": "3adfba1b-c852-4dd2-875e-340730c3555e",
+        "to": "case_briefing",
+        "label": "threatened"
+      },
+      {
+        "id": "9e104051-76c2-4f6e-94cb-64c4210ac234",
+        "from": "case_briefing",
+        "to": "6bec1320-07fa-421f-9302-95b099f2b236",
+        "label": "left station"
+      },
+      {
+        "id": "94c7e959-0d59-446d-b50d-9e8d1b1d8c27",
+        "from": "a86f23a5-f2d5-48e9-948c-e8fe01bb9158",
+        "to": "final_broadcast_script",
+        "label": "gave us"
+      },
+      {
+        "id": "c843799d-1d27-4976-befa-d95bb11c8bca",
+        "from": "final_broadcast_script",
+        "to": "confession_reel",
+        "label": "reel with the voice of the official"
+      },
+      {
+        "id": "9f4c86c5-218f-4c52-b826-decf1c1c8d21",
+        "from": "81663926-0fb2-4fe2-863f-233843649aac",
+        "to": "recovered_confession_fragment",
+        "label": "heard saying"
+      },
+      {
+        "id": "ecb77028-d335-4d08-afa5-d4c90000e0db",
+        "from": "confession_reel",
+        "to": "recovered_confession_fragment",
+        "label": "heard on it"
+      },
+      {
+        "id": "620b1d0d-cf49-425a-955e-8e089b721e73",
+        "from": "81663926-0fb2-4fe2-863f-233843649aac",
+        "to": "94b30460-40c6-4ce0-b0d3-56a01a47b9a7",
+        "label": "maybe driving?"
+      }
+    ]
+  }
+}

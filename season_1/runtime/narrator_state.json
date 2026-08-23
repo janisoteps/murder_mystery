@@ -1,0 +1,248 @@
+{
+  "revision": 34,
+  "lastProcessedEventId": "arrival-0139",
+  "statusMessage": "June Kessler is under arrest. Isaac's concealed recorder preserved her admissions, the empty sluice trap has been disarmed, and Celia's complete tape is secured under seal. The case ends in a pyrrhic resolution because Gideon Rusk was killed.",
+  "threatLevel": 0,
+  "sceneFlags": {
+    "openingDelivered": true,
+    "saintOrraArrivalOpened": true,
+    "gideonInterviewStarted": true,
+    "retainedInspectionKeyDiscovered": true,
+    "townHallArrivalOpened": true,
+    "juneInterviewStarted": true,
+    "redRainRecordsPacketCollected": true,
+    "wohRadioArrivalOpened": true,
+    "naomiInterviewStarted": true,
+    "finalBroadcastScriptDiscovered": true,
+    "confessionReelFound": true,
+    "naomiPrivacyPromiseMade": true,
+    "confessionReelRepaired": true,
+    "recoveredConfessionFragmentDiscovered": true,
+    "anonymousChokingCallTriggered": true,
+    "mercyDinerArrivalOpened": true,
+    "investigatorsSharedFindingsAtMercy": true,
+    "veraInterviewStarted": true,
+    "veraPartialVehicleSighting": true,
+    "veraLoyaltyConflictRevealed": true,
+    "veraVehicleSightingDiscovered": true,
+    "blackwaterPumpHouseArrivalOpened": true,
+    "detailedWestBasinSearchCompleted": true,
+    "pumpHouseBloodDiscovered": true,
+    "goldThreadedButtonDiscovered": true,
+    "blackwaterSampleCollected": true,
+    "sheriffCoronerReturnOpened": true,
+    "juneInterferenceTriggered": true,
+    "juneCoatRemoved": true,
+    "townHallRecordsDestructionOrdered": true,
+    "secondaryTargetResolved": true,
+    "gideonKilledAt1025": true,
+    "miriamEvidenceComparisonStarted": true,
+    "pumpHouseBloodMatched": true,
+    "matchingWaterSampleEstablished": true,
+    "blackwaterDiatomsDiscovered": true,
+    "miriamForensicCooperationEarned": true,
+    "xylazineToxicologyDiscovered": true,
+    "bellFarmArrivalOpened": true,
+    "amosInterviewStarted": true,
+    "bellFarmInventoryInspected": true,
+    "missingXylazineVialDiscovered": true,
+    "juneFarmVisitDisclosed": true,
+    "townHallReturnOpened": true,
+    "townHallInterferenceVisible": true,
+    "townHallIncineratorEntered": true,
+    "falsified1988MinutesDiscovered": true,
+    "investigatorsBurnedDuringRecordsRescue": true,
+    "sheriffCoronerSecondReturnOpened": true,
+    "burnsPresentedAtAnnex": true,
+    "burnsTreatedAtAnnex": true,
+    "cadeCoverupAdmissionObtained": true,
+    "cadeCooperationEarned": true,
+    "juneSearchAlertIssued": true,
+    "finaleGateOpen": true,
+    "juneFinalLureDelivered": true,
+    "finaleAtBlackwaterActive": true,
+    "blackwaterFinaleArrivalOpened": true,
+    "isaacArrivedAloneForFinale": true,
+    "juneToldNoraGravelyInjured": true,
+    "junePsychologicalCrackStarted": true,
+    "juneAdmitsBlackwaterStruggle": true,
+    "juneAdmitsDruggingCelia": true,
+    "juneAdmitsDrowningCelia": true,
+    "juneMurderConfessionObtained": true,
+    "sluiceTrapArmed": true,
+    "juneAdmitsSaintOrraStaging": true,
+    "juneAdmitsPostmortemMutilation": true,
+    "hiddenRecorderRevealed": true,
+    "recordedConfessionSecured": true,
+    "sluiceTrapDisarmed": true,
+    "completeCeliaTapeSecuredUnderSeal": true,
+    "juneArrested": true,
+    "caseResolved": true,
+    "pyrrhicResolution": true
+  },
+  "characterConditions": {
+    "nora_mercer": { "status": "injured", "detail": "Finger burns have been cooled and dressed; smoke irritation remains, but she is mobile." },
+    "isaac_ward": { "status": "injured", "detail": "Right-palm and forearm burns have been cooled and dressed; painful but mobile." }
+  },
+  "peopleAtLocations": {
+    "sheriff_coroner_annex": [
+      { "id": "hollis_cade", "name": "Sheriff Hollis Cade", "description": "Hollowfield's broad-shouldered sheriff, visibly exhausted and protective of his jurisdiction.", "image": "/assets/season_1/characters/hollis_cade.png" },
+      { "id": "miriam_vale", "name": "Dr. Miriam Vale", "description": "The county medical examiner, precise and withdrawn behind round glasses.", "image": "/assets/season_1/characters/miriam_vale.png" }
+    ],
+    "saint_orra_packing": [],
+    "woh_radio": [
+      { "id": "naomi_venn", "name": "Naomi Venn", "description": "Celia's producer, sharp-eyed and raw with barely controlled grief.", "image": "/assets/season_1/characters/naomi_venn.png" }
+    ],
+    "blackwater_pump_house": [
+      { "id": "june_kessler", "name": "June Kessler", "description": "Hollowfield's former mayor, disarmed and in state custody at the Blackwater sluice works.", "image": "/assets/season_1/characters/june_kessler.png" }
+    ],
+    "town_hall": [],
+    "mercy_diner": [
+      { "id": "vera_bell", "name": "Vera Bell", "description": "The diner's steel-spined owner, watching the road through cat-eye glasses.", "image": "/assets/season_1/characters/vera_bell.png" }
+    ],
+    "bell_farm": [
+      { "id": "amos_bell", "name": "Dr. Amos Bell", "description": "A rangy farm veterinarian with windburned skin and an impatient manner.", "image": "/assets/season_1/characters/amos_bell.png" }
+    ],
+    "saint_ledas_archive": [
+      { "id": "rowan_pike", "name": "Father Rowan Pike", "description": "A tired-eyed priest and guarded keeper of the church's labor archive.", "image": "/assets/season_1/characters/rowan_pike.png" }
+    ],
+    "northline_motel": [
+      { "id": "mae_orlov", "name": "Mae Orlov", "description": "The motel's glamorous, unsentimental owner, amused by other people's discomfort.", "image": "/assets/season_1/characters/mae_orlov.png" }
+    ],
+    "dredge_funeral_home": [
+      { "id": "silas_dredge", "name": "Silas Dredge", "description": "A gaunt, courtly mortician with the careful hands of an antiquarian.", "image": "/assets/season_1/characters/silas_dredge.png" }
+    ]
+  },
+  "items": [
+    {
+      "id": "confession_reel",
+      "name": "Repaired Archive Reel 18-B",
+      "description": "A seven-inch reel of quarter-inch audio tape found hidden beside WOHF's bulk eraser. Naomi Venn repaired its splices and stabilized one surviving fragment; most surrounding audio remains erased.",
+      "image": "/assets/season_1/items/confession_reel.png",
+      "foundAtLocationId": "woh_radio"
+    },
+    {
+      "id": "gold_threaded_button",
+      "name": "Torn Gold-Threaded Ceremonial Button",
+      "description": "A heavy civic button bearing Hollowfield's wheat-sheaf seal, recovered beneath the west-basin railing. Cream wool and snapped gold thread remain caught through its shank.",
+      "image": "/assets/season_1/items/gold_threaded_button.png",
+      "foundAtLocationId": "blackwater_pump_house"
+    },
+    {
+      "id": "blackwater_sample_vial",
+      "name": "Sealed West-Basin Water Sample",
+      "description": "A properly labeled sample taken from the west aeration basin. Dr. Miriam Vale found its distinctive black diatoms and algaecide crystals to be microscopically consistent with material recovered from Celia Wren's lungs.",
+      "image": "/assets/season_1/items/blackwater_sample_vial.png",
+      "foundAtLocationId": "blackwater_pump_house"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "case_briefing",
+      "type": "Case file",
+      "title": "The Saint Orra Body",
+      "summary": "Radio journalist Celia Wren, 38, was found suspended and mutilated in the abandoned Saint Orra Packing House at 8:18 p.m.",
+      "source": "Sheriff-Coroner Annex",
+      "image": "/assets/season_1/characters/celia_wren.png"
+    },
+    {
+      "id": "retained_inspection_key",
+      "type": "Access record",
+      "title": "Unreturned Saint Orra Inspection Key",
+      "summary": "The 1988 key register records inspection key 4 as issued to June Kessler during her plant-counsel years. Its return line is blank, and the south loading door shows no forced entry.",
+      "source": "Saint Orra Packing House"
+    },
+    {
+      "id": "red_rain_records_packet",
+      "type": "Municipal records",
+      "title": "Surviving 1988 Red Rain Records",
+      "summary": "Copies supplied by Mayor Kessler show that Sheriff Hollis Cade authorized removal of six bodies before state inspectors arrived. The packet also records that original dispatch sheets and six witness statements later disappeared, but does not establish why.",
+      "source": "Hollowfield Town Hall"
+    },
+    {
+      "id": "final_broadcast_script",
+      "type": "Recovered document",
+      "title": "Celia's Unfinished Red Rain Broadcast",
+      "summary": "Celia's locked script says her 10:00 p.m. broadcast would play the voice of a Hollowfield official who ordered an illegal 1988 bypass and then closed a flood gate while six workers remained below. The official's name is not written in the script.",
+      "source": "WOHF Radio 1090"
+    },
+    {
+      "id": "recovered_confession_fragment",
+      "type": "Audio evidence",
+      "title": "Recovered Fragment from Reel 18-B",
+      "summary": "A surviving section of Celia's damaged recording captures Mayor June Kessler saying, “I closed one gate. I saved the town.” Most surrounding context has been erased.",
+      "source": "WOHF Radio 1090"
+    },
+    {
+      "id": "vera_vehicle_sighting",
+      "type": "Witness statement and business record",
+      "title": "June's Civic Buick at 7:24 p.m.",
+      "summary": "Vera Bell identifies Mayor June Kessler as the woman she saw driving Hollowfield's cream civic Buick and towing a town utility trailer toward Saint Orra Road. Mercy Diner's original register roll fixes the sighting at 7:24 p.m.",
+      "source": "Mercy Diner"
+    },
+    {
+      "id": "pump_house_blood",
+      "type": "Recovered trace evidence",
+      "title": "Blood and Hair Beneath the West-Basin Rail",
+      "summary": "The west-basin railing was scrubbed very recently, but a shielded bolt retained blood and forcibly torn strands of dark, wavy hair. Dr. Miriam Vale's comparison identifies both as consistent with Celia Wren; formal DNA confirmation remains pending.",
+      "source": "Blackwater Pump House"
+    },
+    {
+      "id": "blackwater_diatoms",
+      "type": "Forensic microscopy",
+      "title": "Blackwater Material in Celia's Lungs",
+      "summary": "Celia's deep-lung fluid contains intact black diatoms and algaecide crystals microscopically consistent with Isaac's sealed sample from Blackwater's west aeration basin. Their deep placement shows she inhaled the water while alive.",
+      "source": "Sheriff-Coroner Annex"
+    },
+    {
+      "id": "xylazine_toxicology",
+      "type": "Toxicology",
+      "title": "Celia Was Sedated with Xylazine",
+      "summary": "Dr. Miriam Vale found a disabling concentration of veterinary xylazine in Celia's blood. It was administered shortly before the drowning and would have left her conscious but weak and poorly coordinated.",
+      "source": "Sheriff-Coroner Annex"
+    },
+    {
+      "id": "missing_xylazine_vial",
+      "type": "Controlled-drug inventory",
+      "title": "Missing Xylazine Vial — Batch XB-441",
+      "summary": "Bell Farm's signed 3:55 p.m. count records four sealed xylazine vials from batch XB-441. Only three remain, and the treatment log records no later use or disposal of the missing vial.",
+      "source": "Bell Farm & Veterinary Barn"
+    },
+    {
+      "id": "falsified_1988_minutes",
+      "type": "Salvaged municipal record",
+      "title": "Burned Carbon Copy of the 1988 Emergency Minutes",
+      "summary": "A partially burned carbon copy preserves the original Red Rain emergency entry ordering the illegal bypass and naming then-plant counsel June Kessler in the decision to close Gate Three while six workers remained below. The surviving official version replaces that passage with 'unforeseeable mechanical failure'; handwritten alteration marks carry Kessler's initials.",
+      "source": "Town Hall records incinerator"
+    },
+    {
+      "id": "cade_1988_admission",
+      "type": "Recorded witness admission",
+      "title": "Cade Admits the Red Rain Cover-Up",
+      "summary": "Sheriff Hollis Cade admits that, on June Kessler's orders, he removed the six workers' bodies before state inspection and falsified dispatch times and incident records. He says June knew the men remained below when she ordered Gate Three closed.",
+      "source": "Sheriff-Coroner Annex"
+    },
+    {
+      "id": "june_blackwater_admission",
+      "type": "Suspect admission",
+      "title": "June Admits the Blackwater Struggle",
+      "summary": "At Blackwater Pump House, June Kessler admits that she and Celia had an intimate relationship, that Celia intended to use private material in her broadcast, and that Celia scratched her during a physical struggle beside the west basin. June characterizes the death as an accident and denies deliberate murder.",
+      "source": "Blackwater Pump House"
+    },
+    {
+      "id": "june_murder_confession",
+      "type": "Recorded suspect confession",
+      "title": "June Confesses to Drugging and Drowning Celia",
+      "summary": "Isaac's concealed recorder preserves June admitting that she stole the veterinary sedative, put it in Celia's coffee, and deliberately held Celia beneath the west-basin water until she stopped struggling.",
+      "source": "Blackwater Pump House"
+    },
+    {
+      "id": "june_staging_confession",
+      "type": "Recorded suspect confession",
+      "title": "June Confesses to Staging Celia at Saint Orra",
+      "summary": "Isaac's concealed recorder preserves June admitting that she transported Celia's body to Saint Orra in the civic utility trailer, inflicted the bolt wound and mutilations after death, and copied the Hush Woman tableau to disguise the drowning as ritual violence. She acknowledges that the throat, abdomen, and wax-sealed ears became a personal punishment for Celia's methods.",
+      "source": "Blackwater Pump House"
+    }
+  ],
+  "locationUpdates": {}
+}

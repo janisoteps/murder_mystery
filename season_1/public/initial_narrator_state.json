@@ -1,0 +1,104 @@
+{
+  "revision": 0,
+  "lastProcessedEventId": null,
+  "statusMessage": "Celia Wren was found mutilated inside the abandoned Saint Orra Packing House. The investigation begins at 8:50 p.m.",
+  "threatLevel": 0,
+  "sceneFlags": {},
+  "characterConditions": {
+    "nora_mercer": { "status": "unharmed", "detail": "" },
+    "isaac_ward": { "status": "unharmed", "detail": "" }
+  },
+  "peopleAtLocations": {
+    "sheriff_coroner_annex": [
+      {
+        "id": "hollis_cade",
+        "name": "Sheriff Hollis Cade",
+        "description": "Hollowfield's broad-shouldered sheriff, visibly exhausted and protective of his jurisdiction.",
+        "image": "/assets/season_1/characters/hollis_cade.png"
+      },
+      {
+        "id": "miriam_vale",
+        "name": "Dr. Miriam Vale",
+        "description": "The county medical examiner, precise and withdrawn behind round glasses.",
+        "image": "/assets/season_1/characters/miriam_vale.png"
+      }
+    ],
+    "saint_orra_packing": [
+      {
+        "id": "gideon_rusk",
+        "name": "Gideon Rusk",
+        "description": "The packing house's scarred, gray-bearded caretaker and former union steward.",
+        "image": "/assets/season_1/characters/gideon_rusk.png"
+      }
+    ],
+    "woh_radio": [
+      {
+        "id": "naomi_venn",
+        "name": "Naomi Venn",
+        "description": "Celia's producer, sharp-eyed and raw with barely controlled grief.",
+        "image": "/assets/season_1/characters/naomi_venn.png"
+      }
+    ],
+    "blackwater_pump_house": [],
+    "town_hall": [
+      {
+        "id": "june_kessler",
+        "name": "Mayor June Kessler",
+        "description": "Hollowfield's immaculate mayor, composed even under the weight of a public murder.",
+        "image": "/assets/season_1/characters/june_kessler.png"
+      }
+    ],
+    "mercy_diner": [
+      {
+        "id": "vera_bell",
+        "name": "Vera Bell",
+        "description": "The diner's steel-spined owner, watching the road through cat-eye glasses.",
+        "image": "/assets/season_1/characters/vera_bell.png"
+      }
+    ],
+    "bell_farm": [
+      {
+        "id": "amos_bell",
+        "name": "Dr. Amos Bell",
+        "description": "A rangy farm veterinarian with windburned skin and an impatient manner.",
+        "image": "/assets/season_1/characters/amos_bell.png"
+      }
+    ],
+    "saint_ledas_archive": [
+      {
+        "id": "rowan_pike",
+        "name": "Father Rowan Pike",
+        "description": "A tired-eyed priest and guarded keeper of the church's labor archive.",
+        "image": "/assets/season_1/characters/rowan_pike.png"
+      }
+    ],
+    "northline_motel": [
+      {
+        "id": "mae_orlov",
+        "name": "Mae Orlov",
+        "description": "The motel's glamorous, unsentimental owner, amused by other people's discomfort.",
+        "image": "/assets/season_1/characters/mae_orlov.png"
+      }
+    ],
+    "dredge_funeral_home": [
+      {
+        "id": "silas_dredge",
+        "name": "Silas Dredge",
+        "description": "A gaunt, courtly mortician with the careful hands of an antiquarian.",
+        "image": "/assets/season_1/characters/silas_dredge.png"
+      }
+    ]
+  },
+  "items": [],
+  "evidence": [
+    {
+      "id": "case_briefing",
+      "type": "Case file",
+      "title": "The Saint Orra Body",
+      "summary": "Radio journalist Celia Wren, 38, was found suspended and mutilated in the abandoned Saint Orra Packing House at 8:18 p.m.",
+      "source": "Sheriff-Coroner Annex",
+      "image": "/assets/season_1/characters/celia_wren.png"
+    }
+  ],
+  "locationUpdates": {}
+}
