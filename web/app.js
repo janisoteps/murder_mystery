@@ -12,6 +12,24 @@ const elements = {
   closeNoteDialog: document.querySelector("#close-note-dialog"),
   connectButton: document.querySelector("#connect-button"),
   connectionLayer: document.querySelector("#connection-layer"),
+  conversationAutoSpeak: document.querySelector("#conversation-auto-speak"),
+  conversationClose: document.querySelector("#close-conversation-dialog"),
+  conversationDelivery: document.querySelector("#conversation-delivery"),
+  conversationDialog: document.querySelector("#conversation-dialog"),
+  conversationEvidence: document.querySelector("#conversation-evidence"),
+  conversationForm: document.querySelector("#conversation-form"),
+  conversationGmNotice: document.querySelector("#conversation-gm-notice"),
+  conversationInput: document.querySelector("#conversation-input"),
+  conversationNpcImage: document.querySelector("#conversation-npc-image"),
+  conversationNpcName: document.querySelector("#conversation-npc-name"),
+  conversationReplay: document.querySelector("#conversation-replay"),
+  conversationSend: document.querySelector("#conversation-send"),
+  conversationSpeaker: document.querySelector("#conversation-speaker"),
+  conversationStatus: document.querySelector("#conversation-status"),
+  conversationStop: document.querySelector("#conversation-stop"),
+  conversationTranscript: document.querySelector("#conversation-transcript"),
+  conversationVoice: document.querySelector("#conversation-voice"),
+  conversationRate: document.querySelector("#conversation-rate"),
   evidenceCount: document.querySelector("#evidence-count"),
   handoffCopy: document.querySelector("#handoff-copy"),
   handoffTitle: document.querySelector("#handoff-title"),
@@ -51,6 +69,7 @@ const elements = {
 
 const app = {
   game: null,
+  dialogueConfig: null,
   playerState: null,
   narratorState: null,
   selectedLocationId: null,
@@ -63,6 +82,11 @@ const app = {
   activeLocationId: null,
   activeLocationSlideIndex: 0,
   activeNpcId: null,
+  activeDialogueInvestigatorId: null,
+  activeDialogueNpcId: null,
+  dialoguePending: false,
+  dialogueTranscript: [],
+  lastSpokenText: "",
   interactionPending: false,
   editingNoteId: null
 };
@@ -538,12 +562,22 @@ function openNpcDialog(npcId) {
     button.textContent = `Talk as ${investigator.name}`;
     button.disabled = app.interactionPending;
     button.style.borderLeftColor = investigator.color;
-    button.addEventListener("click", () => requestNpcInteraction(investigator.id, npc.id));
+    button.addEventListener("click", () => {
+      if (app.dialogueConfig?.enabled && elements.conversationDialog) {
+        openBrowserDialogue(investigator.id, npc.id);
+      } else {
+        requestNpcInteraction(investigator.id, npc.id);
+      }
+    });
     elements.npcDialogActions.append(button);
   }
 
   elements.npcDialogGuidance.textContent = colocatedInvestigators.length > 0
-    ? "This records who begins the conversation. Continue the dialogue in Codex."
+    ? app.dialogueConfig?.enabled
+      ? app.dialogueConfig.configured
+        ? "The conversation continues here in the browser. You can speak naturally, bluff, or formally show discovered evidence."
+        : "Browser dialogue needs OPENAI_API_KEY in the server environment before an NPC can answer."
+      : "This records who begins the conversation. Continue the dialogue in Codex."
     : "Move an investigator to this location before starting a conversation.";
   if (!elements.npcDialog.open) elements.npcDialog.showModal();
 }
@@ -559,6 +593,183 @@ function openInvestigatorDialog(characterId) {
   elements.npcDialogActions.replaceChildren();
   elements.npcDialogGuidance.textContent = investigator.strength ?? "Player investigator";
   if (!elements.npcDialog.open) elements.npcDialog.showModal();
+}
+
+function dialogueEvidenceById(evidenceId) {
+  const evidence = (app.narratorState.evidence ?? []).find((item) => item.id === evidenceId);
+  if (evidence) return { title: evidence.title, summary: evidence.summary };
+  const item = (app.narratorState.items ?? []).find((entry) => entry.id === evidenceId);
+  return item ? { title: item.name, summary: item.description } : null;
+}
+
+function populateConversationEvidence() {
+  if (!elements.conversationEvidence) return;
+  const selected = elements.conversationEvidence.value;
+  elements.conversationEvidence.replaceChildren();
+  const none = document.createElement("option");
+  none.value = "";
+  none.textContent = "Do not formally show evidence";
+  elements.conversationEvidence.append(none);
+  const records = [
+    ...(app.narratorState.evidence ?? []).map((item) => ({ id: item.id, title: item.title })),
+    ...(app.narratorState.items ?? []).map((item) => ({ id: item.id, title: item.name }))
+  ];
+  for (const record of records) {
+    const option = document.createElement("option");
+    option.value = record.id;
+    option.textContent = `Show: ${record.title}`;
+    elements.conversationEvidence.append(option);
+  }
+  if (records.some((record) => record.id === selected)) elements.conversationEvidence.value = selected;
+}
+
+function renderConversationTranscript() {
+  if (!elements.conversationTranscript) return;
+  elements.conversationTranscript.replaceChildren();
+  if (app.dialogueTranscript.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "conversation-empty";
+    empty.textContent = "The conversation has not begun. Speak naturally; this does not have to be a formal interview.";
+    elements.conversationTranscript.append(empty);
+    return;
+  }
+
+  for (const turn of app.dialogueTranscript) {
+    const article = document.createElement("article");
+    article.className = `conversation-turn is-${turn.role}`;
+    const speaker = document.createElement("strong");
+    speaker.textContent = turn.speakerName;
+    const text = document.createElement("p");
+    text.textContent = turn.text;
+    article.append(speaker, text);
+    if (turn.shownEvidenceId) {
+      const shown = dialogueEvidenceById(turn.shownEvidenceId);
+      const badge = document.createElement("span");
+      badge.className = "shown-evidence-badge";
+      badge.textContent = `Shown evidence: ${shown?.title ?? turn.shownEvidenceId}`;
+      article.append(badge);
+    }
+    if (turn.delivery) {
+      const delivery = document.createElement("em");
+      delivery.textContent = turn.delivery;
+      article.append(delivery);
+    }
+    elements.conversationTranscript.append(article);
+  }
+  elements.conversationTranscript.scrollTop = elements.conversationTranscript.scrollHeight;
+}
+
+function populateSpeechVoices() {
+  if (!elements.conversationVoice || !("speechSynthesis" in window)) return;
+  const previous = elements.conversationVoice.value;
+  const voices = window.speechSynthesis.getVoices();
+  elements.conversationVoice.replaceChildren();
+  const automatic = document.createElement("option");
+  automatic.value = "";
+  automatic.textContent = "Automatic system voice";
+  elements.conversationVoice.append(automatic);
+  voices.forEach((voice, index) => {
+    const option = document.createElement("option");
+    option.value = String(index);
+    option.textContent = `${voice.name} · ${voice.lang}`;
+    elements.conversationVoice.append(option);
+  });
+  if ([...elements.conversationVoice.options].some((option) => option.value === previous)) {
+    elements.conversationVoice.value = previous;
+  }
+}
+
+function speakNpcText(text) {
+  if (!text || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  const voiceIndex = Number.parseInt(elements.conversationVoice?.value ?? "", 10);
+  const voices = window.speechSynthesis.getVoices();
+  if (Number.isInteger(voiceIndex) && voices[voiceIndex]) utterance.voice = voices[voiceIndex];
+  utterance.rate = Number.parseFloat(elements.conversationRate?.value ?? "1") || 1;
+  utterance.pitch = 1;
+  window.speechSynthesis.speak(utterance);
+}
+
+async function openBrowserDialogue(investigatorId, npcId) {
+  const investigator = investigatorById(investigatorId);
+  const npc = npcById(npcId);
+  if (!investigator || !npc || !elements.conversationDialog) return;
+
+  app.activeDialogueInvestigatorId = investigatorId;
+  app.activeDialogueNpcId = npcId;
+  app.activeNpcId = npcId;
+  elements.conversationNpcName.textContent = npc.name;
+  elements.conversationNpcImage.src = npc.image;
+  elements.conversationNpcImage.alt = `Portrait of ${npc.name}`;
+  elements.conversationSpeaker.textContent = investigator.name;
+  elements.conversationStatus.textContent = app.dialogueConfig?.configured
+    ? "Connected to the local dialogue bridge"
+    : "OPENAI_API_KEY is not configured";
+  elements.conversationDelivery.textContent = "";
+  elements.conversationGmNotice.hidden = true;
+  populateConversationEvidence();
+  populateSpeechVoices();
+  app.dialogueTranscript = [];
+  renderConversationTranscript();
+  if (elements.npcDialog.open) elements.npcDialog.close();
+  if (!elements.conversationDialog.open) elements.conversationDialog.showModal();
+
+  try {
+    const payload = await requestJson("/api/dialogue/session", {
+      method: "POST",
+      body: JSON.stringify({ investigatorId, npcId })
+    });
+    app.dialogueTranscript = payload.transcript;
+    elements.conversationGmNotice.hidden = payload.pendingGmEventCount === 0;
+    renderConversationTranscript();
+  } catch (error) {
+    elements.conversationStatus.textContent = error.message;
+  }
+  elements.conversationInput.focus();
+}
+
+async function submitDialogueTurn(event) {
+  event.preventDefault();
+  if (app.dialoguePending) return;
+  const message = elements.conversationInput.value.trim();
+  if (!message) return;
+
+  app.dialoguePending = true;
+  elements.conversationSend.disabled = true;
+  elements.conversationInput.disabled = true;
+  elements.conversationStatus.textContent = "Waiting for a response…";
+  try {
+    const payload = await requestJson("/api/dialogue/turn", {
+      method: "POST",
+      body: JSON.stringify({
+        investigatorId: app.activeDialogueInvestigatorId,
+        npcId: app.activeDialogueNpcId,
+        message,
+        shownEvidenceId: elements.conversationEvidence.value || null
+      })
+    });
+    app.dialogueTranscript = payload.transcript;
+    app.lastSpokenText = payload.reply.text;
+    elements.conversationDelivery.textContent = payload.reply.delivery;
+    elements.conversationInput.value = "";
+    elements.conversationEvidence.value = "";
+    elements.conversationStatus.textContent = payload.reply.endConversation
+      ? "The NPC appears ready to end this conversation."
+      : "Response recorded";
+    elements.conversationGmNotice.hidden = payload.pendingGmEventCount === 0;
+    renderConversationTranscript();
+    if (elements.conversationAutoSpeak.checked) speakNpcText(payload.reply.text);
+    if (payload.newEvidence.length > 0) showToast("The conversation added evidence to the case board.");
+  } catch (error) {
+    elements.conversationStatus.textContent = error.message;
+    showToast(error.message);
+  } finally {
+    app.dialoguePending = false;
+    elements.conversationSend.disabled = false;
+    elements.conversationInput.disabled = false;
+    elements.conversationInput.focus();
+  }
 }
 
 async function requestNpcInteraction(characterId, npcId) {
@@ -595,6 +806,7 @@ function render() {
   renderTokens();
   renderBoard();
   renderArrivalHandoff();
+  if (elements.conversationDialog?.open) populateConversationEvidence();
 }
 
 function selectLocation(locationId) {
@@ -878,7 +1090,11 @@ function switchView(viewName) {
 }
 
 async function resetRehearsal() {
-  const seasonLabel = app.game.id === "season_1" ? "Season 1" : "Season 0";
+  const seasonLabel = app.game.id === "season_2"
+    ? "Season 2"
+    : app.game.id === "season_1"
+      ? "Season 1"
+      : "Season 0";
   const confirmed = window.confirm(`Reset all ${seasonLabel} travel, notes, connections, and unlocked evidence?`);
   if (!confirmed) return;
 
@@ -912,6 +1128,12 @@ function openStateStream() {
     app.narratorState = JSON.parse(event.data);
     render();
     showToast("The case file has been updated by the narrator.");
+  });
+  stream.addEventListener("dialogue-state", (event) => {
+    const state = JSON.parse(event.data);
+    if (elements.conversationGmNotice) {
+      elements.conversationGmNotice.hidden = state.pendingGmEventCount === 0;
+    }
   });
 }
 
@@ -966,6 +1188,34 @@ function bindEvents() {
   elements.npcDialog.addEventListener("close", () => {
     app.activeNpcId = null;
   });
+  if (elements.conversationDialog) {
+    elements.conversationForm.addEventListener("submit", submitDialogueTurn);
+    elements.conversationClose.addEventListener("click", () => elements.conversationDialog.close());
+    elements.conversationReplay.addEventListener("click", () => speakNpcText(app.lastSpokenText));
+    elements.conversationStop.addEventListener("click", () => window.speechSynthesis?.cancel());
+    elements.conversationDialog.addEventListener("click", (event) => {
+      if (event.target === elements.conversationDialog) elements.conversationDialog.close();
+    });
+    elements.conversationDialog.addEventListener("close", () => {
+      window.speechSynthesis?.cancel();
+      app.activeDialogueInvestigatorId = null;
+      app.activeDialogueNpcId = null;
+    });
+    elements.conversationInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+        event.preventDefault();
+        elements.conversationForm.requestSubmit();
+      }
+    });
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.addEventListener("voiceschanged", populateSpeechVoices);
+      populateSpeechVoices();
+    } else {
+      elements.conversationAutoSpeak.disabled = true;
+      elements.conversationReplay.disabled = true;
+      elements.conversationStop.disabled = true;
+    }
+  }
   elements.noteDialog.addEventListener("click", (event) => {
     if (event.target === elements.noteDialog) closeNoteDialog();
   });
@@ -985,6 +1235,7 @@ async function initialize() {
     app.game = payload.game;
     app.playerState = payload.playerState;
     app.narratorState = payload.narratorState;
+    app.dialogueConfig = payload.dialogue ?? { enabled: false, configured: false, model: null };
     app.selectedLocationId = app.game.locations[0].id;
     bindEvents();
     render();

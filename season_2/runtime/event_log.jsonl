@@ -1,0 +1,3 @@
+
+{"id":"arrival-0009","type":"arrival","characterIds":["linnea_berg"],"fromLocations":{"linnea_berg":"signal_house"},"destinationId":"ferry_terminal","clock":{"day":"Thursday","minutes":1268},"recordedAt":"2026-08-23T18:06:15.249Z"}
+{"id":"arrival-0022","type":"arrival","characterIds":["erik_halden"],"fromLocations":{"erik_halden":"signal_house"},"destinationId":"saint_oda_archive","clock":{"day":"Thursday","minutes":1286},"recordedAt":"2026-08-23T19:07:08.218Z"}

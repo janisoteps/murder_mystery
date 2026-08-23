@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node server.mjs",
     "start:season0": "MYSTERY_SEASON=season_0 node server.mjs",
-    "start:season1": "MYSTERY_SEASON=season_1 node server.mjs"
+    "start:season1": "MYSTERY_SEASON=season_1 node server.mjs",
+    "start:season2": "MYSTERY_SEASON=season_2 node server.mjs"
   }
 }

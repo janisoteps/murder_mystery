@@ -1,0 +1,215 @@
+{
+  "revision": 11,
+  "lastProcessedEventId": "arrival-0022",
+  "statusMessage": "At 21:26 in Saint Oda Archive, Pastor Elias verifies Petra Dahl's identity and places Annika Ravn's sealed deposit directly into her hands. Petra opens it in Erik's presence. Annika's note says her promised Eidolon evidence is real but incomplete, warns that the brass cylinder was a decoy, and directs Petra toward archive pages that do not belong and a ledger that conceals its nature.",
+  "threatLevel": 0,
+  "sceneFlags": {
+    "openingDelivered": true,
+    "ferryTerminalArrivalOpened": true,
+    "linneaEnteredFerryDispatch": true,
+    "ferryDispatchCopiesCollected": true,
+    "ferryDispatchCopiesCompared": true,
+    "cameraIsolationDocketDiscovered": true,
+    "linneaApproachedNilsOffice": true,
+    "ferryVehicleRegisterCollected": true,
+    "linneaEnteredFerryWorkshop": true,
+    "saintOdaArchiveArrivalOpened": true,
+    "annikaNoteDeliveredToPetra": true,
+    "annikaNoteOpened": true
+  },
+  "characterConditions": {
+    "linnea_berg": {
+      "status": "unharmed",
+      "detail": ""
+    },
+    "erik_halden": {
+      "status": "unharmed",
+      "detail": ""
+    }
+  },
+  "peopleAtLocations": {
+    "signal_house": [
+      {
+        "id": "solveig_brandt",
+        "name": "Constable Solveig Brandt",
+        "description": "Vesperholm's composed local constable, rain darkening the shoulders of her uniform.",
+        "image": "/assets/season_2/characters/solveig_brandt.png"
+      },
+      {
+        "id": "emil_jessen",
+        "name": "Dr. Emil Jessen",
+        "description": "The island physician, silver-haired and quietly attentive beside the temporary mortuary table.",
+        "image": "/assets/season_2/characters/emil_jessen.png"
+      }
+    ],
+    "saint_vigga_fort": [
+      {
+        "id": "oskar_lind",
+        "name": "Oskar Lind",
+        "description": "The elderly fort custodian and clockmaker, precise hands folded over an iron key ring.",
+        "image": "/assets/season_2/characters/oskar_lind.png"
+      },
+      {
+        "id": "erik_sund",
+        "name": "Erik Sund",
+        "description": "A weather observer in a salt-stiff coat, more comfortable with instruments than speculation.",
+        "image": "/assets/season_2/characters/erik_sund.png"
+      }
+    ],
+    "marine_laboratory": [
+      {
+        "id": "leif_arden",
+        "name": "Leif Arden",
+        "description": "The marine laboratory's sharp-featured deputy director, impatient beneath professional restraint.",
+        "image": "/assets/season_2/characters/leif_arden.png"
+      },
+      {
+        "id": "rune_falk",
+        "name": "Rune Falk",
+        "description": "A retired tide engineer with heavy brows, oil-black nails, and no patience for automated systems.",
+        "image": "/assets/season_2/characters/rune_falk.png"
+      }
+    ],
+    "glassworks_museum": [
+      {
+        "id": "karin_ravn",
+        "name": "Karin Ravn",
+        "description": "Annika's elder sister and the museum's austere director, grief held behind a level stare.",
+        "image": "/assets/season_2/characters/karin_ravn.png"
+      },
+      {
+        "id": "magnus_hald",
+        "name": "Magnus Hald",
+        "description": "A broad-handed master glassblower whose spectacles catch the furnace glow.",
+        "image": "/assets/season_2/characters/magnus_hald.png"
+      }
+    ],
+    "gull_house_hotel": [
+      {
+        "id": "marta_eide",
+        "name": "Marta Eide",
+        "description": "Gull House's elegant proprietor, warm in manner and absolute about her guests' privacy.",
+        "image": "/assets/season_2/characters/marta_eide.png"
+      },
+      {
+        "id": "kasper_birk",
+        "name": "Kasper Birk",
+        "description": "A young island courier with a quick smile, wet hair, and the alertness of someone who hears everything.",
+        "image": "/assets/season_2/characters/kasper_birk.png"
+      }
+    ],
+    "ferry_terminal": [
+      {
+        "id": "nils_rask",
+        "name": "Nils Rask",
+        "description": "Director of North Channel Ferries, tailored and composed beneath the operations-room fluorescents.",
+        "image": "/assets/season_2/characters/nils_rask.png"
+      },
+      {
+        "id": "jesper_holm",
+        "name": "Jesper Holm",
+        "description": "A young ferry dispatcher with bitten nails and a headset resting around his neck.",
+        "image": "/assets/season_2/characters/jesper_holm.png"
+      },
+      {
+        "id": "ida_brandt",
+        "name": "Ida Brandt",
+        "description": "A dryly observant deck mechanic in blue coveralls, Constable Brandt's younger sister.",
+        "image": "/assets/season_2/characters/ida_brandt.png"
+      }
+    ],
+    "saltline_clinic": [
+      {
+        "id": "asta_berg",
+        "name": "Asta Berg",
+        "description": "The clinic's blunt, watchful senior nurse and pharmacist.",
+        "image": "/assets/season_2/characters/asta_berg.png"
+      },
+      {
+        "id": "tove_jessen",
+        "name": "Tove Jessen",
+        "description": "A composed clinic administrator with a precise memory for schedules.",
+        "image": "/assets/season_2/characters/tove_jessen.png"
+      }
+    ],
+    "tidegate_station": [],
+    "moller_salvage": [
+      {
+        "id": "freja_moller",
+        "name": "Freja Moller",
+        "description": "A powerful salvage diver in a worn work jacket, her left palm newly bandaged.",
+        "image": "/assets/season_2/characters/freja_moller.png"
+      },
+      {
+        "id": "johan_lykke",
+        "name": "Johan Lykke",
+        "description": "An elderly fisherman repairing nets with deliberate, tar-darkened fingers.",
+        "image": "/assets/season_2/characters/johan_lykke.png"
+      }
+    ],
+    "saint_oda_archive": [
+      {
+        "id": "elias_nygaard",
+        "name": "Pastor Elias Nygaard",
+        "description": "Saint Oda's gentle archivist, carrying a ring of small brass drawer keys.",
+        "image": "/assets/season_2/characters/elias_nygaard.png"
+      },
+      {
+        "id": "petra_dahl",
+        "name": "Petra Dahl",
+        "description": "A regional investigative journalist with a damp notebook and an assessing gaze.",
+        "image": "/assets/season_2/characters/petra_dahl.png"
+      }
+    ],
+    "north_light": [],
+    "rask_house": [
+      {
+        "id": "anneli_rask",
+        "name": "Anneli Rask",
+        "description": "An architect and Nils Rask's estranged wife, cool-eyed and exact in her language.",
+        "image": "/assets/season_2/characters/anneli_rask.png"
+      }
+    ]
+  },
+  "items": [],
+  "evidence": [
+    {
+      "id": "case_briefing",
+      "type": "Case file",
+      "title": "The Saint Vigga Drowning",
+      "summary": "Hydrographer Dr. Annika Ravn, 41, was found dead and wet beneath the storm bell inside Saint Vigga's dry locked chamber at 20:18.",
+      "source": "Old Signal House",
+      "image": "/assets/season_2/characters/annika_ravn.png"
+    },
+    {
+      "id": "ferry_camera_isolation_docket",
+      "type": "Maintenance record",
+      "title": "Handwritten camera-isolation docket",
+      "summary": "A handwritten Thursday docket orders terminal cameras two and four offline from 18:29 to 18:36 for a 'union inspection.' The access-alert register records both outages, but the surrounding operational records contain no corresponding formal work order.",
+      "source": "North Channel Ferry Terminal"
+    },
+    {
+      "id": "b3_camera_outage",
+      "type": "System record",
+      "title": "Seven-minute camera gap",
+      "summary": "Jesper disabled terminal cameras two and four from 18:29 to 18:36 on Nils Rask's instruction.",
+      "source": "North Channel Ferry Terminal"
+    },
+    {
+      "id": "ferry_vehicle_register",
+      "type": "Fleet record",
+      "title": "Thursday ferry-company vehicle register",
+      "summary": "A certified copy of North Channel Ferries' Thursday vehicle register, listing registrations, vehicle classes, assigned departments, and recorded status. It has not yet been compared with the service-lane sighting or workshop records.",
+      "source": "North Channel Ferry Terminal"
+    },
+    {
+      "id": "annika_sealed_note",
+      "type": "Recovered letter",
+      "title": "Annika's sealed note to Petra",
+      "summary": "Annika tells Petra that the promised Eidolon evidence is real but that her account was incomplete. She warns that the brass cylinder was a decoy, points toward archive pages that do not belong and a ledger that conceals its nature, and insists Petra account for Annika's own part in 1995 before publishing.",
+      "source": "Saint Oda Archive",
+      "image": "/assets/season_2/items/annika_sealed_note.png"
+    }
+  ],
+  "locationUpdates": {}
+}
