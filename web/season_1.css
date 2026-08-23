@@ -1,0 +1,625 @@
+.season-one {
+  --ink: #ebe2cc;
+  --muted: #aaa38f;
+  --paper: #d7ccb0;
+  --blood: #a24255;
+  --blue: #507f9b;
+  --panel: #131b18;
+  --panel-raised: #1a2520;
+  --line: #3c4941;
+  --gold: #c4a666;
+  background:
+    radial-gradient(circle at 48% -10%, rgba(117, 129, 103, 0.15), transparent 36rem),
+    linear-gradient(180deg, #0e1512, #080d0b 80%);
+}
+
+.season-masthead {
+  position: relative;
+  overflow: hidden;
+  border-bottom-color: #465249;
+  background:
+    linear-gradient(90deg, rgba(10, 16, 13, 0.98), rgba(17, 26, 22, 0.92)),
+    repeating-linear-gradient(90deg, transparent 0 22px, rgba(255, 255, 255, 0.02) 23px);
+}
+
+.season-masthead::after {
+  position: absolute;
+  right: 31%;
+  bottom: -2.8rem;
+  width: 1px;
+  height: 10rem;
+  background: rgba(184, 75, 92, 0.25);
+  box-shadow: 14px 0 rgba(184, 75, 92, 0.1), 31px 0 rgba(184, 75, 92, 0.06);
+  content: "";
+  transform: rotate(19deg);
+}
+
+.title-lockup h1 {
+  letter-spacing: 0.055em;
+}
+
+.case-subtitle {
+  margin: 0.3rem 0 0;
+  color: #918b7c;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.season-map-heading h2 {
+  margin-bottom: 0;
+}
+
+#map-view {
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 24rem);
+}
+
+.hollowfield-map-frame {
+  border-color: #677064;
+  background: #28352e;
+  box-shadow: 0 1.8rem 5.5rem rgba(1, 6, 4, 0.66);
+}
+
+.hollowfield-map-frame::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 1px solid rgba(235, 226, 204, 0.12);
+  content: "";
+  pointer-events: none;
+}
+
+.hollowfield-map {
+  max-height: calc(100vh - 13.5rem);
+  min-height: 38rem;
+}
+
+.hf-field {
+  stroke: rgba(32, 43, 34, 0.8);
+  stroke-width: 3;
+}
+
+.hf-field-gold {
+  fill: #66664a;
+}
+
+.hf-field-russet {
+  fill: #5e4f40;
+}
+
+.hf-field-lines {
+  fill: url(#hf-corn);
+  opacity: 0.8;
+}
+
+.hf-town-footprint {
+  fill: rgba(45, 57, 49, 0.78);
+  stroke: rgba(198, 190, 160, 0.17);
+  stroke-dasharray: 3 10;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.hf-contour {
+  fill: none;
+  stroke: #b6ae89;
+  stroke-dasharray: 2 8;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  opacity: 0.22;
+}
+
+.hf-reservoir {
+  fill: url(#hf-water);
+}
+
+.hf-reservoir-shore {
+  fill: none;
+  stroke: #82928a;
+  stroke-width: 6;
+  opacity: 0.46;
+}
+
+.hf-water-ripple {
+  fill: none;
+  stroke: #8aa6a4;
+  stroke-linecap: round;
+  stroke-width: 2;
+  opacity: 0.15;
+}
+
+.hf-creek-bank {
+  fill: none;
+  stroke: rgba(12, 27, 28, 0.48);
+  stroke-linecap: round;
+  stroke-width: 25;
+}
+
+.hf-creek {
+  fill: none;
+  stroke: #344f50;
+  stroke-linecap: round;
+  stroke-width: 15;
+}
+
+.hf-road-casing,
+.hf-road,
+.hf-street,
+.hf-rail,
+.hf-rail-ties {
+  fill: none;
+}
+
+.hf-road-casing {
+  stroke: #1e2923;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 15;
+}
+
+.hf-road {
+  stroke: #9d947d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 9;
+}
+
+.hf-road-casing.hf-highway {
+  stroke-width: 22;
+}
+
+.hf-road.hf-highway {
+  stroke: #b0a58b;
+  stroke-dasharray: 34 5;
+  stroke-width: 14;
+}
+
+.hf-street {
+  stroke: #85816f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+  opacity: 0.52;
+}
+
+.hf-local-streets .hf-street {
+  stroke-width: 3.5;
+}
+
+.hf-local-streets .hf-access-road {
+  stroke: #aaa18a;
+  stroke-dasharray: 1 5;
+  opacity: 0.72;
+}
+
+.hf-rail {
+  stroke: #111815;
+  stroke-width: 8;
+}
+
+.hf-rail-ties {
+  stroke: #827966;
+  stroke-dasharray: 2 12;
+  stroke-width: 18;
+  opacity: 0.75;
+}
+
+.hf-town-blocks {
+  opacity: 0.86;
+}
+
+.hf-parcels {
+  fill: rgba(75, 82, 66, 0.14);
+  stroke: rgba(172, 169, 139, 0.18);
+  stroke-dasharray: 2 5;
+  stroke-width: 1;
+}
+
+.hf-alleys {
+  fill: none;
+  stroke: rgba(144, 139, 116, 0.31);
+  stroke-dasharray: 5 5;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+}
+
+.hf-town-blocks .hf-house,
+.hf-town-blocks .hf-shop,
+.hf-town-blocks .hf-warehouse,
+.hf-town-blocks .hf-outbuilding {
+  paint-order: stroke;
+  stroke: #17211b;
+  stroke-width: 2;
+}
+
+.hf-town-blocks .hf-house {
+  fill: #4e5a50;
+}
+
+.hf-town-blocks .hf-house:nth-of-type(3n) {
+  fill: #586157;
+}
+
+.hf-town-blocks .hf-house:nth-of-type(4n) {
+  fill: #4b514a;
+}
+
+.hf-town-blocks .hf-l-footprint {
+  fill: #596056;
+}
+
+.hf-town-blocks .hf-shop {
+  fill: #626158;
+  stroke: #20251f;
+}
+
+.hf-town-blocks .hf-warehouse {
+  fill: #514e48;
+  stroke: #24251f;
+  stroke-width: 2.5;
+}
+
+.hf-town-blocks .hf-outbuilding {
+  fill: #3d483e;
+  stroke: #182019;
+  stroke-width: 1.5;
+}
+
+.hf-tree-line {
+  opacity: 0.78;
+}
+
+.hf-town-name,
+.hf-county-name,
+.hf-water-label,
+.hf-water-sub,
+.hf-land-label,
+.hf-road-label,
+.hf-creek-label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.hf-town-name {
+  fill: rgba(233, 224, 199, 0.75);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  letter-spacing: 11px;
+}
+
+.hf-county-name {
+  fill: rgba(205, 196, 170, 0.5);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.hf-water-label {
+  fill: rgba(178, 205, 199, 0.28);
+  font-family: Georgia, serif;
+  font-size: 23px;
+  letter-spacing: 8px;
+}
+
+.hf-water-sub {
+  fill: rgba(178, 205, 199, 0.25);
+  font-size: 8px;
+  letter-spacing: 5px;
+}
+
+.hf-land-label {
+  fill: rgba(225, 214, 181, 0.3);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.hf-road-label,
+.hf-creek-label {
+  fill: rgba(233, 224, 199, 0.53);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  paint-order: stroke;
+  stroke: #28372f;
+  stroke-width: 3px;
+}
+
+.hf-creek-label {
+  fill: rgba(174, 204, 201, 0.55);
+}
+
+.hf-compass circle {
+  fill: rgba(20, 30, 25, 0.72);
+  stroke: rgba(221, 211, 182, 0.42);
+  stroke-dasharray: 2 5;
+}
+
+.hf-compass path {
+  fill: #b9a36f;
+  stroke: #181f1b;
+  stroke-width: 1.5;
+}
+
+.hf-compass path.muted {
+  fill: #65736a;
+}
+
+.hf-compass text {
+  fill: rgba(232, 222, 195, 0.66);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.hf-location .location-hit {
+  r: 60;
+  fill: rgba(238, 223, 181, 0.015);
+}
+
+.hf-location:hover .location-hit,
+.hf-location:focus .location-hit {
+  fill: rgba(213, 197, 151, 0.11);
+  stroke: #dac38a;
+  stroke-width: 2;
+}
+
+.hf-location.is-selected .location-hit {
+  fill: rgba(173, 76, 99, 0.14);
+  stroke: #dc7386;
+  stroke-dasharray: 3 6;
+  stroke-width: 3;
+}
+
+.hf-pin-ground {
+  fill: rgba(9, 15, 12, 0.58);
+}
+
+.hf-building {
+  fill: #657069;
+  stroke: #17201b;
+  stroke-width: 3;
+}
+
+.hf-civic { fill: #70756b; }
+.hf-industrial { fill: #695f58; }
+.hf-radio { fill: #536663; }
+.hf-pump { fill: #53696b; }
+.hf-limestone { fill: #8a8777; }
+.hf-diner { fill: #7b817e; }
+.hf-barn { fill: #754b43; }
+.hf-church { fill: #4d514d; }
+.hf-motel { fill: #675f5a; }
+.hf-funeral { fill: #5e625a; }
+
+.hf-roof,
+.hf-steeple,
+.hf-smokestack {
+  fill: #272c29;
+  stroke: #151a17;
+  stroke-width: 3;
+}
+
+.hf-saw-roof,
+.hf-mast,
+.hf-pipes,
+.hf-sign-post,
+.hf-porch {
+  fill: none;
+  stroke: #202724;
+  stroke-width: 4;
+}
+
+.hf-mast {
+  stroke: #99a39a;
+  stroke-width: 3;
+}
+
+.hf-radio-wave {
+  fill: none;
+  stroke: #a64e5b;
+  stroke-linecap: round;
+  stroke-width: 3;
+  opacity: 0.8;
+}
+
+.hf-door,
+.hf-barn-door {
+  fill: #272d29;
+  stroke: #141916;
+  stroke-width: 2;
+}
+
+.hf-morgue-cross {
+  fill: #922f43;
+}
+
+.hf-window-row,
+.hf-funeral-windows,
+.hf-motel-doors {
+  fill: #c09d60;
+  opacity: 0.72;
+}
+
+.hf-gauge {
+  fill: #d0c29d;
+  stroke: #29302c;
+  stroke-width: 3;
+}
+
+.hf-gauge-needle {
+  stroke: #8f3040;
+  stroke-width: 2;
+}
+
+.hf-columns {
+  stroke: #bbb39e;
+  stroke-width: 4;
+}
+
+.hf-diner-stripe {
+  stroke: #9a3346;
+  stroke-width: 5;
+}
+
+.hf-window-glow {
+  fill: #dbb66b;
+  filter: url(#hf-glow);
+  opacity: 0.9;
+}
+
+.hf-barn-x {
+  stroke: #9b6d58;
+  stroke-width: 2;
+}
+
+.hf-cross {
+  fill: #181e1b;
+}
+
+.hf-rose-window {
+  fill: #9d4c5d;
+  stroke: #242b27;
+  stroke-width: 2;
+}
+
+.hf-motel-sign {
+  fill: #2d4f59;
+  stroke: #172126;
+  stroke-width: 3;
+}
+
+.hollowfield-map .location-label {
+  fill: #e7dec7;
+  font-size: 12px;
+  letter-spacing: 1.25px;
+  stroke: #111a15;
+  stroke-width: 5px;
+}
+
+.hollowfield-map .danger-label {
+  fill: #edc0b5;
+}
+
+.season-map-legend {
+  align-items: center;
+  padding: 0.65rem 0.8rem;
+  border-color: rgba(231, 222, 199, 0.22);
+  background: rgba(8, 14, 11, 0.88);
+}
+
+.legend-dot.nora { background: #ad4c63; }
+.legend-dot.isaac { background: #507f9b; }
+
+.map-scale {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.25rem;
+  color: #8f9387;
+}
+
+.map-scale i {
+  display: block;
+  width: 2.4rem;
+  height: 0.45rem;
+  border-right: 1px solid #aaa28c;
+  border-bottom: 1px solid #aaa28c;
+  border-left: 1px solid #aaa28c;
+}
+
+.season-location-panel {
+  margin-top: 4.75rem;
+  border-color: #48564d;
+  background:
+    linear-gradient(150deg, rgba(30, 42, 35, 0.98), rgba(14, 22, 18, 0.98)),
+    repeating-linear-gradient(0deg, transparent 0 28px, rgba(255, 255, 255, 0.02) 29px);
+}
+
+.location-panel-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.case-pin-number {
+  color: #6f796f;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+.season-one .investigator-row.has-portrait {
+  width: 100%;
+  padding: 0.42rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.season-one .investigator-row.has-portrait:hover {
+  border-color: #4c5a51;
+  background: rgba(54, 68, 60, 0.45);
+}
+
+.season-one .portrait-token:is(img) {
+  display: block;
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 2px solid #cfc4a8;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.nora-button { border-left: 3px solid #ad4c63; }
+.isaac-button { border-left: 3px solid #507f9b; }
+
+.season-board-stage {
+  border-color: #493126;
+  background-color: #766048;
+  background-image:
+    linear-gradient(90deg, rgba(35, 20, 12, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(35, 20, 12, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.035) 0 1px, transparent 2px);
+  background-size: 44px 44px, 44px 44px, 23px 29px;
+}
+
+.season-one .evidence-card:has(.item-card-image) {
+  min-height: 265px;
+}
+
+@media (max-width: 1080px) {
+  .hollowfield-map {
+    min-height: 32rem;
+  }
+
+  .season-location-panel {
+    margin-top: 4.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .season-location-panel {
+    margin-top: 0;
+  }
+
+  .hollowfield-map {
+    min-height: 27rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-subtitle {
+    display: none;
+  }
+
+  .hollowfield-map {
+    min-height: 23rem;
+  }
+}

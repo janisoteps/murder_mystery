@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101716">
+    <title>Blackwater Static · Hollowfield</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/season_1.css">
+  </head>
+  <body class="season-one">
+    <header class="masthead season-masthead">
+      <div class="title-lockup">
+        <p class="eyebrow">Season 1 · Hollowfield, Iowa · October 1996</p>
+        <h1>Blackwater Static</h1>
+        <p class="case-subtitle">The voice stopped. The tape kept turning.</p>
+      </div>
+      <div class="case-status" aria-label="Game status">
+        <div>
+          <span class="status-label">Case clock</span>
+          <strong id="case-clock">Friday · 20:50</strong>
+        </div>
+        <div>
+          <span class="status-label">State bridge</span>
+          <strong id="bridge-status" class="bridge-status">Connecting</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="view-tabs" aria-label="Investigation views">
+      <button class="tab-button is-active" type="button" data-view="map" aria-selected="true">Town map</button>
+      <button class="tab-button" type="button" data-view="board" aria-selected="false">
+        Evidence board <span id="evidence-count" class="count-badge">1</span>
+      </button>
+    </nav>
+
+    <main>
+      <section id="map-view" class="view-panel is-active" aria-labelledby="map-heading">
+        <div class="map-column">
+          <div class="section-heading season-map-heading">
+            <div>
+              <p class="eyebrow">County survey · population 4,812</p>
+              <h2 id="map-heading">Hollowfield after first frost</h2>
+            </div>
+            <p class="map-instruction">Drag an investigator medallion to travel. Every marked place matters; the town will change as the night advances.</p>
+          </div>
+
+          <div class="map-frame hollowfield-map-frame">
+            <svg id="town-map" class="town-map hollowfield-map" viewBox="0 0 1400 900" role="img" aria-labelledby="town-map-title town-map-desc">
+              <title id="town-map-title">Investigation map of Hollowfield, Iowa</title>
+              <desc id="town-map-desc">Ten significant locations connected by county roads, rail, Hollow Creek, and the Blackwater reservoir. Two draggable investigator medallions show current positions.</desc>
+              <defs>
+                <linearGradient id="hf-ground" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#55604f"></stop>
+                  <stop offset="0.48" stop-color="#3d4a40"></stop>
+                  <stop offset="1" stop-color="#273833"></stop>
+                </linearGradient>
+                <linearGradient id="hf-water" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#304b50"></stop>
+                  <stop offset="1" stop-color="#172f35"></stop>
+                </linearGradient>
+                <pattern id="hf-paper-grain" width="44" height="44" patternUnits="userSpaceOnUse">
+                  <circle cx="7" cy="11" r="1" fill="#e9dfc2" opacity=".045"></circle>
+                  <circle cx="31" cy="28" r="1.4" fill="#08110d" opacity=".06"></circle>
+                  <path d="M0 43L43 0" stroke="#e9dfc2" stroke-width=".6" opacity=".025"></path>
+                </pattern>
+                <pattern id="hf-corn" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(14)">
+                  <path d="M2 0V22M13 0V22" stroke="#a9a16b" stroke-width="3" opacity=".18"></path>
+                </pattern>
+                <pattern id="hf-town-grid" width="38" height="38" patternUnits="userSpaceOnUse">
+                  <path d="M0 0H38V38" fill="none" stroke="#a9ab91" stroke-width="1" opacity=".12"></path>
+                </pattern>
+                <filter id="hf-shadow" x="-50%" y="-50%" width="200%" height="220%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#07100d" flood-opacity=".72"></feDropShadow>
+                </filter>
+                <filter id="hf-glow" x="-70%" y="-70%" width="240%" height="240%">
+                  <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                  <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                </filter>
+                <symbol id="hf-tree" viewBox="-10 -16 20 30">
+                  <path d="M-1 14V3" stroke="#1c271f" stroke-width="2"></path>
+                  <path d="M0 4L-8 8M0 2L7 6M0-1L-6 2M0-4L6-1" stroke="#1c271f" stroke-width="1.5"></path>
+                  <circle cx="-4" cy="-5" r="6" fill="#697052"></circle>
+                  <circle cx="4" cy="-7" r="7" fill="#765d43"></circle>
+                  <circle cx="0" cy="-12" r="6" fill="#8a7448"></circle>
+                </symbol>
+              </defs>
+
+              <rect width="1400" height="900" fill="url(#hf-ground)"></rect>
+              <rect width="1400" height="900" fill="url(#hf-paper-grain)"></rect>
+
+              <path class="hf-field hf-field-gold" d="M0 0H425L395 205L0 270Z"></path>
+              <path class="hf-field-lines" d="M0 0H425L395 205L0 270Z"></path>
+              <path class="hf-field hf-field-russet" d="M0 520L370 430L455 900H0Z"></path>
+              <path class="hf-field-lines" d="M0 520L370 430L455 900H0Z"></path>
+              <path class="hf-field hf-field-gold" d="M855 0H1400V250L1080 315L910 195Z"></path>
+              <path class="hf-field-lines" d="M855 0H1400V250L1080 315L910 195Z"></path>
+              <path class="hf-town-footprint" d="M378 238C492 182 663 190 792 214C911 235 1017 302 1061 403C1104 503 1008 574 901 624C785 679 637 692 500 652C379 616 302 535 292 430C283 343 316 278 378 238Z"></path>
+
+              <path class="hf-contour" d="M28 304C160 258 270 292 366 260S555 170 662 190"></path>
+              <path class="hf-contour" d="M18 332C156 286 268 323 380 286S558 205 688 224"></path>
+              <path class="hf-contour" d="M70 744C221 680 325 708 422 677"></path>
+              <path class="hf-contour" d="M90 775C218 720 331 747 441 709"></path>
+
+              <path class="hf-reservoir" d="M963 549C1068 508 1124 535 1210 489C1298 441 1376 461 1440 494V930H905C930 846 896 783 928 711C953 654 911 592 963 549Z"></path>
+              <path class="hf-reservoir-shore" d="M963 549C1068 508 1124 535 1210 489C1298 441 1376 461 1440 494"></path>
+              <path class="hf-water-ripple" d="M1015 606c100-27 190-6 305-47M1000 653c122-25 220 6 342-35M1008 706c108-17 217 9 333-23M970 763c134-13 240 13 386 0"></path>
+
+              <path class="hf-creek-bank" d="M-40 375C140 348 253 393 390 385C566 376 661 313 810 341C947 366 1006 451 1102 516"></path>
+              <path class="hf-creek" d="M-40 375C140 348 253 393 390 385C566 376 661 313 810 341C947 366 1006 451 1102 516"></path>
+
+              <g class="hf-roads">
+                <path class="hf-road-casing hf-highway" d="M-40 692C105 693 188 675 286 661C401 645 466 611 579 598C704 584 804 565 916 574C1038 584 1117 618 1235 618C1318 617 1384 589 1440 565"></path>
+                <path class="hf-road hf-highway" d="M-40 692C105 693 188 675 286 661C401 645 466 611 579 598C704 584 804 565 916 574C1038 584 1117 618 1235 618C1318 617 1384 589 1440 565"></path>
+
+                <path class="hf-road-casing" d="M282 940C291 836 313 765 356 698C398 633 456 584 468 526C480 469 433 417 447 367C463 309 520 283 537 232C559 168 568 88 610-40"></path>
+                <path class="hf-road" d="M282 940C291 836 313 765 356 698C398 633 456 584 468 526C480 469 433 417 447 367C463 309 520 283 537 232C559 168 568 88 610-40"></path>
+
+                <path class="hf-road-casing" d="M603 506C690 439 771 411 858 379C942 348 1010 363 1081 346C1168 326 1192 275 1258 221C1329 163 1381 124 1440 94"></path>
+                <path class="hf-road" d="M603 506C690 439 771 411 858 379C942 348 1010 363 1081 346C1168 326 1192 275 1258 221C1329 163 1381 124 1440 94"></path>
+
+                <path class="hf-road-casing" d="M700 540C770 590 822 630 868 660C925 696 980 760 1018 825C1045 870 1059 910 1070 940"></path>
+                <path class="hf-road" d="M700 540C770 590 822 630 868 660C925 696 980 760 1018 825C1045 870 1059 910 1070 940"></path>
+
+                <path class="hf-road-casing" d="M1081 346C1123 400 1143 456 1131 514C1119 569 1090 612 1102 681C1113 742 1160 802 1210 845"></path>
+                <path class="hf-road" d="M1081 346C1123 400 1143 456 1131 514C1119 569 1090 612 1102 681C1113 742 1160 802 1210 845"></path>
+
+                <g class="hf-local-streets">
+                  <path class="hf-street" d="M208 252C271 230 319 249 366 274C402 293 430 314 447 367"></path>
+                  <path class="hf-street" d="M365 286C423 264 488 255 548 274C610 293 659 323 724 337C778 348 822 346 866 331"></path>
+                  <path class="hf-street" d="M351 405C409 392 459 399 507 419C565 443 624 480 691 480C748 480 806 449 858 420"></path>
+                  <path class="hf-street" d="M405 574C477 548 536 543 598 554C665 565 721 585 787 577"></path>
+                  <path class="hf-street" d="M530 222C515 291 520 341 547 382C566 410 588 429 617 448"></path>
+                  <path class="hf-street" d="M650 248C638 312 650 355 688 405C715 440 751 456 797 455"></path>
+                  <path class="hf-street" d="M780 260C765 320 777 365 811 411"></path>
+                  <path class="hf-street hf-access-road" d="M537 232C591 218 640 187 676 155"></path>
+                  <path class="hf-street hf-access-road" d="M366 274C359 240 353 211 348 187"></path>
+                  <path class="hf-street hf-access-road" d="M447 367C454 353 463 344 473 337"></path>
+                  <path class="hf-street hf-access-road" d="M547 382C565 389 579 394 590 398"></path>
+                  <path class="hf-street hf-access-road" d="M468 526C434 521 410 513 389 503"></path>
+                  <path class="hf-street hf-access-road" d="M691 480C720 478 744 479 767 480"></path>
+                  <path class="hf-street hf-access-road" d="M240 668C222 654 205 643 190 635"></path>
+                  <path class="hf-street hf-access-road" d="M1081 346C1097 318 1107 290 1112 266"></path>
+                  <path class="hf-street hf-access-road" d="M922 694C913 706 905 717 898 725"></path>
+                  <path class="hf-street hf-access-road" d="M1102 681C1123 679 1144 678 1162 677"></path>
+                </g>
+              </g>
+
+              <path class="hf-rail" d="M1035-20C984 184 960 300 884 442C811 578 734 725 668 930"></path>
+              <path class="hf-rail-ties" d="M1035-20C984 184 960 300 884 442C811 578 734 725 668 930"></path>
+
+              <g class="hf-town-blocks" aria-hidden="true">
+                <g class="hf-parcels">
+                  <path d="M397 214l87-28 31 62-93 18zM566 205l99 7 18 67-107-18zM721 223l126 18-14 75-119-27z"></path>
+                  <path d="M276 298l116-20 27 91-129 12zM529 294l96 27-14 76-103-31zM704 355l137 7 2 61-132 25z"></path>
+                  <path d="M474 452l82-19 42 85-99 24zM622 502l117-9 35 70-126 10zM804 468l114-32 41 80-120 30z"></path>
+                </g>
+                <g class="hf-alleys">
+                  <path d="M412 235C448 226 474 228 504 239M583 232C618 237 640 247 667 262M744 257C777 266 802 275 829 289"></path>
+                  <path d="M301 333C337 325 365 327 397 342M539 338C566 349 588 362 610 381M724 389C763 388 797 384 829 377"></path>
+                  <path d="M489 483C519 474 548 475 576 489M643 531C685 528 720 533 754 547M826 495C861 483 894 478 930 482"></path>
+                </g>
+
+                <rect class="hf-house" x="405" y="208" width="34" height="21" rx="2" transform="rotate(-14 422 219)"></rect>
+                <path class="hf-house hf-l-footprint" d="M454 203h39v18h-13v14h-26Z" transform="rotate(7 474 219)"></path>
+                <rect class="hf-house" x="503" y="222" width="29" height="18" rx="2" transform="rotate(-9 518 231)"></rect>
+                <rect class="hf-house" x="570" y="224" width="38" height="22" rx="2" transform="rotate(12 589 235)"></rect>
+                <path class="hf-house hf-l-footprint" d="M617 242h42v19h-15v15h-27Z" transform="rotate(-6 638 258)"></path>
+                <rect class="hf-house" x="718" y="246" width="31" height="20" rx="2" transform="rotate(16 734 256)"></rect>
+                <rect class="hf-house" x="766" y="273" width="42" height="20" rx="2" transform="rotate(-11 787 283)"></rect>
+                <path class="hf-house hf-l-footprint" d="M818 255h36v17h-11v15h-25Z" transform="rotate(8 836 271)"></path>
+
+                <rect class="hf-house" x="286" y="308" width="37" height="19" rx="2" transform="rotate(-17 305 318)"></rect>
+                <path class="hf-house hf-l-footprint" d="M333 326h39v17h-13v14h-26Z" transform="rotate(11 353 342)"></path>
+                <rect class="hf-house" x="383" y="292" width="29" height="21" rx="2" transform="rotate(-8 398 303)"></rect>
+                <rect class="hf-shop" x="544" y="309" width="46" height="25" rx="2" transform="rotate(14 567 322)"></rect>
+                <path class="hf-shop" d="M620 305h52v22h-16v13h-36Z" transform="rotate(-5 646 323)"></path>
+                <rect class="hf-house" x="710" y="365" width="32" height="20" rx="2" transform="rotate(9 726 375)"></rect>
+                <rect class="hf-shop" x="756" y="384" width="51" height="24" rx="2" transform="rotate(-13 782 396)"></rect>
+                <path class="hf-house hf-l-footprint" d="M817 350h37v18h-12v14h-25Z" transform="rotate(17 836 366)"></path>
+                <rect class="hf-house" x="876" y="355" width="30" height="21" rx="2" transform="rotate(-6 891 366)"></rect>
+
+                <rect class="hf-house" x="421" y="432" width="35" height="20" rx="2" transform="rotate(13 439 442)"></rect>
+                <path class="hf-house hf-l-footprint" d="M473 469h42v18h-14v15h-28Z" transform="rotate(-12 494 486)"></path>
+                <rect class="hf-shop" x="523" y="462" width="47" height="24" rx="2" transform="rotate(7 547 474)"></rect>
+                <rect class="hf-house" x="640" y="432" width="31" height="19" rx="2" transform="rotate(-15 656 442)"></rect>
+                <path class="hf-shop" d="M674 510h52v24h-17v12h-35Z" transform="rotate(9 700 528)"></path>
+                <rect class="hf-house" x="842" y="515" width="34" height="19" rx="2" transform="rotate(-7 859 525)"></rect>
+                <path class="hf-house hf-l-footprint" d="M880 456h38v18h-12v15h-26Z" transform="rotate(-10 899 473)"></path>
+
+                <rect class="hf-house" x="365" y="590" width="33" height="20" rx="2" transform="rotate(-16 382 600)"></rect>
+                <rect class="hf-house" x="492" y="557" width="42" height="19" rx="2" transform="rotate(8 513 567)"></rect>
+                <path class="hf-house hf-l-footprint" d="M548 524h39v17h-12v15h-27Z" transform="rotate(-7 568 540)"></path>
+                <rect class="hf-house" x="605" y="515" width="36" height="20" rx="2" transform="rotate(14 623 525)"></rect>
+                <rect class="hf-house" x="655" y="528" width="31" height="19" rx="2" transform="rotate(-11 671 538)"></rect>
+                <path class="hf-house hf-l-footprint" d="M722 598h43v18h-15v15h-28Z" transform="rotate(6 744 614)"></path>
+
+                <path class="hf-warehouse" d="M919 265l68-18 13 43-70 14Z"></path>
+                <path class="hf-warehouse" d="M972 307l78-12 7 36-77 14Z"></path>
+                <path class="hf-warehouse" d="M932 397l64-20 14 42-67 18Z"></path>
+                <rect class="hf-outbuilding" x="1025" y="393" width="38" height="19" transform="rotate(-18 1044 403)"></rect>
+                <rect class="hf-outbuilding" x="279" y="578" width="39" height="18" transform="rotate(21 299 587)"></rect>
+                <rect class="hf-outbuilding" x="318" y="615" width="28" height="16" transform="rotate(-12 332 623)"></rect>
+              </g>
+
+              <g class="hf-tree-line" aria-hidden="true">
+                <use href="#hf-tree" x="80" y="290" width="24" height="36"></use><use href="#hf-tree" x="120" y="302" width="21" height="32"></use>
+                <use href="#hf-tree" x="160" y="286" width="25" height="38"></use><use href="#hf-tree" x="215" y="305" width="22" height="34"></use>
+                <use href="#hf-tree" x="265" y="294" width="25" height="37"></use><use href="#hf-tree" x="320" y="309" width="21" height="33"></use>
+                <use href="#hf-tree" x="935" y="410" width="25" height="38"></use><use href="#hf-tree" x="973" y="431" width="20" height="31"></use>
+                <use href="#hf-tree" x="1022" y="452" width="24" height="36"></use><use href="#hf-tree" x="1062" y="471" width="22" height="34"></use>
+                <use href="#hf-tree" x="288" y="718" width="27" height="40"></use><use href="#hf-tree" x="335" y="732" width="23" height="35"></use>
+                <use href="#hf-tree" x="385" y="753" width="27" height="40"></use><use href="#hf-tree" x="431" y="771" width="22" height="34"></use>
+              </g>
+
+              <g class="hf-map-copy" aria-hidden="true">
+                <text class="hf-town-name" x="655" y="74">HOLLOWFIELD</text>
+                <text class="hf-county-name" x="655" y="96">BLACKWATER COUNTY · IOWA</text>
+                <text class="hf-water-label" x="1207" y="810">BLACKWATER</text>
+                <text class="hf-water-sub" x="1207" y="833">RESERVOIR</text>
+                <text class="hf-land-label" x="137" y="112">WEST FIELDS</text>
+                <text class="hf-land-label" x="1195" y="106">OLD WORKS</text>
+                <text class="hf-road-label" x="112" y="665" transform="rotate(-6 112 665)">COUNTY 6</text>
+                <text class="hf-road-label" x="332" y="778" transform="rotate(-72 332 778)">LEDA ROAD</text>
+                <text class="hf-creek-label" x="194" y="406">HOLLOW CREEK</text>
+              </g>
+
+              <g class="hf-compass" transform="translate(1290 80)" aria-hidden="true">
+                <circle r="45"></circle><path d="M0-36L9-5L0 0L-9-5Z"></path><path class="muted" d="M0 36L7 5L0 0L-7 5Z"></path>
+                <text x="0" y="-51">N</text><text x="0" y="62">S</text><text x="-58" y="5">W</text><text x="58" y="5">E</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="sheriff_coroner_annex" tabindex="0" role="button" aria-label="Sheriff-Coroner Annex">
+                <circle class="location-hit" cx="480" cy="330" r="58"></circle>
+                <g class="hf-pin" transform="translate(480 330)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-42 26H42L31 38H-31Z"></path>
+                  <rect class="hf-building hf-civic" x="-34" y="-24" width="68" height="50" rx="3"></rect>
+                  <path class="hf-roof" d="M-40-24L0-45L40-24Z"></path><rect class="hf-door" x="-8" y="3" width="16" height="23"></rect>
+                  <path class="hf-morgue-cross" d="M-24-8h10v-10h8v10H4v8H-6v10h-8V0h-10Z"></path>
+                </g>
+                <text class="map-label location-label" x="480" y="392">SHERIFF &amp; CORONER</text>
+              </g>
+
+              <g class="location hf-location hf-danger" data-location-id="saint_orra_packing" tabindex="0" role="button" aria-label="Saint Orra Packing House">
+                <circle class="location-hit" cx="1115" cy="250" r="70"></circle>
+                <g class="hf-pin" transform="translate(1115 250)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-54 27H55L41 40H-42Z"></path>
+                  <rect class="hf-building hf-industrial" x="-47" y="-24" width="94" height="51"></rect>
+                  <path class="hf-saw-roof" d="M-47-24l18-19v19l20-19v19l20-19v19l18-19v19h18"></path>
+                  <rect class="hf-smokestack" x="31" y="-66" width="13" height="42"></rect><path class="hf-window-row" d="M-36-8h14v12h-14zm23 0H1v12h-14zm23 0h14v12H10z"></path>
+                </g>
+                <text class="map-label location-label danger-label" x="1115" y="321">SAINT ORRA PACKING</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="woh_radio" tabindex="0" role="button" aria-label="WOHF Radio 1090">
+                <circle class="location-hit" cx="690" cy="145" r="61"></circle>
+                <g class="hf-pin" transform="translate(690 145)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-42 26H42L31 38H-31Z"></path>
+                  <rect class="hf-building hf-radio" x="-39" y="-9" width="78" height="35"></rect>
+                  <path class="hf-mast" d="M0-70L-16-9M0-70L16-9M-8-40H8M-13-20h26"></path>
+                  <path class="hf-radio-wave" d="M10-58c18 10 18 26 0 36M16-68c29 16 29 42 0 58"></path>
+                </g>
+                <text class="map-label location-label" x="690" y="211">WOHF RADIO 1090</text>
+              </g>
+
+              <g class="location hf-location hf-danger" data-location-id="blackwater_pump_house" tabindex="0" role="button" aria-label="Blackwater Pump House">
+                <circle class="location-hit" cx="1180" cy="675" r="66"></circle>
+                <g class="hf-pin" transform="translate(1180 675)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-47 27H47L34 40H-34Z"></path>
+                  <rect class="hf-building hf-pump" x="-39" y="-27" width="78" height="54"></rect><path class="hf-roof" d="M-45-27H45L34-41H-34Z"></path>
+                  <circle class="hf-gauge" cx="0" cy="-3" r="14"></circle><path class="hf-gauge-needle" d="M0-3L8-10"></path>
+                  <path class="hf-pipes" d="M-39 8h-17v20M39 8h17v20"></path>
+                </g>
+                <text class="map-label location-label danger-label" x="1180" y="744">BLACKWATER PUMPS</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="town_hall" tabindex="0" role="button" aria-label="Hollowfield Town Hall">
+                <circle class="location-hit" cx="600" cy="400" r="56"></circle>
+                <g class="hf-pin" transform="translate(600 400)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-43 27H43L31 39H-31Z"></path>
+                  <rect class="hf-building hf-limestone" x="-37" y="-19" width="74" height="46"></rect><path class="hf-roof" d="M-43-19L0-42L43-19Z"></path>
+                  <rect class="hf-door" x="-7" y="2" width="14" height="25"></rect><path class="hf-columns" d="M-26-13V21M-14-13V21M14-13V21M26-13V21"></path>
+                </g>
+                <text class="map-label location-label" x="600" y="462">TOWN HALL</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="mercy_diner" tabindex="0" role="button" aria-label="Mercy Diner">
+                <circle class="location-hit" cx="780" cy="480" r="55"></circle>
+                <g class="hf-pin" transform="translate(780 480)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-45 26H45L33 38H-33Z"></path>
+                  <path class="hf-building hf-diner" d="M-42-14h72q12 0 12 12v28h-84Z"></path><path class="hf-diner-stripe" d="M-42 5h84"></path>
+                  <rect class="hf-window-glow" x="-30" y="-7" width="42" height="18"></rect><rect class="hf-door" x="20" y="-7" width="13" height="33"></rect>
+                </g>
+                <text class="map-label location-label" x="780" y="540">MERCY DINER</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="bell_farm" tabindex="0" role="button" aria-label="Bell Farm and Veterinary Barn">
+                <circle class="location-hit" cx="175" cy="625" r="64"></circle>
+                <g class="hf-pin" transform="translate(175 625)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-49 29H49L36 42H-36Z"></path>
+                  <path class="hf-building hf-barn" d="M-42 29v-45L0-44l42 28v45Z"></path><path class="hf-roof" d="M-48-15L0-50l48 35-7 8L0-37-41-7Z"></path>
+                  <rect class="hf-barn-door" x="-15" y="2" width="30" height="27"></rect><path class="hf-barn-x" d="M-13 4l26 23M13 4l-26 23"></path>
+                </g>
+                <text class="map-label location-label" x="175" y="697">BELL FARM &amp; VET</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="saint_ledas_archive" tabindex="0" role="button" aria-label="Saint Leda's Church and Archive">
+                <circle class="location-hit" cx="345" cy="170" r="62"></circle>
+                <g class="hf-pin" transform="translate(345 170)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-45 30H45L33 42H-33Z"></path>
+                  <path class="hf-building hf-church" d="M-35 30v-47L0-40l35 23v47Z"></path><rect class="hf-steeple" x="-11" y="-68" width="22" height="45"></rect>
+                  <path class="hf-roof" d="M-15-68L0-91l15 23Z"></path><path class="hf-cross" d="M-3-93h6v-12h8v-6H3v-9h-6v9h-8v6h8Z"></path>
+                  <path class="hf-rose-window" d="M0-20a10 10 0 1 0 0 20 10 10 0 1 0 0-20"></path>
+                </g>
+                <text class="map-label location-label" x="345" y="240">ST. LEDA'S ARCHIVE</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="northline_motel" tabindex="0" role="button" aria-label="Northline Motor Lodge">
+                <circle class="location-hit" cx="890" cy="735" r="62"></circle>
+                <g class="hf-pin" transform="translate(890 735)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-52 28H52L38 41H-38Z"></path>
+                  <path class="hf-building hf-motel" d="M-48-18h96v46h-96Z"></path><path class="hf-motel-doors" d="M-39-5h15v25h-15zm25 0H1v25h-15zm25 0h15v25H11zm25 0h10v25H36z"></path>
+                  <path class="hf-sign-post" d="M-58-37v65"></path><rect class="hf-motel-sign" x="-76" y="-51" width="36" height="25" rx="3"></rect>
+                </g>
+                <text class="map-label location-label" x="890" y="804">NORTHLINE MOTEL</text>
+              </g>
+
+              <g class="location hf-location" data-location-id="dredge_funeral_home" tabindex="0" role="button" aria-label="Dredge Funeral Home">
+                <circle class="location-hit" cx="375" cy="500" r="58"></circle>
+                <g class="hf-pin" transform="translate(375 500)" filter="url(#hf-shadow)">
+                  <path class="hf-pin-ground" d="M-43 29H43L31 41H-31Z"></path>
+                  <rect class="hf-building hf-funeral" x="-35" y="-18" width="70" height="47"></rect><path class="hf-roof" d="M-43-18L0-47L43-18Z"></path>
+                  <rect class="hf-door" x="-7" y="4" width="14" height="25"></rect><path class="hf-funeral-windows" d="M-27-7h13V8h-13zm41 0h13V8H14z"></path>
+                  <path class="hf-porch" d="M-20 29v-8h40v8M-17 21V3M17 21V3"></path>
+                </g>
+                <text class="map-label location-label" x="375" y="564">DREDGE FUNERAL</text>
+              </g>
+
+              <g id="token-layer" aria-label="Investigator positions"></g>
+            </svg>
+
+            <div class="map-legend season-map-legend" aria-hidden="true">
+              <span><i class="legend-dot nora"></i>Nora Mercer</span>
+              <span><i class="legend-dot isaac"></i>Isaac Ward</span>
+              <span class="map-scale"><i></i>1 mile</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="location-panel season-location-panel" aria-live="polite">
+          <div class="location-panel-heading">
+            <p id="location-kind" class="eyebrow">Case headquarters</p>
+            <span class="case-pin-number">HF–96</span>
+          </div>
+          <h2 id="location-name">Sheriff-Coroner Annex</h2>
+          <p id="location-description" class="location-description"></p>
+          <button id="view-location-button" class="location-preview-button" type="button">Open location photograph</button>
+
+          <div class="panel-block">
+            <h3>People here</h3>
+            <div id="known-people" class="npc-presence-list"></div>
+          </div>
+
+          <div class="panel-block">
+            <h3>Investigators</h3>
+            <div id="investigator-list" class="investigator-list"></div>
+          </div>
+
+          <div class="travel-controls">
+            <button type="button" class="travel-button nora-button" data-travel-character="nora_mercer">Move Nora here</button>
+            <button type="button" class="travel-button isaac-button" data-travel-character="isaac_ward">Move Isaac here</button>
+            <button type="button" class="travel-button party-button" data-travel-party>Move both investigators</button>
+          </div>
+
+          <div id="arrival-handoff" class="arrival-handoff" hidden>
+            <strong id="handoff-title">Arrival recorded</strong>
+            <p id="handoff-copy">The state is current. Return to Codex and say, “We have arrived.”</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="board-view" class="view-panel" aria-labelledby="board-heading" hidden>
+        <div class="board-header">
+          <div>
+            <p class="eyebrow">Hollowfield major-crimes file</p>
+            <h2 id="board-heading">Evidence board</h2>
+            <p id="narrator-message" class="narrator-message"></p>
+          </div>
+          <div class="board-actions">
+            <button id="add-note-button" class="secondary-button" type="button">Add note</button>
+            <button id="connect-button" class="secondary-button" type="button" aria-pressed="false">Connect cards</button>
+          </div>
+        </div>
+        <div id="board-stage" class="board-stage season-board-stage">
+          <svg id="connection-layer" class="connection-layer" aria-hidden="true"></svg>
+          <div id="card-layer" class="card-layer"></div>
+          <p id="board-empty" class="board-empty" hidden>No evidence has been recorded yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-bar">
+      <p id="save-status">Season 1 state has not changed.</p>
+      <button id="reset-button" class="text-button" type="button">Reset Season 1</button>
+    </footer>
+
+    <dialog id="location-dialog" class="location-dialog" aria-labelledby="location-dialog-title">
+      <div class="location-dialog-shell">
+        <button id="close-location-dialog" class="dialog-close" type="button" aria-label="Close location photograph">×</button>
+        <div class="location-image-frame">
+          <img id="location-slide-image" alt="">
+          <span id="location-slide-label" class="slide-label"></span>
+        </div>
+        <div class="slideshow-footer">
+          <div>
+            <p class="eyebrow">Field photograph</p>
+            <h2 id="location-dialog-title"></h2>
+            <p id="location-slide-caption" class="slide-caption"></p>
+          </div>
+          <div class="slideshow-controls" aria-label="Location image controls">
+            <button id="previous-location-slide" class="slide-arrow" type="button" aria-label="Previous location image">←</button>
+            <div id="location-slide-dots" class="slide-dots" aria-label="Slides"></div>
+            <button id="next-location-slide" class="slide-arrow" type="button" aria-label="Next location image">→</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="npc-dialog" class="npc-dialog" aria-labelledby="npc-dialog-name">
+      <div class="npc-dialog-shell">
+        <button id="close-npc-dialog" class="dialog-close" type="button" aria-label="Close character portrait">×</button>
+        <div class="npc-portrait-frame"><img id="npc-dialog-image" alt=""></div>
+        <div class="npc-dialog-details">
+          <p class="eyebrow">Hollowfield case contact</p>
+          <h2 id="npc-dialog-name"></h2>
+          <p id="npc-dialog-description" class="npc-dialog-description"></p>
+          <div id="npc-dialog-actions" class="npc-dialog-actions" aria-label="Start a conversation"></div>
+          <p id="npc-dialog-guidance" class="npc-dialog-guidance"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="note-dialog" class="note-dialog" aria-labelledby="note-dialog-title">
+      <form id="note-form" class="postit-editor">
+        <button id="close-note-dialog" class="note-dialog-close" type="button" aria-label="Cancel note">×</button>
+        <p class="postit-kicker">Investigator's note</p>
+        <h2 id="note-dialog-title">Pin a thought to the board</h2>
+        <label for="note-title">Heading</label>
+        <input id="note-title" name="title" maxlength="80" value="Investigator note" autocomplete="off">
+        <label for="note-text">Note</label>
+        <textarea id="note-text" name="text" maxlength="800" rows="7" required placeholder="Write what you suspect, remember, or need to verify…"></textarea>
+        <div class="postit-actions">
+          <button id="cancel-note-button" class="postit-cancel" type="button">Cancel</button>
+          <button id="save-note-button" class="postit-pin" type="submit">Pin to board</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

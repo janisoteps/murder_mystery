@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111715">
+    <title>The Bellwether Test Case</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Season 0 · Technical rehearsal</p>
+        <h1>The Bellwether Test Case</h1>
+      </div>
+      <div class="case-status" aria-label="Game status">
+        <div>
+          <span class="status-label">Case clock</span>
+          <strong id="case-clock">Friday · 19:20</strong>
+        </div>
+        <div>
+          <span class="status-label">State bridge</span>
+          <strong id="bridge-status" class="bridge-status">Connecting</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="view-tabs" aria-label="Investigation views">
+      <button class="tab-button is-active" type="button" data-view="map" aria-selected="true">
+        Town map
+      </button>
+      <button class="tab-button" type="button" data-view="board" aria-selected="false">
+        Evidence board <span id="evidence-count" class="count-badge">1</span>
+      </button>
+    </nav>
+
+    <main>
+      <section id="map-view" class="view-panel is-active" aria-labelledby="map-heading">
+        <div class="map-column">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Bellwether, Iowa</p>
+              <h2 id="map-heading">Friday night</h2>
+            </div>
+            <p class="map-instruction">Drag an investigator onto a location, or select a place and use the travel controls.</p>
+          </div>
+
+          <div class="map-frame">
+            <svg id="town-map" class="town-map" viewBox="0 0 1000 700" role="img" aria-labelledby="town-map-title town-map-desc">
+              <title id="town-map-title">Map of Bellwether, Iowa</title>
+              <desc id="town-map-desc">Five selectable locations connected by rural roads. Two investigator tokens show the current party positions.</desc>
+              <defs>
+                <linearGradient id="map-ground-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#384138"></stop>
+                  <stop offset="1" stop-color="#202923"></stop>
+                </linearGradient>
+                <pattern id="field-lines" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+                  <line x1="0" y1="0" x2="0" y2="28" stroke="#75806d" stroke-opacity="0.12" stroke-width="6"></line>
+                </pattern>
+                <filter id="soft-shadow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#07100c" flood-opacity="0.75"></feDropShadow>
+                </filter>
+              </defs>
+
+              <rect width="1000" height="700" fill="url(#map-ground-gradient)"></rect>
+              <path class="field" d="M0 0H1000V118C850 145 705 97 570 124C388 160 214 106 0 146Z"></path>
+              <path class="field-lines" d="M0 0H1000V122C850 148 705 101 570 128C388 164 214 110 0 150Z"></path>
+              <path class="field" d="M0 575C190 530 370 595 540 555C720 512 850 558 1000 520V700H0Z"></path>
+              <path class="field-lines" d="M0 579C190 534 370 599 540 559C720 516 850 562 1000 524V700H0Z"></path>
+              <path class="river" d="M1040 350C860 315 766 388 633 375C485 361 398 301 255 326C134 348 62 421 -40 405"></path>
+              <path class="road road-main" d="M75 182C234 172 341 221 474 245C612 270 721 232 908 181"></path>
+              <path class="road" d="M190 180C225 280 268 393 300 510"></path>
+              <path class="road" d="M465 245C532 339 609 419 700 505"></path>
+              <path class="road" d="M790 170C772 286 748 395 700 505"></path>
+              <path class="rail" d="M940 15L565 700"></path>
+              <text class="map-label landscape-label" x="835" y="612">COUNTY LINE</text>
+              <text class="map-label landscape-label" x="710" y="325" transform="rotate(-10 710 325)">MERCY RIVER</text>
+
+              <g class="location" data-location-id="sheriffs_annex" tabindex="0" role="button" aria-label="Sheriff's Annex">
+                <circle class="location-hit" cx="190" cy="180" r="72"></circle>
+                <g filter="url(#soft-shadow)">
+                  <rect class="building civic" x="148" y="142" width="84" height="60" rx="3"></rect>
+                  <rect class="roof" x="141" y="132" width="98" height="18" rx="2"></rect>
+                  <rect class="window" x="161" y="157" width="16" height="17"></rect>
+                  <rect class="window" x="203" y="157" width="16" height="17"></rect>
+                  <rect class="door" x="182" y="171" width="18" height="31"></rect>
+                </g>
+                <text class="map-label location-label" x="190" y="226">SHERIFF'S ANNEX</text>
+              </g>
+
+              <g class="location" data-location-id="ruths_diner" tabindex="0" role="button" aria-label="Ruth's Diner">
+                <circle class="location-hit" cx="465" cy="245" r="72"></circle>
+                <g filter="url(#soft-shadow)">
+                  <rect class="building business" x="414" y="219" width="102" height="48" rx="7"></rect>
+                  <rect class="window diner-window" x="425" y="231" width="54" height="18"></rect>
+                  <rect class="door" x="487" y="229" width="18" height="38"></rect>
+                  <path class="diner-sign" d="M445 211h40l-7-13h-26Z"></path>
+                </g>
+                <text class="map-label location-label" x="465" y="292">RUTH'S DINER</text>
+              </g>
+
+              <g class="location" data-location-id="grain_elevator" tabindex="0" role="button" aria-label="Harker Grain Elevator">
+                <circle class="location-hit" cx="790" cy="170" r="82"></circle>
+                <g filter="url(#soft-shadow)">
+                  <rect class="silo" x="745" y="105" width="30" height="94" rx="13"></rect>
+                  <rect class="silo" x="778" y="94" width="30" height="105" rx="13"></rect>
+                  <rect class="silo" x="811" y="111" width="30" height="88" rx="13"></rect>
+                  <rect class="building industrial" x="738" y="181" width="110" height="31"></rect>
+                  <path class="conveyor" d="M795 104L852 65l7 10-57 41Z"></path>
+                </g>
+                <text class="map-label location-label danger-label" x="790" y="237">HARKER ELEVATOR</text>
+              </g>
+
+              <g class="location" data-location-id="st_orisons" tabindex="0" role="button" aria-label="St. Orison's Chapel">
+                <circle class="location-hit" cx="300" cy="510" r="80"></circle>
+                <g filter="url(#soft-shadow)">
+                  <path class="building chapel" d="M252 536v-64l48-27 48 27v64Z"></path>
+                  <rect class="steeple" x="285" y="418" width="30" height="73"></rect>
+                  <path class="roof" d="M280 422l20-31 20 31Z"></path>
+                  <rect class="door chapel-door" x="289" y="500" width="22" height="36" rx="10"></rect>
+                  <path class="cross" d="M297 386h6v-16h8v-6h-8v-11h-6v11h-8v6h8Z"></path>
+                </g>
+                <text class="map-label location-label" x="300" y="563">ST. ORISON'S</text>
+              </g>
+
+              <g class="location" data-location-id="north_star_motel" tabindex="0" role="button" aria-label="North Star Motor Court">
+                <circle class="location-hit" cx="700" cy="505" r="82"></circle>
+                <g filter="url(#soft-shadow)">
+                  <path class="building motel" d="M628 470h144v58H628Zm18 17h21v23h-21Zm31 0h21v23h-21Zm31 0h21v23h-21Zm31 0h21v23h-21Z" fill-rule="evenodd"></path>
+                  <rect class="motel-sign-post" x="781" y="467" width="5" height="63"></rect>
+                  <path class="motel-sign" d="M765 447h38v32h-38Z"></path>
+                  <text class="sign-star" x="784" y="469">★</text>
+                </g>
+                <text class="map-label location-label" x="700" y="557">NORTH STAR MOTEL</text>
+              </g>
+
+              <g id="token-layer" aria-label="Investigator positions"></g>
+            </svg>
+            <div class="map-legend" aria-hidden="true">
+              <span><i class="legend-dot mara"></i>Mara Voss</span>
+              <span><i class="legend-dot elias"></i>Elias Reed</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="location-panel" aria-live="polite">
+          <p id="location-kind" class="eyebrow">Civic</p>
+          <h2 id="location-name">Sheriff's Annex</h2>
+          <p id="location-description" class="location-description"></p>
+          <button id="view-location-button" class="location-preview-button" type="button">View location</button>
+
+          <div class="panel-block">
+            <h3>People here</h3>
+            <div id="known-people" class="npc-presence-list"></div>
+          </div>
+
+          <div class="panel-block">
+            <h3>Investigator positions</h3>
+            <div id="investigator-list" class="investigator-list"></div>
+          </div>
+
+          <div class="travel-controls">
+            <button type="button" class="travel-button mara-button" data-travel-character="mara_voss">Move Mara here</button>
+            <button type="button" class="travel-button elias-button" data-travel-character="elias_reed">Move Elias here</button>
+            <button type="button" class="travel-button party-button" data-travel-party>Move both investigators</button>
+          </div>
+
+          <div id="arrival-handoff" class="arrival-handoff" hidden>
+            <strong id="handoff-title">Arrival recorded</strong>
+            <p id="handoff-copy">The JSON state is current. Return to Codex and say, “We have arrived.”</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="board-view" class="view-panel" aria-labelledby="board-heading" hidden>
+        <div class="board-header">
+          <div>
+            <p class="eyebrow">Shared case file</p>
+            <h2 id="board-heading">Evidence board</h2>
+            <p id="narrator-message" class="narrator-message"></p>
+          </div>
+          <div class="board-actions">
+            <button id="add-note-button" class="secondary-button" type="button">Add note</button>
+            <button id="connect-button" class="secondary-button" type="button" aria-pressed="false">Connect cards</button>
+          </div>
+        </div>
+
+        <div id="board-stage" class="board-stage">
+          <svg id="connection-layer" class="connection-layer" aria-hidden="true"></svg>
+          <div id="card-layer" class="card-layer"></div>
+          <p id="board-empty" class="board-empty" hidden>No evidence has been recorded yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-bar">
+      <p id="save-status">State has not changed.</p>
+      <button id="reset-button" class="text-button" type="button">Reset rehearsal</button>
+    </footer>
+
+    <dialog id="location-dialog" class="location-dialog" aria-labelledby="location-dialog-title">
+      <div class="location-dialog-shell">
+        <button id="close-location-dialog" class="dialog-close" type="button" aria-label="Close location slideshow">×</button>
+        <div class="location-image-frame">
+          <img id="location-slide-image" alt="">
+          <span id="location-slide-label" class="slide-label"></span>
+        </div>
+        <div class="slideshow-footer">
+          <div>
+            <p class="eyebrow">Arrival dossier</p>
+            <h2 id="location-dialog-title"></h2>
+            <p id="location-slide-caption" class="slide-caption"></p>
+          </div>
+          <div class="slideshow-controls" aria-label="Location slideshow controls">
+            <button id="previous-location-slide" class="slide-arrow" type="button" aria-label="Previous location image">←</button>
+            <div id="location-slide-dots" class="slide-dots" aria-label="Slides"></div>
+            <button id="next-location-slide" class="slide-arrow" type="button" aria-label="Next location image">→</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="npc-dialog" class="npc-dialog" aria-labelledby="npc-dialog-name">
+      <div class="npc-dialog-shell">
+        <button id="close-npc-dialog" class="dialog-close" type="button" aria-label="Close character portrait">×</button>
+        <div class="npc-portrait-frame">
+          <img id="npc-dialog-image" alt="">
+        </div>
+        <div class="npc-dialog-details">
+          <p class="eyebrow">Person at this location</p>
+          <h2 id="npc-dialog-name"></h2>
+          <p id="npc-dialog-description" class="npc-dialog-description"></p>
+          <div id="npc-dialog-actions" class="npc-dialog-actions" aria-label="Start a conversation"></div>
+          <p id="npc-dialog-guidance" class="npc-dialog-guidance"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="note-dialog" class="note-dialog" aria-labelledby="note-dialog-title">
+      <form id="note-form" class="postit-editor">
+        <button id="close-note-dialog" class="note-dialog-close" type="button" aria-label="Cancel note">×</button>
+        <p class="postit-kicker">Investigator's note</p>
+        <h2 id="note-dialog-title">Pin a thought to the board</h2>
+        <label for="note-title">Heading</label>
+        <input id="note-title" name="title" maxlength="80" value="Investigator note" autocomplete="off">
+        <label for="note-text">Note</label>
+        <textarea id="note-text" name="text" maxlength="800" rows="7" required placeholder="Write what you suspect, remember, or need to verify…"></textarea>
+        <div class="postit-actions">
+          <button id="cancel-note-button" class="postit-cancel" type="button">Cancel</button>
+          <button id="save-note-button" class="postit-pin" type="submit">Pin to board</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
