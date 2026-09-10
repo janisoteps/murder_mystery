@@ -1,6 +1,28 @@
 # Murder Mystery
 
-This repository contains a dependency-free Season 0 technical rehearsal and the complete Season 1 campaign, *Blackwater Static*. Each season has isolated public, runtime, and game-master state.
+This repository contains a dependency-free Season 0 technical rehearsal, Season 1 (*Blackwater Static*), and Season 2 (*The Ninth Bell*). Each season has isolated public, runtime, and game-master state.
+
+## Run Season 2
+
+Season 2 uses the OpenAI Responses API for browser-based NPC conversations. Create a root `.env` file from the safe example:
+
+```sh
+cp .env.example .env
+```
+
+Add your key to `.env`, then start the season:
+
+```dotenv
+OPENAI_API_KEY=your-key
+```
+
+```sh
+npm run start:season2
+```
+
+Open `http://127.0.0.1:8000`. The root `.env` file is ignored by Git, and the key is never sent to the browser. Existing shell environment variables take precedence over `.env`; `MYSTERY_OPENAI_MODEL` can override the default `gpt-5.6-sol` model.
+
+Season 2 adds an image-backed interactive island map, twenty persistent NPCs, free-form browser conversations, formal evidence presentation, Chrome speech synthesis controls, a server-private gated knowledge system, dialogue transcripts, and pending game-master events.
 
 ## Run Season 1
 
@@ -71,7 +93,9 @@ Physical items use a deliberately small narrator-owned record: stable ID, name, 
 - `GET /api/events` — Server-Sent Events stream.
 - `POST /api/travel` — validated investigator arrival.
 - `POST /api/interact` — validated request to speak to a co-located NPC.
+- `POST /api/dialogue/session` — retrieve a co-located Season 2 conversation transcript.
+- `POST /api/dialogue/turn` — generate and persist one gated Season 2 NPC reply.
 - `POST /api/board` — validated corkboard snapshot.
 - `POST /api/reset` — restore the rehearsal opening state.
 
-The active data directory and landing page are selected with `MYSTERY_SEASON=season_0` or `MYSTERY_SEASON=season_1`. The `start:season0` and `start:season1` scripts set this automatically.
+The active data directory and landing page are selected with `MYSTERY_SEASON=season_0`, `season_1`, or `season_2`. The corresponding npm scripts set this automatically.

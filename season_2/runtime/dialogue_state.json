@@ -1,0 +1,827 @@
+{
+  "revision": 48,
+  "sessions": {
+    "erik_halden:solveig_brandt": {
+      "id": "erik_halden:solveig_brandt",
+      "investigatorId": "erik_halden",
+      "npcId": "solveig_brandt",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Hi Solveig, we are here to help you investigate the death of Annika. What do you know so far?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T17:46:58.617Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Constable Solveig Brandt",
+          "text": "Dr. Ravn was found dead in a chamber at Saint Vigga Sea Fort. The chamber was locked when I arrived. Her body was wet, but the room itself was dry. That is enough for me to know this is beyond a lone island constable’s resources, so I called you in. The weather has cut us off for now. Keep your work orderly, and do not start rumors at the harbor.",
+          "delivery": "Controlled, professional, with a firm warning at the end.",
+          "responseId": "resp_07f004520e1943a0016a8b320fea2887d29f71baf3c6098757",
+          "recordedAt": "2026-08-23T17:46:58.617Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "So someone who has the keys to the chamber must have been involved, right?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T17:55:18.525Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Constable Solveig Brandt",
+          "text": "No. That is a possibility, not a conclusion. A locked chamber can be explained several ways, and we have not established who held keys, when it was secured, or how Dr. Ravn came to be there. Do not turn an assumption into an accusation.",
+          "delivery": "Firm and controlled.",
+          "responseId": "resp_09a54034e59c4b88016a8b34046e4487d2a1cccb49b45ae266",
+          "recordedAt": "2026-08-23T17:55:18.525Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "So what are your theories then?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T17:55:53.459Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Constable Solveig Brandt",
+          "text": "I have observations, not theories. Dr. Ravn was found wet in a dry, locked chamber. The weather has isolated Vesperholm, which limits movement now but does not explain what happened before. We need to establish her last known movements, who had reason to meet her, and the fort’s access arrangements. Until then, I will not name a suspect or invent a method.",
+          "delivery": "Even, firm, professional.",
+          "responseId": "resp_02351615f4c895cc016a8b3427080087d28253a64987f6282d",
+          "recordedAt": "2026-08-23T17:55:53.459Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T17:55:53.459Z",
+      "ended": false
+    },
+    "linnea_berg:solveig_brandt": {
+      "id": "linnea_berg:solveig_brandt",
+      "investigatorId": "linnea_berg",
+      "npcId": "solveig_brandt",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Maybe you can help us with advice who can we talk to - to establish her last movements?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T17:58:33.800Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Constable Solveig Brandt",
+          "text": "Start with anyone tied to the fort’s access and the harbor. The ferry crew can account for crossings, at least in broad terms. Then speak to the people who knew Dr. Ravn’s work and habits; they may know why she went to Saint Vigga. Keep a clean timeline: last confirmed sighting, departure, arrival at the fort, and any contact afterward. The weather will make vague recollections worse, so ask for times and witnesses, not impressions.",
+          "delivery": "Measured and professional.",
+          "responseId": "resp_0167374799f6c5c4016a8b34c76e6c87d29d14757ff18bee9e",
+          "recordedAt": "2026-08-23T17:58:33.800Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T17:58:33.800Z",
+      "ended": false
+    },
+    "linnea_berg:emil_jessen": {
+      "id": "linnea_berg:emil_jessen",
+      "investigatorId": "linnea_berg",
+      "npcId": "emil_jessen",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hi Dr Jessen. Nice to meet you! Do you have already learned any interesting facts from the body of Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:00:30.844Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "Ms. Berg, good evening. Only preliminary impressions, and I would be careful not to turn them into conclusions. In a drowning recovery, bruising and other marks can vary considerably, particularly after exposure to water and the process of recovery. The toxicology work will be more informative than visual speculation. For now, the medically responsible description is that Dr. Ravn died in circumstances requiring further examination.",
+          "delivery": "Soft-spoken, courteous, clinically measured.",
+          "responseId": "resp_0113b0060abb5b27016a8b353c6e8087d2bc9f1b767b5b4309",
+          "recordedAt": "2026-08-23T18:00:30.844Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Does she have water in her lungs? Do you think she drowned?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:01:41.938Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "I cannot responsibly answer either point as a conclusion yet. Water in the airways is only one finding among several, and its presence or absence does not, by itself, settle whether a person drowned. Recovery from the sea can also complicate what we see. At present, drowning is a possibility under examination, not a diagnosis I am prepared to certify. We should wait for the full post-mortem and toxicology results.",
+          "delivery": "quiet, precise, professionally reserved",
+          "responseId": "resp_0f5df5c43e330f54016a8b3583a2ec87d2b58d023c9cae31bd",
+          "recordedAt": "2026-08-23T18:01:41.938Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "So you say \"recovery from the sea\". Do you think she was in the sea?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:02:38.125Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "I mean only that she was recovered in a maritime environment, Ms. Berg. That fact can affect the condition of a body and the interpretation of marks. It does not allow me to say, from that wording alone, how long she was in seawater, whether she entered it alive, or whether it caused her death. Those are precisely the questions the examination must address.",
+          "delivery": "Soft-spoken, precise, professionally guarded.",
+          "responseId": "resp_042a44fe6ec55af9016a8b35bbe9d487d28377c4922b7561ec",
+          "recordedAt": "2026-08-23T18:02:38.125Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T18:02:38.125Z",
+      "ended": false
+    },
+    "erik_halden:emil_jessen": {
+      "id": "erik_halden:emil_jessen",
+      "investigatorId": "erik_halden",
+      "npcId": "emil_jessen",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Nice to meet you Dr Jessen! I like your glasses. \nDid you know Annika personally?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:03:56.872Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "Thank you, Mr. Halden. They are practical rather than fashionable, but I have grown attached to them. Yes, I knew Annika professionally. On an island this size, one comes to know the other doctors well enough—consultations, meetings, the occasional disagreement over a case. She was a capable physician.",
+          "delivery": "Soft-spoken, courteous, and measured.",
+          "responseId": "resp_011c8e6567d54906016a8b360a988c87d2b87526879bd3f257",
+          "recordedAt": "2026-08-23T18:03:56.872Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you know what did she specialize in with regards to medicine?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:04:44.025Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "Annika’s work was broad, but her particular strength was acute care and internal medicine. She had a very disciplined way of approaching difficult presentations—she did not rush to a conclusion simply because one was convenient. On Vesperholm, of course, all of us become generalists to some degree.",
+          "delivery": "Soft-spoken, professional.",
+          "responseId": "resp_031d0b0b780287d2016a8b363a295087d2b5cc185482cba434",
+          "recordedAt": "2026-08-23T18:04:44.025Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you have any suspicions who might want her dead?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:05:21.165Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "No. I would be reluctant to turn professional acquaintance into suspicion, especially before the medical facts are settled. A death in the water can look more straightforward than it is, and sometimes less so. The sensible course is to let the investigators establish the circumstances and let the laboratory work speak where it can.",
+          "delivery": "Soft-spoken, measured, professionally restrained.",
+          "responseId": "resp_0fb2ce0d2c92d6c9016a8b365f1b7887d2ac4d949851a433eb",
+          "recordedAt": "2026-08-23T18:05:21.165Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Ok bye. Till later",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:05:49.224Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "Good evening, Mr. Halden. Take care in this weather.",
+          "delivery": "quiet, courteous",
+          "responseId": "resp_01215c0e0b15a4c0016a8b367bdb6087d2b92416560a6dac62",
+          "recordedAt": "2026-08-23T18:05:49.224Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T18:05:49.224Z",
+      "ended": true
+    },
+    "linnea_berg:jesper_holm": {
+      "id": "linnea_berg:jesper_holm",
+      "investigatorId": "linnea_berg",
+      "npcId": "jesper_holm",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hi Jesper, my name is Linnea. I am an police investigator working on the death of Annika. How are you tonight?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:14:33.390Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Hello. I’m... managing, Inspector Berg. It’s a terrible thing, what happened to Dr. Ravn. I’ve been at my post all evening, following the usual procedures. If there’s anything I can provide from dispatch records, I’ll help as best I can.",
+          "delivery": "Nervous but polite; speaks carefully and tries to sound professional.",
+          "responseId": "resp_0ce66a34de757fc9016a8b38872c7087d2824850a17208979d",
+          "recordedAt": "2026-08-23T18:14:33.390Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Do you know anything about Annika's movements earlier today?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:15:24.485Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Not directly, Inspector. Dispatch does not track people’s personal movements, only calls, access alerts, and operational notices. I did not speak with Dr. Ravn today, and I have not seen any record that would tell me where she was before the fort.",
+          "delivery": "Careful, formal, with audible anxiety.",
+          "responseId": "resp_055ddadd6cc14b39016a8b38bad07487d288eb8d2328d280c9",
+          "recordedAt": "2026-08-23T18:15:24.485Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "So did she not take the ferry or any other vessel today?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:16:01.966Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "I can’t say that, Inspector. Ferry passenger movements aren’t part of my dispatch records, and I haven’t checked any harbour manifests. I only meant I have no direct record of Dr. Ravn’s movements through this office.",
+          "delivery": "careful, slightly defensive",
+          "responseId": "resp_09a0d8b894199bb8016a8b38e0385087d2a33de9bbcc800e4e",
+          "recordedAt": "2026-08-23T18:16:01.966Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Did you know her personally?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:16:26.298Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "No, Inspector. I knew who Dr. Ravn was, of course—most people on the island did—but not personally. We had no social connection, and I did not speak with her today.",
+          "delivery": "Careful, restrained; anxious but cooperative.",
+          "responseId": "resp_0a978e9e6d30d070016a8b38f8b7c087d290598d82132c8eee",
+          "recordedAt": "2026-08-23T18:16:26.298Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Could you give me your records?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:16:59.023Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Yes, Inspector. I can provide the dispatch log, the access-alert register, and the operational notices recorded during my shift. I’ll need to keep the originals in the office, but I can make copies or let you review them here. Please tell me which time period you want first, and I’ll pull the relevant entries.",
+          "delivery": "Anxious but cooperative; careful, procedural phrasing.",
+          "responseId": "resp_073e4f968d3475e9016a8b3918e48487d28a2f85ef06386150",
+          "recordedAt": "2026-08-23T18:16:59.023Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Can we please get today and yesterday? And a copy would be nice",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:17:52.768Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Yes, Inspector. I’ll prepare copies of the dispatch log, access-alert register, and operational notices for today and yesterday. The originals stay filed here, but you may review them alongside the copies if you wish. It may take me a few minutes to collate them properly; I don’t want to omit a page or disrupt the sequence.",
+          "delivery": "Careful and accommodating, with a procedural tone.",
+          "responseId": "resp_096a3a9414e78659016a8b394e182487d297fc4d5863809ced",
+          "recordedAt": "2026-08-23T18:17:52.768Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I would like to ask you about this one curious maintenance docket of cameras 2 and 4 from 18:29 until 18:36 for a “union inspection.”\nCan you tell me more about it?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:25:46.472Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Yes. That was entered as a routine isolation request for cameras two and four, from 18:29 until 18:36. Nils told me a union inspection required the cameras to be isolated briefly. I understood it to be legitimate maintenance-related work, so I disabled them for that interval and restored them afterward. The docket should be among the operational notices.",
+          "delivery": "Uneasy, careful, and procedural; he speaks a little too quickly when defending the request.",
+          "responseId": "resp_010e56b983379556016a8b3b27ed8487d28f9989c3458c1d21",
+          "recordedAt": "2026-08-23T18:25:46.472Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "How come there is no corresponding formal maintenance work order?\nAnd no union inspection appears elsewhere in Thursday’s operational notices?\nSimilar camera work from Wednesday carries a reference number and supervisor authorization.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:27:14.731Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "I... I cannot account for why it was not entered that way. Nils told me it was a union inspection and that the isolation was required. I should have asked for the work-order reference and supervisor authorization before I acted on it. I did not. I treated his instruction as legitimate and restored the cameras at 18:36. If the notices do not contain the supporting paperwork, then I cannot honestly call it routine maintenance documentation.",
+          "delivery": "Uneasy, increasingly formal; voice catches briefly before the admission.",
+          "responseId": "resp_001ec62e62d3a0c1016a8b3b7f614887d29844087c2d643784",
+          "recordedAt": "2026-08-23T18:27:14.731Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok thanks, I guess I should to Nils then",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:28:44.979Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Yes, Inspector. I think you should speak with Nils. He can tell you why he said the cameras needed isolating, and whether there was supposed to be paperwork. I only acted on his request. There is one other thing: during that interval, I saw a yellow maintenance van cross the service lane from the office window. I could not see who was driving it, and I cannot say where it went afterward.",
+          "delivery": "Nervous, careful, and quietly relieved to pass the question to Nils.",
+          "responseId": "resp_0a0d4bc22b5c01c5016a8b3bd90a7487d2a8af24f5861a5d54",
+          "recordedAt": "2026-08-23T18:28:44.979Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Thank you for the tip! Don't worry, I don't think you anything bad",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:31:09.861Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Thank you, Inspector. I appreciate that. I know I should have insisted on the reference number before touching the camera controls. I was trying to keep operations moving, and I trusted Nils when I should have followed the procedure exactly. I’ll cooperate fully with whatever review you need.",
+          "delivery": "Relieved but still tense; careful, earnest speech.",
+          "responseId": "resp_02055043b67c090b016a8b3c6bda8487d2a8701222c0b9e40b",
+          "recordedAt": "2026-08-23T18:31:09.861Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I'm back!\nCan you tell me more about the van:\nDid you see registration, driver, or destination? Which office window, which direction it crossed, and whether you noticed roof lights, side markings, or damage? Your vans look identical until you know where the dents are.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:06:03.682Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Jesper Holm",
+          "text": "Welcome back, Inspector. I’m afraid I can’t give you that level of detail. I saw the yellow maintenance van through the dispatch office window while it crossed the service lane during the camera outage. I could not see the driver, registration, or where it went afterward. I also did not note its direction, roof lights, side markings, or any dents or other damage. At the time, it looked ordinary enough that I had no reason to study it. I don’t want to guess now and turn a vague glimpse into something more certain than it was.",
+          "delivery": "Anxious but cooperative, answering carefully and with procedural precision.",
+          "responseId": "resp_08ea17e90040f7ef016a8b449698fc87d2b3d3f6f9a614fc97",
+          "recordedAt": "2026-08-23T19:06:03.682Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T19:06:03.682Z",
+      "ended": false
+    },
+    "linnea_berg:nils_rask": {
+      "id": "linnea_berg:nils_rask",
+      "investigatorId": "linnea_berg",
+      "npcId": "nils_rask",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hi Mr Rask, so nice to meet you! How are you doing?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:37:37.474Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Miss Berg. A difficult evening for the island, as you can imagine. I’m managing. Thank you for asking. And you?",
+          "delivery": "Measured and courteous, with restrained fatigue.",
+          "responseId": "resp_03c9043a905f45e0016a8b3defc73c87d298df150e4412cfa9",
+          "recordedAt": "2026-08-23T18:37:37.474Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I am very well thanks. However very saddened about the your loss. Was Annika close to you?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:42:36.689Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Close is not the word I would use. But Annika was part of this community, and a death like hers is a loss the whole island feels. Thank you for saying so.",
+          "delivery": "Controlled and courteous, with a brief pause before answering.",
+          "responseId": "resp_00ea92707713c6a5016a8b3f04a9cc87d2acb4272afa7fedd5",
+          "recordedAt": "2026-08-23T18:42:36.689Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I was just chatting to Jasper and he told me about some maintenance work done between 18:29 and 18:36. Can you tell me more about - what was being done during this time period?",
+          "shownEvidenceId": "b3_camera_outage",
+          "recordedAt": "2026-08-23T18:44:16.388Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Jesper disabled terminal cameras two and four from 18:29 until 18:36 on my instruction. I won’t dress that up as something else, but I also won’t speculate about technical details he handled. If you’re asking whether I used that interval to go to Tidegate or Saint Vigga, I did not. I was visible at the ferry board meeting around the time Annika died.",
+          "delivery": "Measured and formal, with slight emphasis on the denial.",
+          "responseId": "resp_0253e713f76f3c5f016a8b3f79b8f087d29656eeda70550144",
+          "recordedAt": "2026-08-23T18:44:16.388Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Maybe you could help me with this:\nThere is no corresponding formal maintenance work order. How come?\nNo union inspection appears elsewhere in Thursday’s operational notices. How come?\nSimilar camera work from Wednesday carries a reference number and supervisor authorization.\nThis docket has neither—only a dispatcher acknowledgement bearing Jesper’s initials.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:45:45.988Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "If those records are as you describe, then there is an administrative discrepancy, and I will account for it. But I’m not going to authenticate a docket from a verbal summary. Show me the notices, Wednesday’s authorization, and Jesper’s acknowledgement together, and I’ll answer point by point. Until then, I can only repeat what I know: I instructed Jesper to disable those cameras, and I was at the ferry board meeting around the fatal time. I did not go to Tidegate or Saint Vigga.",
+          "delivery": "Controlled and formal, with a slight hardening on the demand to see the records.",
+          "responseId": "resp_08ac2935b3484f4f016a8b3fd4d03087d2b1570619b3f909fc",
+          "recordedAt": "2026-08-23T18:45:45.988Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Here is the evidence.",
+          "shownEvidenceId": "ferry_camera_isolation_docket",
+          "recordedAt": "2026-08-23T18:46:28.519Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Thank you. This establishes that cameras two and four were taken offline on my instruction, and that the instruction was recorded without a corresponding formal work order. I accept responsibility for that procedural failure. It does not establish that I went to Tidegate or Saint Vigga; I did neither. I was visible at the ferry board meeting around the fatal minute. If you want a fuller answer, ask me about a specific entry and I will answer it precisely.",
+          "delivery": "Controlled and formal, with a brief pause before distinguishing the procedural failure from the murder.",
+          "responseId": "resp_065b71fc2e60ad7f016a8b3ffea37887d2800538aeaef5bca5",
+          "recordedAt": "2026-08-23T18:46:28.519Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Do you own a yellow van?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:47:17.162Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "What makes you ask, Miss Berg? If a vehicle is relevant, give me the registration number or tell me where and when it was seen. I won’t identify a van from its colour alone.",
+          "delivery": "Controlled and precise, with a faintly negotiating edge.",
+          "responseId": "resp_0e9b559d32e8643a016a8b403195c487d2abcaf291045cff86",
+          "recordedAt": "2026-08-23T18:47:17.162Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Let me take a step back. Are there any yellow vans in the ownership of the ferry company?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:48:30.481Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Not that I can confirm from memory. The ferry company’s vehicle register will give you a reliable answer, including registrations and assigned departments. If you tell me which van you mean—where it was seen and at what time—I can have the relevant entry checked rather than speculate from colour alone.",
+          "delivery": "Measured and cooperative, with careful emphasis on verification.",
+          "responseId": "resp_076aa3d335edd4f4016a8b407a6b3887d292702c7795033068",
+          "recordedAt": "2026-08-23T18:48:30.481Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "It was seen at 18:29 crossing the service lane",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:49:26.701Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Seen by whom, and which way was it travelling? At 18:29, a yellow van on the service lane is a lead, not an identification. Give me the witness account, registration if any, and a description beyond colour. I’ll have it checked against the ferry company’s vehicle register.",
+          "delivery": "Controlled and precise, with a firm emphasis on verification.",
+          "responseId": "resp_0683170f4168f0c4016a8b40b287f087d29d83d0aec6899898",
+          "recordedAt": "2026-08-23T18:49:26.701Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "We don't have the registration number. And I'm afraid at this point I cannot reveal the witness' identity. Could you give me the ferry company's vehicle register?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:50:27.873Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Yes. I can provide the company vehicle register for Thursday, including registrations and assigned departments. I’ll have a copy produced and preserve the original. I won’t ask you to compromise a witness, but without a registration, direction of travel, or fuller description, the register alone may not identify the van you mean. If you can provide those details without naming your source, I’ll have them checked against it.",
+          "delivery": "Measured and cooperative, with careful emphasis on procedural limits.",
+          "responseId": "resp_047f83c53d783048016a8b40ee8a7887d28ede2a5ccf6c515f",
+          "recordedAt": "2026-08-23T18:50:27.873Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok thanks, I will come back with more information when I have it. You have been of the utmost help. I wish you a pleasant evening",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:52:15.873Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Nils Rask",
+          "text": "Thank you, Miss Berg. When you have more precise information, bring it to me and I’ll make sure it is checked properly. I wish you a pleasant evening as well, under the circumstances.",
+          "delivery": "Courteous and controlled, with a slight formal warmth.",
+          "responseId": "resp_0bb63c0d73a8c1ea016a8b415e062487d292243b97440f6867",
+          "recordedAt": "2026-08-23T18:52:15.873Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T18:52:15.873Z",
+      "ended": true
+    },
+    "linnea_berg:ida_brandt": {
+      "id": "linnea_berg:ida_brandt",
+      "investigatorId": "linnea_berg",
+      "npcId": "ida_brandt",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Good evening, my name is Linnea. Howdy?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:58:26.353Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Ida Brandt",
+          "text": "Evening, Linnea. “Howdy” is ambitious for Vesperholm, but I suppose the wind hasn’t outlawed it yet. Ida Brandt. I keep the ferry machinery from developing opinions.",
+          "delivery": "Dry and guarded, with a faintly amused edge.",
+          "responseId": "resp_0d6f3b4a3cf0923f016a8b42ced12087d2b9a841d050046f58",
+          "recordedAt": "2026-08-23T18:58:26.353Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I'm glad you are not saying that you are \"managing\" ;) can you tell me more about your work here?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T18:59:40.799Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Ida Brandt",
+          "text": "Managing is what people call it when they’ve lost the correct spanner. I maintain the ferry engines, hydraulics, generators, and whatever else starts groaning when the weather turns. Mostly preventive work, emergency repairs, and explaining to the office why salt water does not respect a timetable. It’s dirty, loud, honest work. On a good day, nobody notices I’ve done it.",
+          "delivery": "Dryly amused and matter-of-fact, with a slight softening at the joke.",
+          "responseId": "resp_09b6942dc3e44000016a8b4318f59c87d28f5a53ba050ee2c2",
+          "recordedAt": "2026-08-23T18:59:40.799Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Could you help me with something? Do you know which of your yellow vans was seen here at 18:30?",
+          "shownEvidenceId": "ferry_vehicle_register",
+          "recordedAt": "2026-08-23T19:01:44.091Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Ida Brandt",
+          "text": "Not from “here” and a time alone. Our vans are yellow; that is the company’s great contribution to camouflage. Give me the location, a registration, or tell me who saw it. Then I can compare that with the register you’ve brought, but I won’t guess and turn it into fact for you.",
+          "delivery": "Dry and guarded, with a practical, matter-of-fact tone.",
+          "responseId": "resp_040662326989be3e016a8b4390ef1487d2854fd744e4498e33",
+          "recordedAt": "2026-08-23T19:01:44.091Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Jasper saw it, he said it was on the service lane. His quote:\nI saw a yellow maintenance van cross the service lane from the office window. I could not see who was driving it, and I cannot say where it went afterward.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:03:22.298Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Ida Brandt",
+          "text": "That narrows the sighting, not the van. Jasper saw company yellow at half past six, but no registration, driver, or destination. Ask him which office window, which direction it crossed, and whether he noticed roof lights, side markings, or damage. Our vans look identical until you know where the dents are. I can check a specific vehicle against the workshop records; I won’t nominate one because Jasper saw a colour.",
+          "delivery": "Measured and wary, with dry emphasis on the limits of the sighting.",
+          "responseId": "resp_07ddc923f3991ced016a8b43f4fb5087d2af0fa65e662a300e",
+          "recordedAt": "2026-08-23T19:03:22.298Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I can show you the records now :)",
+          "shownEvidenceId": "ferry_vehicle_register",
+          "recordedAt": "2026-08-23T19:04:09.298Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Ida Brandt",
+          "text": "All right. Put the certified register where I can read it. I can explain the vehicle classes, department assignments, and recorded status. But the register alone still won’t tell us which yellow van Jasper saw; we’d need a distinguishing detail or the workshop records to test it properly.",
+          "delivery": "Cooperative but cautious, with dry restraint.",
+          "responseId": "resp_07b8b296539d059b016a8b44257eb087d2a1560a2c67057c66",
+          "recordedAt": "2026-08-23T19:04:09.298Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T19:04:09.298Z",
+      "ended": false
+    },
+    "erik_halden:elias_nygaard": {
+      "id": "erik_halden:elias_nygaard",
+      "investigatorId": "erik_halden",
+      "npcId": "elias_nygaard",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Good evening, father!",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:09:00.323Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "Good evening, Erik. You chose a hard night to be out. What can I do for you?",
+          "delivery": "Warm but subdued, with quiet concern.",
+          "responseId": "resp_06a637ff9a014426016a8b454a2d3c87d2b0e83ba99d683ecf",
+          "recordedAt": "2026-08-23T19:09:00.323Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Yes, the night is not one of the easiest for this island. I guess.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:10:14.151Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "No, it is not. The wind makes the island feel smaller, and what has happened at Saint Vigga makes it smaller still. Come in out of the cold, Erik. Tell me what you need.",
+          "delivery": "Quiet and welcoming, with a restrained gravity.",
+          "responseId": "resp_0251794187856a8b016a8b4592728087d2988f4f96d58b6c5e",
+          "recordedAt": "2026-08-23T19:10:14.151Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you know anything about Annika? I am just trying to find people who knew her",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:11:16.476Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "I knew her chiefly through the parish archive. She came here this afternoon and entrusted a sealed note to my keeping, intended for Petra. She also updated an entry in a private index drawer at 17:18. The note may be released upon Annika's death, or if Petra is in danger. Beyond those conditions, I must respect what Annika entrusted to me.",
+          "delivery": "Gentle and measured, becoming firm when speaking of the entrusted records.",
+          "responseId": "resp_062ed073a0dd5255016a8b45cfdda887d2b7307fa385583b88",
+          "recordedAt": "2026-08-23T19:11:16.476Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Who is Petra?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:11:50.613Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "Annika named her only as Petra. I will not speculate about her identity, and the archive gives me no right to do so. If you already know a Petra connected to Annika, tell me why you believe she may be in danger.",
+          "delivery": "Gentle but guarded, with quiet emphasis on the final question.",
+          "responseId": "resp_05f034ff0b534adc016a8b45f327cc87d29539882bef4e109e",
+          "recordedAt": "2026-08-23T19:11:50.613Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "What a coincidence! Petra is in the room with us now. Her name is Petra dahl. Could you give her the note now?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:25:39.446Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "Annika's death satisfies one condition, yes. But your saying Petra Dahl is present does not establish that she is the Petra Annika intended. Petra must speak for herself and provide enough identification for me to verify the name against the sealed deposit. If that matches, I will give the note directly to her—not through you or anyone else.",
+          "delivery": "Gentle but unyielding, with careful emphasis on identity and direct custody.",
+          "responseId": "resp_0f661dcfa6b739ec016a8b492e87d487d2825202ac9f2922eb",
+          "recordedAt": "2026-08-23T19:25:39.446Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Great thanks",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:31:48.525Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Pastor Elias Nygaard",
+          "text": "Of course, Erik. Ask Petra to come and speak with me herself. I will handle Annika's trust carefully and without unnecessary delay.",
+          "delivery": "Gentle but firm, with calm formality.",
+          "responseId": "resp_0fd6f11b0b2d2faf016a8b4aa1d61087d2be1dd478e05c3d9a",
+          "recordedAt": "2026-08-23T19:31:48.525Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T19:31:48.525Z",
+      "ended": false
+    },
+    "erik_halden:petra_dahl": {
+      "id": "erik_halden:petra_dahl",
+      "investigatorId": "erik_halden",
+      "npcId": "petra_dahl",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Hi, may I ask your name?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:19:16.588Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Petra Dahl",
+          "text": "Petra Dahl. Journalist. And you’re Erik Halden, unless I’ve been badly briefed. What do you need?",
+          "delivery": "Crisp and guarded, with a matter-of-fact tone.",
+          "responseId": "resp_01d1a39f203dbe4b016a8b47b2113087d2aa633947c07a66f1",
+          "recordedAt": "2026-08-23T19:19:16.588Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "I am Erik indeed. Nice to meet you! I was looking just for you. Annika left a note for you here in archive. Pastor Elias would be happy to give it to you.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:20:17.395Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Petra Dahl",
+          "text": "Then let Pastor Elias produce it, and I’ll decide whether it’s Annika’s. Until I see the paper, the handwriting, and where it was found, it’s only something you’ve told me. Why were you looking for me specifically?",
+          "delivery": "Alert and skeptical, with brisk professional restraint.",
+          "responseId": "resp_0ddc752f60069cc0016a8b47ee0bb087d2974e12a15e741833",
+          "recordedAt": "2026-08-23T19:20:17.395Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Becauase I am investigate Annika's death. And as part of that investigation I need to talk to everyone who knew her personally. I understand that you knew her since she left a note for you.",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:21:27.177Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Petra Dahl",
+          "text": "Professionally, not personally. Annika contacted me about the 1995 Eidolon sinking. She promised original evidence, then postponed delivery more than once while insisting on control over publication. That made her a source, not a friend. I’ll answer relevant questions, but my notes and confidential source material remain protected. Now—what exactly do you want to know?",
+          "delivery": "Crisp and guarded, with emphasis on the distinction between source and friend.",
+          "responseId": "resp_0a9a850304948e59016a8b4832418487d2b9217a2e4594e33a",
+          "recordedAt": "2026-08-23T19:21:27.177Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Was she investigating the 1995 Eidolon sinking?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:22:27.652Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Petra Dahl",
+          "text": "That was what she claimed. She contacted me about the Eidolon and promised original evidence concerning the 1995 sinking. But she never delivered it, so I can’t confirm how far her investigation had gone—or whether she was investigating, managing a disclosure, or simply testing my interest.",
+          "delivery": "Crisp and skeptical, emphasizing the distinction between Annika’s claim and verified fact.",
+          "responseId": "resp_04ec775ba42d01a0016a8b4870268887d28bb93860e6867b3f",
+          "recordedAt": "2026-08-23T19:22:27.652Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "I imagine the note might provide some clues about this. Let me ask pastor to give you the note now",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-08-23T19:23:40.780Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Petra Dahl",
+          "text": "Do that. And ask him not to fold, mark, or handle it more than necessary. I want to see where it was found, who found it, and who has touched it since. If it’s addressed to me, I’ll read it—but I won’t pretend it proves anything until we’ve established it’s genuine.",
+          "delivery": "Crisp and businesslike, with restrained impatience.",
+          "responseId": "resp_089317bc9308d401016a8b48b9431887d2917ebc79d5a92429",
+          "recordedAt": "2026-08-23T19:23:40.780Z"
+        }
+      ],
+      "updatedAt": "2026-08-23T19:23:40.780Z",
+      "ended": false
+    }
+  },
+  "disclosedNodes": [
+    "solveig_public_case",
+    "emil_initial_findings",
+    "jesper_camera_story",
+    "jesper_van_glimpse",
+    "nils_literal_alibi",
+    "elias_annika_deposit",
+    "petra_promised_evidence"
+  ],
+  "relationships": {
+    "erik_halden:solveig_brandt": 0,
+    "linnea_berg:solveig_brandt": 0,
+    "linnea_berg:emil_jessen": 0,
+    "erik_halden:emil_jessen": 0,
+    "linnea_berg:jesper_holm": 1,
+    "linnea_berg:nils_rask": 1,
+    "linnea_berg:ida_brandt": 1,
+    "erik_halden:elias_nygaard": 0,
+    "erik_halden:petra_dahl": 0
+  },
+  "pendingGmEvents": []
+}

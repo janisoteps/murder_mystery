@@ -1,0 +1,123 @@
+{
+  "revision": 31,
+  "clock": {
+    "day": "Thursday",
+    "minutes": 1286
+  },
+  "characters": {
+    "linnea_berg": {
+      "locationId": "ferry_terminal",
+      "status": "arrived",
+      "condition": "unharmed"
+    },
+    "erik_halden": {
+      "locationId": "saint_oda_archive",
+      "status": "arrived",
+      "condition": "unharmed"
+    }
+  },
+  "latestEvent": {
+    "id": "arrival-0022",
+    "type": "arrival",
+    "characterIds": [
+      "erik_halden"
+    ],
+    "fromLocations": {
+      "erik_halden": "signal_house"
+    },
+    "destinationId": "saint_oda_archive",
+    "clock": {
+      "day": "Thursday",
+      "minutes": 1286
+    },
+    "recordedAt": "2026-08-23T19:07:08.218Z"
+  },
+  "board": {
+    "positions": {
+      "case_briefing": {
+        "x": 80,
+        "y": 75
+      },
+      "c60c88e0-5591-4b87-b108-844e13e46139": {
+        "x": 560,
+        "y": 85
+      },
+      "b679fc90-4391-478e-a9b2-26d77d559301": {
+        "x": 1370,
+        "y": 98
+      },
+      "ferry_camera_isolation_docket": {
+        "x": 1000,
+        "y": 94
+      },
+      "b3_camera_outage": {
+        "x": 944,
+        "y": 428
+      },
+      "d76df082-53b9-41ea-822a-1db50494fac5": {
+        "x": 1370,
+        "y": 427
+      },
+      "ferry_vehicle_register": {
+        "x": 571,
+        "y": 458
+      },
+      "5b8829e0-6572-4fe8-a445-918404f28dc3": {
+        "x": 81,
+        "y": 683
+      },
+      "annika_sealed_note": {
+        "x": 64,
+        "y": 1136
+      }
+    },
+    "notes": [
+      {
+        "id": "c60c88e0-5591-4b87-b108-844e13e46139",
+        "title": "Annika has wet hair",
+        "text": "Her hair is wet with water but it's not salt water so it must be rain.\nEven from nearby, it carries a faint mineral smell: iron and wet concrete."
+      },
+      {
+        "id": "b679fc90-4391-478e-a9b2-26d77d559301",
+        "title": "The chamber was dry and locked",
+        "text": "The chamber where Annika was found was dry even though she was wet. And the chamber doors were locked. The police woman acts strange when I ask about the key."
+      },
+      {
+        "id": "d76df082-53b9-41ea-822a-1db50494fac5",
+        "title": "Yellow maintenance van",
+        "text": "during that interval, I saw a yellow maintenance van cross the service lane from the office window"
+      },
+      {
+        "id": "5b8829e0-6572-4fe8-a445-918404f28dc3",
+        "title": "Chapel archive",
+        "text": "Annika visited at 17:18, left a note for Petra.\nShe also updated an entry in a private index drawer at 17:18"
+      }
+    ],
+    "connections": [
+      {
+        "id": "6ddf8278-106b-4d2d-a571-ff6fcaf3e5f8",
+        "from": "c60c88e0-5591-4b87-b108-844e13e46139",
+        "to": "case_briefing",
+        "label": "wet"
+      },
+      {
+        "id": "2dbf6da0-b5f1-46a5-add9-729197566677",
+        "from": "d76df082-53b9-41ea-822a-1db50494fac5",
+        "to": "b3_camera_outage",
+        "label": "while switched off"
+      },
+      {
+        "id": "2f4152a7-b0fe-4ea8-9f88-eb4bd0931b5f",
+        "from": "case_briefing",
+        "to": "5b8829e0-6572-4fe8-a445-918404f28dc3",
+        "label": "Last seen"
+      },
+      {
+        "id": "1f0f3230-6fbe-4e42-aec3-2bcf39ce4277",
+        "from": "5b8829e0-6572-4fe8-a445-918404f28dc3",
+        "to": "annika_sealed_note",
+        "label": "from Annika to Petra"
+      }
+    ]
+  }
+}

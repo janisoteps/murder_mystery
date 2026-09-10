@@ -1,0 +1,185 @@
+{
+  "id": "season_2",
+  "title": "The Ninth Bell",
+  "subtitle": "The island heard one bell too many.",
+  "setting": "Vesperholm, Denmark · November 2004",
+  "map": {
+    "image": "/assets/season_2/map/vesperholm_map.webp",
+    "alt": "Illustrated investigation map of the island of Vesperholm",
+    "width": 1720,
+    "height": 960
+  },
+  "rules": {
+    "travelMinutes": 18,
+    "dayLabels": ["Thursday", "Friday", "Saturday"],
+    "dialogueEnabled": true
+  },
+  "investigators": [
+    {
+      "id": "linnea_berg",
+      "name": "Linnea Berg",
+      "initials": "LB",
+      "role": "Forensic document and trace examiner",
+      "description": "A white Northern European woman in her mid-thirties, pale-skinned with ash-blonde hair and gray-green eyes. Linnea specializes in altered records, material traces, and patient reconstruction.",
+      "strength": "Sees the physical history of documents and objects; excels at patient, exact comparison.",
+      "color": "#b65768",
+      "portrait": "/assets/season_2/characters/linnea_berg.png"
+    },
+    {
+      "id": "erik_halden",
+      "name": "Erik Halden",
+      "initials": "EH",
+      "role": "Maritime major-crimes investigator",
+      "description": "A white Northern European man in his late thirties, fair-skinned with dark-blond hair and blue eyes. Erik is experienced with ports, vessels, interviews, and contested timelines.",
+      "strength": "Reads operational systems and human pressure; excels at route, access, and timeline reconstruction.",
+      "color": "#547f9f",
+      "portrait": "/assets/season_2/characters/erik_halden.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": "signal_house",
+      "name": "Old Signal House",
+      "kind": "Case headquarters and temporary mortuary",
+      "description": "A wind-battered telegraph station above the harbor, reopened as the island investigation room.",
+      "x": 850,
+      "y": 451,
+      "images": [
+        { "src": "/assets/season_2/locations/signal_house_exterior.png", "label": "Exterior", "alt": "The Old Signal House above Vesperholm harbor at night" },
+        { "src": "/assets/season_2/locations/signal_house_interior.png", "label": "Interior", "alt": "The chart-lined investigation room inside the Old Signal House" }
+      ]
+    },
+    {
+      "id": "saint_vigga_fort",
+      "name": "Saint Vigga Sea Fort",
+      "kind": "Decommissioned coastal battery",
+      "description": "A granite sea fort reached by a tidal causeway, its storm bell dark above the surf.",
+      "x": 1493,
+      "y": 113,
+      "images": [
+        { "src": "/assets/season_2/locations/saint_vigga_fort_exterior.png", "label": "Exterior", "alt": "Saint Vigga Sea Fort beyond a tidal causeway" },
+        { "src": "/assets/season_2/locations/saint_vigga_fort_interior.png", "label": "Bell chamber", "alt": "The iron bell chamber inside Saint Vigga Sea Fort" }
+      ]
+    },
+    {
+      "id": "marine_laboratory",
+      "name": "Vesperholm Marine Laboratory",
+      "kind": "Hydrographic research institute",
+      "description": "A whitewashed research station overlooking the north channel, full of charts, sample cabinets, and old instruments.",
+      "x": 1045,
+      "y": 220,
+      "images": [
+        { "src": "/assets/season_2/locations/marine_laboratory_exterior.png", "label": "Exterior", "alt": "Vesperholm Marine Laboratory on the north headland" },
+        { "src": "/assets/season_2/locations/marine_laboratory_interior.png", "label": "Chart room", "alt": "The marine laboratory chart room and antique tide clock" }
+      ]
+    },
+    {
+      "id": "glassworks_museum",
+      "name": "Vesper Glassworks Museum",
+      "kind": "Museum and working glass studio",
+      "description": "A converted cobalt-glass factory whose furnace hall still glows behind exhibition galleries.",
+      "x": 556,
+      "y": 354,
+      "images": [
+        { "src": "/assets/season_2/locations/glassworks_museum_exterior.png", "label": "Exterior", "alt": "The converted Vesper Glassworks beside a dark canal" },
+        { "src": "/assets/season_2/locations/glassworks_museum_interior.png", "label": "Gallery", "alt": "The cobalt-glass gallery and working furnace hall" }
+      ]
+    },
+    {
+      "id": "gull_house_hotel",
+      "name": "Gull House Hotel",
+      "kind": "Harbor hotel and dining rooms",
+      "description": "An old customs residence made elegant, facing the ferry lights across the inner harbor.",
+      "x": 1081,
+      "y": 555,
+      "images": [
+        { "src": "/assets/season_2/locations/gull_house_hotel_exterior.png", "label": "Exterior", "alt": "Gull House Hotel overlooking the wet harbor street" },
+        { "src": "/assets/season_2/locations/gull_house_hotel_interior.png", "label": "Interior", "alt": "The lamplit lobby and dining corridor of Gull House" }
+      ]
+    },
+    {
+      "id": "ferry_terminal",
+      "name": "North Channel Ferry Terminal",
+      "kind": "Passenger quay and maintenance depot",
+      "description": "Floodlit ramps, workshops, and an operations tower facing the mainland channel.",
+      "x": 1175,
+      "y": 665,
+      "images": [
+        { "src": "/assets/season_2/locations/ferry_terminal_exterior.png", "label": "Quay", "alt": "North Channel ferry ramps under storm lights" },
+        { "src": "/assets/season_2/locations/ferry_terminal_interior.png", "label": "Operations", "alt": "The ferry dispatch room above the maintenance lanes" }
+      ]
+    },
+    {
+      "id": "saltline_clinic",
+      "name": "Saltline Clinic",
+      "kind": "Island medical clinic",
+      "description": "A compact brick clinic between the harbor road and the old lifeboat sheds.",
+      "x": 759,
+      "y": 590,
+      "images": [
+        { "src": "/assets/season_2/locations/saltline_clinic_exterior.png", "label": "Exterior", "alt": "Saltline Clinic in rain near the harbor" },
+        { "src": "/assets/season_2/locations/saltline_clinic_interior.png", "label": "Dispensary", "alt": "The orderly dispensary and records counter at Saltline Clinic" }
+      ]
+    },
+    {
+      "id": "tidegate_station",
+      "name": "Tidegate Pumping Station",
+      "kind": "Storm-water and flood-control works",
+      "description": "Concrete gates and rainwater cisterns buried where the marsh meets the eastern sea wall.",
+      "x": 1463,
+      "y": 504,
+      "images": [
+        { "src": "/assets/season_2/locations/tidegate_station_exterior.png", "label": "Exterior", "alt": "Tidegate Pumping Station behind the eastern sea wall" },
+        { "src": "/assets/season_2/locations/tidegate_station_interior.png", "label": "Pump hall", "alt": "The cavernous pump hall and settling cisterns" }
+      ]
+    },
+    {
+      "id": "moller_salvage",
+      "name": "Moller Salvage Yard",
+      "kind": "Marine recovery yard",
+      "description": "Cranes, stripped hulls, and a low workshop clustered around a sheltered industrial inlet.",
+      "x": 1425,
+      "y": 727,
+      "images": [
+        { "src": "/assets/season_2/locations/moller_salvage_exterior.png", "label": "Yard", "alt": "Moller Salvage Yard beside a black inlet" },
+        { "src": "/assets/season_2/locations/moller_salvage_interior.png", "label": "Workshop", "alt": "The winch workshop inside Moller Salvage" }
+      ]
+    },
+    {
+      "id": "saint_oda_archive",
+      "name": "Saint Oda Chapel and Archive",
+      "kind": "Parish chapel and maritime records room",
+      "description": "A small stone chapel whose dry crypt stores the island's ship registers and private deposits.",
+      "x": 359,
+      "y": 481,
+      "images": [
+        { "src": "/assets/season_2/locations/saint_oda_archive_exterior.png", "label": "Exterior", "alt": "Saint Oda Chapel above the western marsh" },
+        { "src": "/assets/season_2/locations/saint_oda_archive_interior.png", "label": "Archive", "alt": "The vaulted maritime archive beneath Saint Oda Chapel" }
+      ]
+    },
+    {
+      "id": "north_light",
+      "name": "North Light Weather Station",
+      "kind": "Lighthouse and meteorological post",
+      "description": "A low lighthouse and instrument garden on the island's exposed northern point.",
+      "x": 653,
+      "y": 92,
+      "images": [
+        { "src": "/assets/season_2/locations/north_light_exterior.png", "label": "Exterior", "alt": "North Light and its weather instruments in a hard coastal wind" },
+        { "src": "/assets/season_2/locations/north_light_interior.png", "label": "Weather room", "alt": "The instrument-filled weather room at North Light" }
+      ]
+    },
+    {
+      "id": "rask_house",
+      "name": "Rask House",
+      "kind": "Clifftop residence and private ferry office",
+      "description": "A severe modernist house above the south channel, joined to a private chart office.",
+      "x": 357,
+      "y": 748,
+      "images": [
+        { "src": "/assets/season_2/locations/rask_house_exterior.png", "label": "Exterior", "alt": "Rask House on the south cliff above the channel" },
+        { "src": "/assets/season_2/locations/rask_house_interior.png", "label": "Office", "alt": "The private ferry office inside Rask House" }
+      ]
+    }
+  ]
+}

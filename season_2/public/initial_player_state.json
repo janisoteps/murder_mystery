@@ -1,0 +1,14 @@
+{
+  "revision": 0,
+  "clock": { "day": "Thursday", "minutes": 1250 },
+  "characters": {
+    "linnea_berg": { "locationId": "signal_house", "status": "arrived", "condition": "unharmed" },
+    "erik_halden": { "locationId": "signal_house", "status": "arrived", "condition": "unharmed" }
+  },
+  "latestEvent": null,
+  "board": {
+    "positions": { "case_briefing": { "x": 80, "y": 75 } },
+    "notes": [],
+    "connections": []
+  }
+}

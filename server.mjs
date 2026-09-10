@@ -3,17 +3,76 @@ import { promises as fs, watch as watchDirectory } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
+
+function parseEnvValue(rawValue) {
+  const value = rawValue.trim();
+  if (value.length < 2) return value;
+
+  const quote = value[0];
+  if ((quote === "\"" || quote === "'") && value.at(-1) === quote) {
+    const unquoted = value.slice(1, -1);
+    if (quote === "'") return unquoted;
+
+    return unquoted.replace(/\\(n|r|t|\\|\")/g, (_, escaped) => ({
+      n: "\n",
+      r: "\r",
+      t: "\t",
+      "\\": "\\",
+      "\"": "\""
+    })[escaped]);
+  }
+
+  return value.replace(/\s+#.*$/, "").trimEnd();
+}
+
+async function loadRootEnv() {
+  let contents;
+  try {
+    contents = await fs.readFile(path.join(ROOT, ".env"), "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") return;
+    throw error;
+  }
+
+  const lines = contents.replace(/^\uFEFF/, "").split(/\r?\n/);
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index].trim();
+    if (!line || line.startsWith("#")) continue;
+
+    const assignment = line.startsWith("export ") ? line.slice(7).trimStart() : line;
+    const separatorIndex = assignment.indexOf("=");
+    if (separatorIndex < 1) {
+      throw new Error(`Invalid .env entry on line ${index + 1}`);
+    }
+
+    const key = assignment.slice(0, separatorIndex).trim();
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)) {
+      throw new Error(`Invalid .env variable name on line ${index + 1}`);
+    }
+
+    if (process.env[key] === undefined) {
+      process.env[key] = parseEnvValue(assignment.slice(separatorIndex + 1));
+    }
+  }
+}
+
+await loadRootEnv();
+
 const HOST = "127.0.0.1";
 const PORT = Number.parseInt(process.env.MYSTERY_PORT ?? "8000", 10);
-const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const WEB_ROOT = path.join(ROOT, "web");
 const SEASON_ID = process.env.MYSTERY_SEASON ?? "season_0";
-const SUPPORTED_SEASONS = new Set(["season_0", "season_1"]);
+const SUPPORTED_SEASONS = new Set(["season_0", "season_1", "season_2"]);
 if (!SUPPORTED_SEASONS.has(SEASON_ID)) {
   throw new Error(`Unsupported MYSTERY_SEASON: ${SEASON_ID}`);
 }
 const SEASON_ROOT = path.join(ROOT, SEASON_ID);
-const DEFAULT_INDEX_PATH = SEASON_ID === "season_1" ? "/season_1.html" : "/index.html";
+const DEFAULT_INDEX_PATH = SEASON_ID === "season_2"
+  ? "/season_2.html"
+  : SEASON_ID === "season_1"
+    ? "/season_1.html"
+    : "/index.html";
 const PUBLIC_GAME_PATH = path.join(SEASON_ROOT, "public", "game.json");
 const RUNTIME_ROOT = path.join(SEASON_ROOT, "runtime");
 const INITIAL_PLAYER_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_player_state.json");
@@ -21,7 +80,13 @@ const PLAYER_STATE_PATH = path.join(RUNTIME_ROOT, "player_state.json");
 const NARRATOR_STATE_PATH = path.join(RUNTIME_ROOT, "narrator_state.json");
 const INITIAL_NARRATOR_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_narrator_state.json");
 const EVENT_LOG_PATH = path.join(RUNTIME_ROOT, "event_log.jsonl");
+const DIALOGUE_DEFINITION_PATH = path.join(SEASON_ROOT, "gm", "dialogue.json");
+const INITIAL_DIALOGUE_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_dialogue_state.json");
+const DIALOGUE_STATE_PATH = path.join(RUNTIME_ROOT, "dialogue_state.json");
+const DIALOGUE_LOG_PATH = path.join(RUNTIME_ROOT, "dialogue_log.jsonl");
+const DIALOGUE_MODEL = process.env.MYSTERY_OPENAI_MODEL ?? "gpt-5.6-sol";
 const MAX_BODY_BYTES = 64 * 1024;
+const DIALOGUE_ENABLED = SEASON_ID === "season_2";
 
 const MIME_TYPES = new Map([
   [".css", "text/css; charset=utf-8"],
@@ -36,6 +101,7 @@ const MIME_TYPES = new Map([
 
 const sseClients = new Set();
 let narratorBroadcastTimer = null;
+let dialogueTurnQueue = Promise.resolve();
 
 function sendJson(response, status, payload) {
   response.writeHead(status, {
@@ -76,6 +142,20 @@ async function ensureRuntime() {
     await fs.writeFile(EVENT_LOG_PATH, "", { encoding: "utf8", flag: "wx" });
   } catch (error) {
     if (error.code !== "EEXIST") throw error;
+  }
+
+  if (DIALOGUE_ENABLED) {
+    try {
+      await fs.access(DIALOGUE_STATE_PATH);
+    } catch {
+      await fs.copyFile(INITIAL_DIALOGUE_STATE_PATH, DIALOGUE_STATE_PATH);
+    }
+
+    try {
+      await fs.writeFile(DIALOGUE_LOG_PATH, "", { encoding: "utf8", flag: "wx" });
+    } catch (error) {
+      if (error.code !== "EEXIST") throw error;
+    }
   }
 }
 
@@ -274,6 +354,343 @@ async function handleNpcInteraction(request, response) {
   return sendJson(response, 200, { playerState: state, event: interactionEvent });
 }
 
+function publicEvidenceIds(narratorState) {
+  return new Set([
+    ...(narratorState.evidence ?? []).map((item) => item.id),
+    ...(narratorState.items ?? []).map((item) => item.id),
+    ...Object.entries(narratorState.sceneFlags ?? {})
+      .filter(([, value]) => Boolean(value))
+      .map(([key]) => key)
+  ]);
+}
+
+function pendingGmEventCount(dialogueState) {
+  return (dialogueState.pendingGmEvents ?? []).filter((event) => !event.processedAt).length;
+}
+
+function eligibleDialogueNodes(profile, evidenceIds, shownEvidenceId) {
+  return (profile.nodes ?? []).filter((node) => {
+    const requiresAll = node.requiresAllEvidence ?? [];
+    const requiresAny = node.requiresAnyEvidence ?? [];
+    const requiresShown = node.requiresShownEvidence ?? [];
+    return requiresAll.every((id) => evidenceIds.has(id))
+      && (requiresAny.length === 0 || requiresAny.some((id) => evidenceIds.has(id)))
+      && (requiresShown.length === 0 || requiresShown.includes(shownEvidenceId));
+  });
+}
+
+function dialogueResponseText(apiPayload) {
+  for (const outputItem of apiPayload.output ?? []) {
+    if (outputItem.type !== "message") continue;
+    for (const content of outputItem.content ?? []) {
+      if (content.type === "output_text" && typeof content.text === "string") return content.text;
+    }
+  }
+  return "";
+}
+
+async function requestNpcResponse({ dialogueDefinition, profile, npc, investigator, recentTurns, eligibleNodes, message, shownEvidence }) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    const error = new Error("Browser dialogue is not configured. Set OPENAI_API_KEY before starting Season 2.");
+    error.statusCode = 503;
+    throw error;
+  }
+
+  const nodeBriefs = eligibleNodes.map((node) => ({
+    id: node.id,
+    availableKnowledge: node.fact,
+    revealWhen: node.revealWhen
+  }));
+  const transcript = recentTurns.map((turn) => ({
+    speaker: turn.role === "npc" ? npc.name : turn.speakerName,
+    text: turn.text
+  }));
+  const instructions = [
+    "You perform exactly one NPC in a grounded prestige murder mystery.",
+    "Write only the NPC's side of a natural conversation. Never write investigator dialogue, actions, thoughts, choices, scene narration, or game-master commentary.",
+    "The conversation may be social, practical, emotional, or investigative. Do not force every reply toward the murder.",
+    "You may use only the public setting and currently available knowledge nodes supplied below. Do not infer hidden causes, culprits, relationships, routes, evidence, or chronology.",
+    "A player's unsupported claim may be a bluff. Formally shown evidence is identified separately. React according to the NPC, but never treat an unsupported claim as newly true.",
+    "If a knowledge node's reveal condition is not met by the actual exchange, do not reveal it even though it is available.",
+    "Keep spokenText under 1,400 characters and suitable for browser text-to-speech. Put delivery cues only in delivery, never in brackets inside spokenText.",
+    `Setting: ${dialogueDefinition.setting}`,
+    `NPC: ${npc.name}. Persona: ${profile.persona}`,
+    `Current surface goal: ${profile.surfaceGoal}`,
+    `Current relationship score: ${profile.relationshipScore ?? 0} on a -3 to +3 scale.`,
+    `Formally shown evidence: ${shownEvidence ? `${shownEvidence.title}: ${shownEvidence.summary}` : "none"}.`,
+    `Available knowledge nodes: ${JSON.stringify(nodeBriefs)}`,
+    `Recent local transcript: ${JSON.stringify(transcript)}`
+  ].join("\n");
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 45_000);
+  let apiResponse;
+  try {
+    apiResponse = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: DIALOGUE_MODEL,
+        store: false,
+        instructions,
+        input: [{
+          role: "user",
+          content: [{ type: "input_text", text: `${investigator.name} says: ${message}` }]
+        }],
+        reasoning: { effort: "low" },
+        max_output_tokens: 700,
+        text: {
+          format: {
+            type: "json_schema",
+            name: "npc_dialogue_turn",
+            strict: true,
+            schema: {
+              type: "object",
+              additionalProperties: false,
+              properties: {
+                spokenText: { type: "string", minLength: 1, maxLength: 1400 },
+                delivery: { type: "string", maxLength: 160 },
+                usedKnowledgeNodeIds: { type: "array", items: { type: "string" }, maxItems: 6 },
+                relationshipChange: { type: "string", enum: ["improved", "unchanged", "worsened"] },
+                endConversation: { type: "boolean" }
+              },
+              required: ["spokenText", "delivery", "usedKnowledgeNodeIds", "relationshipChange", "endConversation"]
+            }
+          }
+        }
+      }),
+      signal: controller.signal
+    });
+  } catch (error) {
+    const wrapped = new Error(error.name === "AbortError"
+      ? "The NPC response timed out. Please try that line again."
+      : "The NPC dialogue service could not be reached.");
+    wrapped.statusCode = 502;
+    throw wrapped;
+  } finally {
+    clearTimeout(timeout);
+  }
+
+  const apiPayload = await apiResponse.json().catch(() => ({}));
+  if (!apiResponse.ok) {
+    const error = new Error(apiPayload.error?.message ?? "OpenAI rejected the NPC dialogue request.");
+    error.statusCode = 502;
+    throw error;
+  }
+
+  let result;
+  try {
+    result = JSON.parse(dialogueResponseText(apiPayload));
+  } catch {
+    const error = new Error("The NPC returned an unreadable response. Please try again.");
+    error.statusCode = 502;
+    throw error;
+  }
+
+  const eligibleIds = new Set(eligibleNodes.map((node) => node.id));
+  if (!result.spokenText || result.usedKnowledgeNodeIds.some((id) => !eligibleIds.has(id))) {
+    const error = new Error("The NPC response failed its spoiler-safety check. Please try again.");
+    error.statusCode = 502;
+    throw error;
+  }
+  return { ...result, responseId: apiPayload.id ?? null };
+}
+
+async function processDialogueTurn(body) {
+  if (!DIALOGUE_ENABLED) {
+    const error = new Error("Browser dialogue is available only in Season 2.");
+    error.statusCode = 404;
+    throw error;
+  }
+
+  const message = cleanText(body.message, 1200);
+  if (!message) {
+    const error = new Error("Say something before sending the turn.");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const [game, playerState, narratorState, dialogueState, dialogueDefinition] = await Promise.all([
+    readJson(PUBLIC_GAME_PATH),
+    readJson(PLAYER_STATE_PATH),
+    readJson(NARRATOR_STATE_PATH),
+    readJson(DIALOGUE_STATE_PATH),
+    readJson(DIALOGUE_DEFINITION_PATH)
+  ]);
+  const investigator = game.investigators.find((person) => person.id === body.investigatorId);
+  const characterState = playerState.characters?.[body.investigatorId];
+  if (!investigator || !characterState) {
+    const error = new Error("Choose a valid investigator.");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const npc = (narratorState.peopleAtLocations?.[characterState.locationId] ?? [])
+    .find((person) => person.id === body.npcId);
+  const profile = dialogueDefinition.npcs?.[body.npcId];
+  if (!npc || !profile) {
+    const error = new Error("That person is not available for conversation here.");
+    error.statusCode = 409;
+    throw error;
+  }
+
+  const evidenceIds = publicEvidenceIds(narratorState);
+  const shownEvidenceId = cleanText(body.shownEvidenceId, 80) || null;
+  const shownEvidence = shownEvidenceId
+    ? [...(narratorState.evidence ?? []), ...(narratorState.items ?? []).map((item) => ({
+        ...item,
+        title: item.name,
+        summary: item.description
+      }))].find((item) => item.id === shownEvidenceId)
+    : null;
+  if (shownEvidenceId && !shownEvidence) {
+    const error = new Error("That evidence is not currently available to show.");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const eligibleNodes = eligibleDialogueNodes(profile, evidenceIds, shownEvidenceId);
+  const sessionId = `${investigator.id}:${npc.id}`;
+  const session = dialogueState.sessions[sessionId] ?? {
+    id: sessionId,
+    investigatorId: investigator.id,
+    npcId: npc.id,
+    turns: []
+  };
+  const maximumRecentTurns = dialogueDefinition.rules?.maximumRecentTurns ?? 18;
+  const recentTurns = session.turns.slice(-maximumRecentTurns);
+  const relationshipKey = `${investigator.id}:${npc.id}`;
+  profile.relationshipScore = dialogueState.relationships[relationshipKey] ?? 0;
+
+  const npcResult = await requestNpcResponse({
+    dialogueDefinition,
+    profile,
+    npc,
+    investigator,
+    recentTurns,
+    eligibleNodes,
+    message,
+    shownEvidence
+  });
+
+  const recordedAt = new Date().toISOString();
+  session.turns.push(
+    { role: "investigator", speakerName: investigator.name, text: message, shownEvidenceId, recordedAt },
+    { role: "npc", speakerName: npc.name, text: cleanText(npcResult.spokenText, 1400), delivery: cleanText(npcResult.delivery, 160), responseId: npcResult.responseId, recordedAt }
+  );
+  session.turns = session.turns.slice(-80);
+  session.updatedAt = recordedAt;
+  session.ended = Boolean(npcResult.endConversation);
+  dialogueState.sessions[sessionId] = session;
+
+  const relationshipDelta = npcResult.relationshipChange === "improved"
+    ? 1
+    : npcResult.relationshipChange === "worsened"
+      ? -1
+      : 0;
+  dialogueState.relationships[relationshipKey] = Math.max(-3, Math.min(3,
+    (dialogueState.relationships[relationshipKey] ?? 0) + relationshipDelta
+  ));
+
+  const usedNodes = eligibleNodes.filter((node) => npcResult.usedKnowledgeNodeIds.includes(node.id));
+  const disclosedSet = new Set(dialogueState.disclosedNodes ?? []);
+  for (const node of usedNodes) disclosedSet.add(node.id);
+  dialogueState.disclosedNodes = [...disclosedSet];
+
+  const newEvidence = [];
+  const currentPublicIds = publicEvidenceIds(narratorState);
+  for (const node of usedNodes) {
+    if (node.publicEvidence && !currentPublicIds.has(node.publicEvidence.id)) {
+      narratorState.evidence.push(node.publicEvidence);
+      currentPublicIds.add(node.publicEvidence.id);
+      newEvidence.push(node.publicEvidence);
+    }
+    if (node.gmAttention) {
+      dialogueState.pendingGmEvents.push({
+        id: `gm-dialogue-${Date.now()}-${node.id}`,
+        type: "dialogue_attention",
+        npcId: npc.id,
+        investigatorId: investigator.id,
+        nodeId: node.id,
+        reason: node.gmAttention,
+        recordedAt
+      });
+    }
+  }
+
+  dialogueState.pendingGmEvents = dialogueState.pendingGmEvents.slice(-40);
+  dialogueState.revision += 1;
+  if (newEvidence.length > 0) {
+    narratorState.revision += 1;
+    narratorState.statusMessage = newEvidence.at(-1).summary;
+    await writeJsonAtomic(NARRATOR_STATE_PATH, narratorState);
+    broadcast("narrator-state", narratorState);
+  }
+  await writeJsonAtomic(DIALOGUE_STATE_PATH, dialogueState);
+
+  const dialogueEvent = {
+    id: `dialogue-${String(dialogueState.revision).padStart(5, "0")}`,
+    type: "dialogue_turn",
+    investigatorId: investigator.id,
+    npcId: npc.id,
+    playerText: message,
+    shownEvidenceId,
+    npcText: npcResult.spokenText,
+    usedKnowledgeNodeIds: usedNodes.map((node) => node.id),
+    newEvidenceIds: newEvidence.map((item) => item.id),
+    responseId: npcResult.responseId,
+    recordedAt
+  };
+  await fs.appendFile(DIALOGUE_LOG_PATH, `${JSON.stringify(dialogueEvent)}\n`, "utf8");
+  broadcast("dialogue-state", {
+    revision: dialogueState.revision,
+    pendingGmEventCount: pendingGmEventCount(dialogueState)
+  });
+
+  return {
+    reply: {
+      text: npcResult.spokenText,
+      delivery: npcResult.delivery,
+      endConversation: npcResult.endConversation
+    },
+    transcript: session.turns,
+    newEvidence,
+    pendingGmEventCount: pendingGmEventCount(dialogueState)
+  };
+}
+
+async function handleDialogueTurn(request, response) {
+  const body = await readRequestJson(request);
+  const task = dialogueTurnQueue.then(() => processDialogueTurn(body));
+  dialogueTurnQueue = task.catch(() => undefined);
+  return sendJson(response, 200, await task);
+}
+
+async function handleDialogueSession(request, response) {
+  if (!DIALOGUE_ENABLED) return sendJson(response, 404, { error: "Browser dialogue is unavailable." });
+  const body = await readRequestJson(request);
+  const [state, narratorState, playerState, game] = await Promise.all([
+    readJson(DIALOGUE_STATE_PATH),
+    readJson(NARRATOR_STATE_PATH),
+    readJson(PLAYER_STATE_PATH),
+    readJson(PUBLIC_GAME_PATH)
+  ]);
+  const investigator = game.investigators.find((person) => person.id === body.investigatorId);
+  const locationId = playerState.characters?.[body.investigatorId]?.locationId;
+  const npcIsColocated = (narratorState.peopleAtLocations?.[locationId] ?? [])
+    .some((person) => person.id === body.npcId);
+  if (!investigator || !npcIsColocated) return sendJson(response, 400, { error: "Unknown conversation." });
+  const session = state.sessions[`${investigator.id}:${body.npcId}`];
+  return sendJson(response, 200, {
+    transcript: session?.turns ?? [],
+    pendingGmEventCount: pendingGmEventCount(state)
+  });
+}
+
 async function handleBoardUpdate(request, response) {
   const body = await readRequestJson(request);
   const state = await readJson(PLAYER_STATE_PATH);
@@ -290,6 +707,10 @@ async function handleReset(response) {
   await writeJsonAtomic(PLAYER_STATE_PATH, initialPlayerState);
   await writeJsonAtomic(NARRATOR_STATE_PATH, initialNarratorState);
   await fs.writeFile(EVENT_LOG_PATH, "", "utf8");
+  if (DIALOGUE_ENABLED) {
+    await writeJsonAtomic(DIALOGUE_STATE_PATH, await readJson(INITIAL_DIALOGUE_STATE_PATH));
+    await fs.writeFile(DIALOGUE_LOG_PATH, "", "utf8");
+  }
   broadcast("player-state", initialPlayerState);
   broadcast("narrator-state", initialNarratorState);
   return sendJson(response, 200, {
@@ -331,7 +752,16 @@ async function handleRequest(request, response) {
       readJson(PLAYER_STATE_PATH),
       readJson(NARRATOR_STATE_PATH)
     ]);
-    return sendJson(response, 200, { game, playerState, narratorState });
+    return sendJson(response, 200, {
+      game,
+      playerState,
+      narratorState,
+      dialogue: {
+        enabled: DIALOGUE_ENABLED,
+        configured: DIALOGUE_ENABLED && Boolean(process.env.OPENAI_API_KEY),
+        model: DIALOGUE_ENABLED ? DIALOGUE_MODEL : null
+      }
+    });
   }
 
   if (request.method === "GET" && url.pathname === "/api/state") {
@@ -360,6 +790,14 @@ async function handleRequest(request, response) {
 
   if (request.method === "POST" && url.pathname === "/api/interact") {
     return handleNpcInteraction(request, response);
+  }
+
+  if (request.method === "POST" && url.pathname === "/api/dialogue/turn") {
+    return handleDialogueTurn(request, response);
+  }
+
+  if (request.method === "POST" && url.pathname === "/api/dialogue/session") {
+    return handleDialogueSession(request, response);
   }
 
   if (request.method === "POST" && url.pathname === "/api/board") {
@@ -394,15 +832,31 @@ const server = http.createServer((request, response) => {
 });
 
 const runtimeWatcher = watchDirectory(RUNTIME_ROOT, (_eventType, filename) => {
-  if (filename !== path.basename(NARRATOR_STATE_PATH)) return;
-  clearTimeout(narratorBroadcastTimer);
-  narratorBroadcastTimer = setTimeout(async () => {
-    try {
-      broadcast("narrator-state", await readJson(NARRATOR_STATE_PATH));
-    } catch (error) {
-      console.error("Could not broadcast narrator state:", error.message);
-    }
-  }, 80);
+  if (filename === path.basename(NARRATOR_STATE_PATH)) {
+    clearTimeout(narratorBroadcastTimer);
+    narratorBroadcastTimer = setTimeout(async () => {
+      try {
+        broadcast("narrator-state", await readJson(NARRATOR_STATE_PATH));
+      } catch (error) {
+        console.error("Could not broadcast narrator state:", error.message);
+      }
+    }, 80);
+    return;
+  }
+
+  if (DIALOGUE_ENABLED && filename === path.basename(DIALOGUE_STATE_PATH)) {
+    setTimeout(async () => {
+      try {
+        const dialogueState = await readJson(DIALOGUE_STATE_PATH);
+        broadcast("dialogue-state", {
+          revision: dialogueState.revision,
+          pendingGmEventCount: pendingGmEventCount(dialogueState)
+        });
+      } catch (error) {
+        console.error("Could not broadcast dialogue state:", error.message);
+      }
+    }, 80);
+  }
 });
 
 const keepAlive = setInterval(() => {

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a151a">
+    <title>The Ninth Bell · Vesperholm</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/season_2.css">
+  </head>
+  <body class="season-two">
+    <header class="masthead season-two-masthead">
+      <div class="title-lockup">
+        <p class="eyebrow">Season 2 · Vesperholm, Denmark · November 2004</p>
+        <h1>The Ninth Bell</h1>
+        <p class="case-subtitle">The island heard one bell too many.</p>
+      </div>
+      <div class="case-status" aria-label="Game status">
+        <div>
+          <span class="status-label">Case clock</span>
+          <strong id="case-clock">Thursday · 20:50</strong>
+        </div>
+        <div>
+          <span class="status-label">State bridge</span>
+          <strong id="bridge-status" class="bridge-status">Connecting</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="view-tabs" aria-label="Investigation views">
+      <button class="tab-button is-active" type="button" data-view="map" aria-selected="true">Island map</button>
+      <button class="tab-button" type="button" data-view="board" aria-selected="false">
+        Evidence board <span id="evidence-count" class="count-badge">1</span>
+      </button>
+    </nav>
+
+    <main>
+      <section id="map-view" class="view-panel is-active" aria-labelledby="map-heading">
+        <div class="map-column">
+          <div class="section-heading season-two-map-heading">
+            <div>
+              <p class="eyebrow">Island survey · winter population 2,106</p>
+              <h2 id="map-heading">Vesperholm under storm tide</h2>
+            </div>
+            <p class="map-instruction">Drag an investigator marker to travel. The painted map is the visual base; labels and case state remain interactive.</p>
+          </div>
+
+          <div class="map-frame vesper-map-frame">
+            <svg id="town-map" class="town-map vesper-map" viewBox="0 0 1720 960" role="img" aria-labelledby="vesper-map-title vesper-map-desc">
+              <title id="vesper-map-title">Investigation map of Vesperholm</title>
+              <desc id="vesper-map-desc">Twelve significant island locations with two draggable investigator markers.</desc>
+              <defs>
+                <filter id="map-label-shadow" x="-30%" y="-80%" width="160%" height="260%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#020709" flood-opacity=".95"></feDropShadow>
+                </filter>
+                <radialGradient id="map-fallback" cx="45%" cy="45%" r="70%">
+                  <stop offset="0" stop-color="#31454a"></stop>
+                  <stop offset=".55" stop-color="#1e353a"></stop>
+                  <stop offset="1" stop-color="#07151b"></stop>
+                </radialGradient>
+              </defs>
+              <rect width="1720" height="960" fill="url(#map-fallback)"></rect>
+              <image class="map-base-image" href="/assets/season_2/map/vesperholm_map.webp" x="0" y="0" width="1720" height="960" preserveAspectRatio="xMidYMid meet"></image>
+
+              <g class="location" data-location-id="signal_house" tabindex="0" role="button" aria-label="Old Signal House">
+                <circle class="location-hit" cx="850" cy="451" r="60"></circle><circle class="location-marker" cx="850" cy="451" r="13"></circle><text class="map-label" x="850" y="496">OLD SIGNAL HOUSE</text>
+              </g>
+              <g class="location" data-location-id="saint_vigga_fort" tabindex="0" role="button" aria-label="Saint Vigga Sea Fort">
+                <circle class="location-hit" cx="1493" cy="113" r="70"></circle><circle class="location-marker is-fort" cx="1493" cy="113" r="13"></circle><text class="map-label" x="1493" y="158">SAINT VIGGA FORT</text>
+              </g>
+              <g class="location" data-location-id="marine_laboratory" tabindex="0" role="button" aria-label="Vesperholm Marine Laboratory">
+                <circle class="location-hit" cx="1045" cy="220" r="64"></circle><circle class="location-marker" cx="1045" cy="220" r="13"></circle><text class="map-label" x="1045" y="265">MARINE LABORATORY</text>
+              </g>
+              <g class="location" data-location-id="glassworks_museum" tabindex="0" role="button" aria-label="Vesper Glassworks Museum">
+                <circle class="location-hit" cx="556" cy="354" r="66"></circle><circle class="location-marker" cx="556" cy="354" r="13"></circle><text class="map-label" x="556" y="399">GLASSWORKS MUSEUM</text>
+              </g>
+              <g class="location" data-location-id="gull_house_hotel" tabindex="0" role="button" aria-label="Gull House Hotel">
+                <circle class="location-hit" cx="1081" cy="555" r="62"></circle><circle class="location-marker" cx="1081" cy="555" r="13"></circle><text class="map-label" x="1081" y="600">GULL HOUSE</text>
+              </g>
+              <g class="location" data-location-id="ferry_terminal" tabindex="0" role="button" aria-label="North Channel Ferry Terminal">
+                <circle class="location-hit" cx="1175" cy="665" r="69"></circle><circle class="location-marker" cx="1175" cy="665" r="13"></circle><text class="map-label" x="1175" y="710">FERRY TERMINAL</text>
+              </g>
+              <g class="location" data-location-id="saltline_clinic" tabindex="0" role="button" aria-label="Saltline Clinic">
+                <circle class="location-hit" cx="759" cy="590" r="56"></circle><circle class="location-marker" cx="759" cy="590" r="13"></circle><text class="map-label" x="759" y="635">SALTLINE CLINIC</text>
+              </g>
+              <g class="location" data-location-id="tidegate_station" tabindex="0" role="button" aria-label="Tidegate Pumping Station">
+                <circle class="location-hit" cx="1463" cy="504" r="70"></circle><circle class="location-marker" cx="1463" cy="504" r="13"></circle><text class="map-label" x="1463" y="549">TIDEGATE STATION</text>
+              </g>
+              <g class="location" data-location-id="moller_salvage" tabindex="0" role="button" aria-label="Moller Salvage Yard">
+                <circle class="location-hit" cx="1425" cy="727" r="69"></circle><circle class="location-marker" cx="1425" cy="727" r="13"></circle><text class="map-label" x="1425" y="772">MOLLER SALVAGE</text>
+              </g>
+              <g class="location" data-location-id="saint_oda_archive" tabindex="0" role="button" aria-label="Saint Oda Chapel and Archive">
+                <circle class="location-hit" cx="359" cy="481" r="68"></circle><circle class="location-marker" cx="359" cy="481" r="13"></circle><text class="map-label" x="359" y="526">SAINT ODA ARCHIVE</text>
+              </g>
+              <g class="location" data-location-id="north_light" tabindex="0" role="button" aria-label="North Light Weather Station">
+                <circle class="location-hit" cx="653" cy="92" r="65"></circle><circle class="location-marker" cx="653" cy="92" r="13"></circle><text class="map-label" x="653" y="137">NORTH LIGHT</text>
+              </g>
+              <g class="location" data-location-id="rask_house" tabindex="0" role="button" aria-label="Rask House">
+                <circle class="location-hit" cx="357" cy="748" r="64"></circle><circle class="location-marker" cx="357" cy="748" r="13"></circle><text class="map-label" x="357" y="793">RASK HOUSE</text>
+              </g>
+              <g id="token-layer" aria-label="Investigator positions"></g>
+            </svg>
+            <div class="map-legend season-two-map-legend" aria-hidden="true">
+              <span><i class="legend-dot linnea"></i>Linnea Berg</span>
+              <span><i class="legend-dot erik"></i>Erik Halden</span>
+              <span>18 minutes per journey</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="location-panel season-two-location-panel" aria-live="polite">
+          <div class="location-panel-heading">
+            <p id="location-kind" class="eyebrow">Case headquarters</p>
+            <span class="case-pin-number">VH–04</span>
+          </div>
+          <h2 id="location-name">Old Signal House</h2>
+          <p id="location-description" class="location-description"></p>
+          <button id="view-location-button" class="location-preview-button" type="button">Open location photograph</button>
+
+          <div class="panel-block">
+            <h3>People here</h3>
+            <div id="known-people" class="npc-presence-list"></div>
+          </div>
+          <div class="panel-block">
+            <h3>Investigators</h3>
+            <div id="investigator-list" class="investigator-list"></div>
+          </div>
+          <div class="travel-controls">
+            <button type="button" class="travel-button linnea-button" data-travel-character="linnea_berg">Move Linnea here</button>
+            <button type="button" class="travel-button erik-button" data-travel-character="erik_halden">Move Erik here</button>
+            <button type="button" class="travel-button party-button" data-travel-party>Move both investigators</button>
+          </div>
+          <div id="arrival-handoff" class="arrival-handoff" hidden>
+            <strong id="handoff-title">Arrival recorded</strong>
+            <p id="handoff-copy">The state is current. Return to Codex and say, “We have arrived.”</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="board-view" class="view-panel" aria-labelledby="board-heading" hidden>
+        <div class="board-header">
+          <div>
+            <p class="eyebrow">Vesperholm joint investigation</p>
+            <h2 id="board-heading">Evidence board</h2>
+            <p id="narrator-message" class="narrator-message"></p>
+          </div>
+          <div class="board-actions">
+            <button id="add-note-button" class="secondary-button" type="button">Add note</button>
+            <button id="connect-button" class="secondary-button" type="button" aria-pressed="false">Connect cards</button>
+          </div>
+        </div>
+        <div id="board-stage" class="board-stage season-two-board-stage">
+          <svg id="connection-layer" class="connection-layer" aria-hidden="true"></svg>
+          <div id="card-layer" class="card-layer"></div>
+          <p id="board-empty" class="board-empty" hidden>No evidence has been recorded yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-bar">
+      <p id="save-status">Season 2 state has not changed.</p>
+      <button id="reset-button" class="text-button" type="button">Reset Season 2</button>
+    </footer>
+
+    <dialog id="location-dialog" class="location-dialog" aria-labelledby="location-dialog-title">
+      <div class="location-dialog-shell">
+        <button id="close-location-dialog" class="dialog-close" type="button" aria-label="Close location photograph">×</button>
+        <div class="location-image-frame"><img id="location-slide-image" alt=""><span id="location-slide-label" class="slide-label"></span></div>
+        <div class="slideshow-footer">
+          <div><p class="eyebrow">Field photograph</p><h2 id="location-dialog-title"></h2><p id="location-slide-caption" class="slide-caption"></p></div>
+          <div class="slideshow-controls" aria-label="Location image controls">
+            <button id="previous-location-slide" class="slide-arrow" type="button" aria-label="Previous location image">←</button>
+            <div id="location-slide-dots" class="slide-dots" aria-label="Slides"></div>
+            <button id="next-location-slide" class="slide-arrow" type="button" aria-label="Next location image">→</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="npc-dialog" class="npc-dialog" aria-labelledby="npc-dialog-name">
+      <div class="npc-dialog-shell">
+        <button id="close-npc-dialog" class="dialog-close" type="button" aria-label="Close character portrait">×</button>
+        <div class="npc-portrait-frame"><img id="npc-dialog-image" alt=""></div>
+        <div class="npc-dialog-details">
+          <p class="eyebrow">Vesperholm resident</p>
+          <h2 id="npc-dialog-name"></h2>
+          <p id="npc-dialog-description" class="npc-dialog-description"></p>
+          <div id="npc-dialog-actions" class="npc-dialog-actions" aria-label="Start a conversation"></div>
+          <p id="npc-dialog-guidance" class="npc-dialog-guidance"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="conversation-dialog" class="conversation-dialog" aria-labelledby="conversation-npc-name">
+      <div class="conversation-shell">
+        <header class="conversation-header">
+          <div class="conversation-identity">
+            <img id="conversation-npc-image" alt="">
+            <div><p class="eyebrow">Live conversation</p><h2 id="conversation-npc-name"></h2><p>Speaking as <strong id="conversation-speaker"></strong></p></div>
+          </div>
+          <button id="close-conversation-dialog" class="dialog-close" type="button" aria-label="Close conversation">×</button>
+        </header>
+        <div id="conversation-gm-notice" class="conversation-gm-notice" hidden>
+          A consequential event is waiting for the game master. When ready, return to Codex and say, “Process the pending GM dialogue event.”
+        </div>
+        <div class="conversation-main">
+          <div id="conversation-transcript" class="conversation-transcript" aria-live="polite"></div>
+          <aside class="speech-panel">
+            <h3>Voice playback</h3>
+            <label for="conversation-voice">Chrome voice</label>
+            <select id="conversation-voice"></select>
+            <label for="conversation-rate">Speaking speed</label>
+            <input id="conversation-rate" type="range" min="0.7" max="1.3" value="1" step="0.05">
+            <label class="check-control"><input id="conversation-auto-speak" type="checkbox" checked> Speak replies automatically</label>
+            <div class="speech-actions">
+              <button id="conversation-replay" type="button">Replay last reply</button>
+              <button id="conversation-stop" type="button">Stop voice</button>
+            </div>
+            <p id="conversation-delivery" class="conversation-delivery"></p>
+          </aside>
+        </div>
+        <form id="conversation-form" class="conversation-form">
+          <label for="conversation-evidence">Evidence presentation</label>
+          <select id="conversation-evidence"></select>
+          <label for="conversation-input">What does your investigator say?</label>
+          <textarea id="conversation-input" maxlength="1200" rows="4" required placeholder="Speak naturally, ask for help, challenge a contradiction, or bluff…"></textarea>
+          <div class="conversation-submit-row">
+            <span id="conversation-status">Ready</span>
+            <button id="conversation-send" type="submit">Say this <small>Ctrl/⌘ + Enter</small></button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="note-dialog" class="note-dialog" aria-labelledby="note-dialog-title">
+      <form id="note-form" class="postit-editor">
+        <button id="close-note-dialog" class="note-dialog-close" type="button" aria-label="Cancel note">×</button>
+        <p class="postit-kicker">Investigator's note</p>
+        <h2 id="note-dialog-title">Pin a thought to the board</h2>
+        <label for="note-title">Heading</label>
+        <input id="note-title" name="title" maxlength="80" value="Investigator note" autocomplete="off">
+        <label for="note-text">Note</label>
+        <textarea id="note-text" name="text" maxlength="800" rows="7" required placeholder="Write what you suspect, remember, or need to verify…"></textarea>
+        <div class="postit-actions">
+          <button id="cancel-note-button" class="postit-cancel" type="button">Cancel</button>
+          <button id="save-note-button" class="postit-pin" type="submit">Pin to board</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
