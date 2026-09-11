@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#33483e"/>
+  <g opacity=".55" stroke-linecap="round">
+    <path stroke="#73836c" stroke-width="3" d="M18 77l11-34m6 38l-2-42M78 149l15-38m-2 42l15-42M145 62l-7-37m17 39l13-33M214 132l13-47m1 48l-2-39M285 69l-12-40m24 43l8-38M361 145l14-45m-3 48l20-37M438 75l-5-42m18 42l14-38M494 151l-8-39"/>
+    <path stroke="#1f352e" stroke-width="4" d="M8 228l17-48m13 48l-3-52M100 293l-8-45m21 47l12-50M180 226l14-39m-1 43l19-36M270 310l9-51m2 53l18-47M350 235l-8-44m21 43l13-38M447 302l14-49m1 52l-3-43M504 232l-13-41"/>
+    <path stroke="#8f9676" stroke-width="2" d="M38 420l8-47m11 48l18-42M122 368l-4-39m19 42l15-44M213 454l14-52m0 54l-3-41M301 391l-13-44m28 47l9-51M385 468l7-48m8 46l18-39M474 395l-5-43m19 45l14-39"/>
+  </g>
+  <g fill="none" stroke="#a1a285" opacity=".32">
+    <path d="M0 183c71-22 122 18 190-4s121-5 190 10 92-2 132-12"/>
+    <path d="M0 357c59 19 114-7 169 4s118 25 184 4 110-10 159 3"/>
+  </g>
+  <g fill="#182c27" opacity=".7">
+    <circle cx="55" cy="255" r="7"/><circle cx="165" cy="333" r="5"/><circle cx="253" cy="178" r="8"/><circle cx="341" cy="352" r="6"/><circle cx="471" cy="254" r="8"/>
+  </g>
+</svg>

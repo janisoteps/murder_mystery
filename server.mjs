@@ -81,6 +81,7 @@ const NARRATOR_STATE_PATH = path.join(RUNTIME_ROOT, "narrator_state.json");
 const INITIAL_NARRATOR_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_narrator_state.json");
 const EVENT_LOG_PATH = path.join(RUNTIME_ROOT, "event_log.jsonl");
 const DIALOGUE_DEFINITION_PATH = path.join(SEASON_ROOT, "gm", "dialogue.json");
+const SCENE_FINDINGS_PATH = path.join(SEASON_ROOT, "gm", "scene_findings.json");
 const INITIAL_DIALOGUE_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_dialogue_state.json");
 const DIALOGUE_STATE_PATH = path.join(RUNTIME_ROOT, "dialogue_state.json");
 const DIALOGUE_LOG_PATH = path.join(RUNTIME_ROOT, "dialogue_log.jsonl");
@@ -354,6 +355,89 @@ async function handleNpcInteraction(request, response) {
   return sendJson(response, 200, { playerState: state, event: interactionEvent });
 }
 
+async function handleSceneFinding(request, response) {
+  if (SEASON_ID !== "season_2") {
+    return sendJson(response, 404, { error: "Interactive scene discoveries are not enabled for this season." });
+  }
+
+  const body = await readRequestJson(request);
+  const [game, playerState, narratorState, definitions] = await Promise.all([
+    readJson(PUBLIC_GAME_PATH),
+    readJson(PLAYER_STATE_PATH),
+    readJson(NARRATOR_STATE_PATH),
+    readJson(SCENE_FINDINGS_PATH)
+  ]);
+  const investigator = game.investigators.find((entry) => entry.id === body.investigatorId);
+  const characterState = playerState.characters?.[body.investigatorId];
+  const finding = definitions.find((entry) => entry.id === body.findingId);
+
+  if (!investigator || !characterState) {
+    return sendJson(response, 400, { error: "Choose a valid investigator." });
+  }
+  if (!finding || finding.locationId !== body.locationId) {
+    return sendJson(response, 400, { error: "That discovery does not belong to this location." });
+  }
+  if (characterState.locationId !== finding.locationId) {
+    return sendJson(response, 409, { error: `${investigator.name} is no longer at this location.` });
+  }
+  if (finding.requiresInvestigatorId && finding.requiresInvestigatorId !== investigator.id) {
+    const required = game.investigators.find((entry) => entry.id === finding.requiresInvestigatorId);
+    return sendJson(response, 409, { error: `${required?.name ?? "The other investigator"}'s expertise is required.` });
+  }
+
+  const existing = [
+    ...(narratorState.items ?? []),
+    ...(narratorState.evidence ?? [])
+  ].find((entry) => entry.id === finding.id);
+  if (existing) {
+    return sendJson(response, 200, { narratorState, finding: existing, unchanged: true });
+  }
+
+  const publicFinding = finding.kind === "evidence"
+    ? {
+        id: finding.id,
+        type: finding.type,
+        title: finding.title,
+        summary: finding.description,
+        source: finding.source,
+        ...(finding.image ? { image: finding.image } : {})
+      }
+    : {
+        id: finding.id,
+        name: finding.title,
+        description: finding.description,
+        foundAtLocationId: finding.locationId,
+        image: finding.image
+      };
+
+  if (finding.kind === "evidence") {
+    narratorState.evidence = [...(narratorState.evidence ?? []), publicFinding];
+  } else {
+    narratorState.items = [...(narratorState.items ?? []), publicFinding];
+  }
+  narratorState.sceneFlags = {
+    ...(narratorState.sceneFlags ?? {}),
+    [`sceneFinding:${finding.id}`]: true
+  };
+  narratorState.revision += 1;
+  narratorState.statusMessage = finding.statusMessage ?? finding.description;
+
+  const discoveryEvent = {
+    id: `scene-discovery-${String(narratorState.revision).padStart(4, "0")}`,
+    type: "scene_discovery",
+    investigatorId: investigator.id,
+    locationId: finding.locationId,
+    findingId: finding.id,
+    findingKind: finding.kind,
+    clock: playerState.clock,
+    recordedAt: new Date().toISOString()
+  };
+  await writeJsonAtomic(NARRATOR_STATE_PATH, narratorState);
+  await fs.appendFile(EVENT_LOG_PATH, `${JSON.stringify(discoveryEvent)}\n`, "utf8");
+  broadcast("narrator-state", narratorState);
+  return sendJson(response, 200, { narratorState, finding: publicFinding, event: discoveryEvent });
+}
+
 function publicEvidenceIds(narratorState) {
   return new Set([
     ...(narratorState.evidence ?? []).map((item) => item.id),
@@ -406,21 +490,37 @@ async function requestNpcResponse({ dialogueDefinition, profile, npc, investigat
     speaker: turn.role === "npc" ? npc.name : turn.speakerName,
     text: turn.text
   }));
+  const relationshipScore = profile.relationshipScore ?? 0;
+  const socialTemperature = relationshipScore <= -2
+    ? "openly distrustful"
+    : relationshipScore === -1
+      ? "guarded"
+      : relationshipScore >= 2
+        ? "personally receptive"
+        : relationshipScore === 1
+          ? "slightly warmed"
+          : "neutral and unfamiliar";
   const instructions = [
-    "You perform exactly one NPC in a grounded prestige murder mystery.",
-    "Write only the NPC's side of a natural conversation. Never write investigator dialogue, actions, thoughts, choices, scene narration, or game-master commentary.",
-    "The conversation may be social, practical, emotional, or investigative. Do not force every reply toward the murder.",
-    "You may use only the public setting and currently available knowledge nodes supplied below. Do not infer hidden causes, culprits, relationships, routes, evidence, or chronology.",
-    "A player's unsupported claim may be a bluff. Formally shown evidence is identified separately. React according to the NPC, but never treat an unsupported claim as newly true.",
-    "If a knowledge node's reveal condition is not met by the actual exchange, do not reveal it even though it is available.",
-    "Keep spokenText under 1,400 characters and suitable for browser text-to-speech. Put delivery cues only in delivery, never in brackets inside spokenText.",
+    "You are one specific human being in a grounded prestige murder mystery, not an assistant, referee, detective interface, or fact checker.",
+    "Write only what the NPC says aloud. Never write investigator dialogue, actions, thoughts, choices, scene narration, or game-master commentary.",
+    "Respond first to the investigator's social intention and emotional tone: friendliness, pressure, insult, fear, humor, confusion, or genuine curiosity. Do not mechanically evaluate the wording of their claim.",
+    "Use natural spoken language: contractions, fragments, brief hesitations, incomplete recollections, dry humor, irritation, warmth, or a change of subject when those fit this person. Vary response length. Most replies should be one to four sentences.",
+    "Never use game-system language such as 'unsupported claim', 'formal evidence', 'knowledge node', 'relationship score', 'reveal condition', or 'semantics'. Avoid courtroom phrases and repeated lines such as 'that is not evidence', 'I will not speculate', or 'to be precise' unless this particular person would genuinely say one in this moment.",
+    "Do not paraphrase the investigator's question before answering it. Do not turn every response into a counter-question, a lecture, or an invitation to present evidence. A plain 'I don't know', a human memory, an emotional reaction, or companionable small talk is often enough.",
+    "The conversation may be social, practical, emotional, or investigative. Let the NPC have opinions, moods, vanity, affection, grudges, embarrassment, and ordinary concerns unrelated to the murder.",
+    "You may invent small, low-stakes conversational texture consistent with the setting and persona, such as habits, weather complaints, food, work routines, or harmless memories. Never invent or imply new murder-relevant facts, alibis, relationships, routes, evidence, culpability, or chronology.",
+    "The available facts below are the complete boundary for murder-relevant knowledge. The investigator may bluff or be mistaken; react naturally to what they said without silently accepting it as a newly established fact.",
+    "Reveal an available fact only when its listed conversational condition is genuinely met. Keep all other case facts private.",
+    "Use the recent transcript only for conversational memory. The voice instructions in this request override its diction; do not imitate stiff, repetitive, legalistic, or analytical phrasing from earlier NPC replies.",
+    "Keep spokenText under 1,400 characters and comfortable to hear aloud. Put performance notes only in delivery, never in brackets inside spokenText.",
     `Setting: ${dialogueDefinition.setting}`,
-    `NPC: ${npc.name}. Persona: ${profile.persona}`,
-    `Current surface goal: ${profile.surfaceGoal}`,
-    `Current relationship score: ${profile.relationshipScore ?? 0} on a -3 to +3 scale.`,
-    `Formally shown evidence: ${shownEvidence ? `${shownEvidence.title}: ${shownEvidence.summary}` : "none"}.`,
-    `Available knowledge nodes: ${JSON.stringify(nodeBriefs)}`,
-    `Recent local transcript: ${JSON.stringify(transcript)}`
+    `You are ${npc.name}. Core personality: ${profile.persona}`,
+    `Voice and behavior: ${profile.voice ?? "Speak plainly and distinctively, as this person rather than as an investigator."}`,
+    `What you want right now: ${profile.surfaceGoal}`,
+    `Private social temperature toward this investigator: ${socialTemperature}. Let this subtly affect warmth and patience; never mention or quantify it.`,
+    ...(shownEvidence ? [`An object or record physically shown in this exchange: ${shownEvidence.title}: ${shownEvidence.summary}`] : []),
+    `Case-relevant facts currently permitted for this NPC: ${JSON.stringify(nodeBriefs)}`,
+    `Recent conversation: ${JSON.stringify(transcript)}`
   ].join("\n");
 
   const controller = new AbortController();
@@ -732,7 +832,7 @@ async function serveStatic(url, response, headOnly = false) {
     if (!stats.isFile()) return sendJson(response, 404, { error: "Not found." });
     response.writeHead(200, {
       "Cache-Control": "no-store",
-      "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+      "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
       "Content-Type": MIME_TYPES.get(path.extname(targetPath).toLowerCase()) ?? "application/octet-stream",
       "X-Content-Type-Options": "nosniff"
     });
@@ -790,6 +890,10 @@ async function handleRequest(request, response) {
 
   if (request.method === "POST" && url.pathname === "/api/interact") {
     return handleNpcInteraction(request, response);
+  }
+
+  if (request.method === "POST" && url.pathname === "/api/scene/finding") {
+    return handleSceneFinding(request, response);
   }
 
   if (request.method === "POST" && url.pathname === "/api/dialogue/turn") {

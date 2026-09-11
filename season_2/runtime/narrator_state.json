@@ -1,7 +1,7 @@
 {
-  "revision": 11,
-  "lastProcessedEventId": "arrival-0022",
-  "statusMessage": "At 21:26 in Saint Oda Archive, Pastor Elias verifies Petra Dahl's identity and places Annika Ravn's sealed deposit directly into her hands. Petra opens it in Erik's presence. Annika's note says her promised Eidolon evidence is real but incomplete, warns that the brass cylinder was a decoy, and directs Petra toward archive pages that do not belong and a ledger that conceals its nature.",
+  "revision": 25,
+  "lastProcessedEventId": "arrival-0043",
+  "statusMessage": "At 23:14 the investigators are working separately. Linnea is at Rask House with Anneli Rask, where the recovered withdrawal record links Nils's money to Emil, Freja, and Oskar. Erik has arrived at the North Channel Ferry Terminal; the floodlit service lanes are nearly deserted, but Nils Rask, Jesper Holm, and Ida Brandt remain inside the operations and workshop buildings.",
   "threatLevel": 0,
   "sceneFlags": {
     "openingDelivered": true,
@@ -15,7 +15,23 @@
     "linneaEnteredFerryWorkshop": true,
     "saintOdaArchiveArrivalOpened": true,
     "annikaNoteDeliveredToPetra": true,
-    "annikaNoteOpened": true
+    "annikaNoteOpened": true,
+    "sceneFinding:clock_escapement_key": true,
+    "oskarKeyStopMarksCompared": true,
+    "oskarStagingAdmissionReceived": true,
+    "oskarArrested": true,
+    "oskarHeldAtSignalHouse": true,
+    "signalHouseCustodyArrivalOpened": true,
+    "investigatorsDebriefedAfterOskarArrest": true,
+    "sceneFinding:signal-telegraph-strip": true,
+    "sceneFinding:orange_sling_fragment": true,
+    "mollerSalvageArrivalOpened": true,
+    "orangeSlingFragmentSecured": true,
+    "frejaArrested": true,
+    "frejaHeldAtSignalHouse": true,
+    "sceneFinding:rask-withdrawal-slip": true,
+    "raskHouseArrivalOpened": true,
+    "ferryTerminalReturnAfterFrejaArrestOpened": true
   },
   "characterConditions": {
     "linnea_berg": {
@@ -40,15 +56,21 @@
         "name": "Dr. Emil Jessen",
         "description": "The island physician, silver-haired and quietly attentive beside the temporary mortuary table.",
         "image": "/assets/season_2/characters/emil_jessen.png"
-      }
-    ],
-    "saint_vigga_fort": [
+      },
       {
         "id": "oskar_lind",
         "name": "Oskar Lind",
-        "description": "The elderly fort custodian and clockmaker, precise hands folded over an iron key ring.",
+        "description": "The Saint Vigga custodian, now under arrest and seated under Constable Brandt's guard after admitting that he staged Annika's body.",
         "image": "/assets/season_2/characters/oskar_lind.png"
       },
+      {
+        "id": "freja_moller",
+        "name": "Freja Moller",
+        "description": "The salvage diver, now under arrest and held separately from Oskar after denying involvement in Annika's death.",
+        "image": "/assets/season_2/characters/freja_moller.png"
+      }
+    ],
+    "saint_vigga_fort": [
       {
         "id": "erik_sund",
         "name": "Erik Sund",
@@ -135,12 +157,6 @@
     "tidegate_station": [],
     "moller_salvage": [
       {
-        "id": "freja_moller",
-        "name": "Freja Moller",
-        "description": "A powerful salvage diver in a worn work jacket, her left palm newly bandaged.",
-        "image": "/assets/season_2/characters/freja_moller.png"
-      },
-      {
         "id": "johan_lykke",
         "name": "Johan Lykke",
         "description": "An elderly fisherman repairing nets with deliberate, tar-darkened fingers.",
@@ -171,7 +187,36 @@
       }
     ]
   },
-  "items": [],
+  "items": [
+    {
+      "id": "clock_escapement_key",
+      "name": "Clock escapement key",
+      "description": "A modified clock key whose stop marks can be compared with the Saint Vigga mechanism.",
+      "foundAtLocationId": "saint_vigga_fort",
+      "image": "/assets/season_2/items/clock_escapement_key.png"
+    },
+    {
+      "id": "signal-telegraph-strip",
+      "name": "Dated telegraph strip",
+      "description": "A narrow station printout carrying a sequence of harbor signals from the evening Annika died.",
+      "foundAtLocationId": "signal_house",
+      "image": "/assets/season_2/locations/signal_house_interior.png"
+    },
+    {
+      "id": "orange_sling_fragment",
+      "name": "Orange sling fragment",
+      "description": "A torn high-load sling fragment carrying black hull paint and Tidegate grit.",
+      "foundAtLocationId": "moller_salvage",
+      "image": "/assets/season_2/items/orange_sling_fragment.png"
+    },
+    {
+      "id": "rask-withdrawal-slip",
+      "name": "Structured withdrawal slip",
+      "description": "A bank counterfoil grouping three cash withdrawals beneath misleading repair references.",
+      "foundAtLocationId": "rask_house",
+      "image": "/assets/season_2/locations/rask_house_interior.png"
+    }
+  ],
   "evidence": [
     {
       "id": "case_briefing",
@@ -186,7 +231,13 @@
       "type": "Maintenance record",
       "title": "Handwritten camera-isolation docket",
       "summary": "A handwritten Thursday docket orders terminal cameras two and four offline from 18:29 to 18:36 for a 'union inspection.' The access-alert register records both outages, but the surrounding operational records contain no corresponding formal work order.",
-      "source": "North Channel Ferry Terminal"
+      "source": "North Channel Ferry Terminal",
+      "inventoryItem": {
+        "name": "Handwritten camera-isolation docket",
+        "description": "A copied Thursday operational docket ordering terminal cameras two and four offline from 18:29 to 18:36 for a supposed union inspection. It carries Jesper Holm's acknowledgement but no work-order reference or supervisor authorization.",
+        "foundAtLocationId": "ferry_terminal",
+        "image": "/assets/season_2/locations/ferry_terminal_interior.png"
+      }
     },
     {
       "id": "b3_camera_outage",
@@ -200,7 +251,13 @@
       "type": "Fleet record",
       "title": "Thursday ferry-company vehicle register",
       "summary": "A certified copy of North Channel Ferries' Thursday vehicle register, listing registrations, vehicle classes, assigned departments, and recorded status. It has not yet been compared with the service-lane sighting or workshop records.",
-      "source": "North Channel Ferry Terminal"
+      "source": "North Channel Ferry Terminal",
+      "inventoryItem": {
+        "name": "Thursday company ferry vehicle register",
+        "description": "A certified copy of North Channel Ferries' Thursday vehicle register, listing registrations, vehicle classes, assigned departments, and recorded status.",
+        "foundAtLocationId": "ferry_terminal",
+        "image": "/assets/season_2/locations/ferry_terminal_interior.png"
+      }
     },
     {
       "id": "annika_sealed_note",
@@ -208,7 +265,41 @@
       "title": "Annika's sealed note to Petra",
       "summary": "Annika tells Petra that the promised Eidolon evidence is real but that her account was incomplete. She warns that the brass cylinder was a decoy, points toward archive pages that do not belong and a ledger that conceals its nature, and insists Petra account for Annika's own part in 1995 before publishing.",
       "source": "Saint Oda Archive",
-      "image": "/assets/season_2/items/annika_sealed_note.png"
+      "image": "/assets/season_2/items/annika_sealed_note.png",
+      "inventoryItem": {
+        "name": "Note from Annika to Petra",
+        "description": "Annika's sealed deposit to Petra Dahl. The opened note says the promised Eidolon evidence is real but incomplete, warns that the brass cylinder was a decoy, and points toward replaced archive pages and a disguised ledger.",
+        "foundAtLocationId": "saint_oda_archive",
+        "image": "/assets/season_2/items/annika_sealed_note.png"
+      }
+    },
+    {
+      "id": "c4_oskar_clock_tool",
+      "type": "Tool-mark comparison",
+      "title": "Modified key stopped the fort clock",
+      "summary": "Under magnification, the paired stop marks on the modified escapement key exactly match fresh impressions inside Saint Vigga's clock mechanism. The clock was deliberately stopped with this key, contradicting Oskar Lind's explanation that age or storm damage halted it.",
+      "source": "Saint Vigga Sea Fort"
+    },
+    {
+      "id": "oskar_staging_admission",
+      "type": "Admission",
+      "title": "Oskar staged Saint Vigga",
+      "summary": "Oskar admits operating the bell lift, stopping the clock, planting blue glass, and locking the chamber after Freja delivered Annika's body.",
+      "source": "Oskar Lind"
+    },
+    {
+      "id": "johan_wake_statement",
+      "type": "Witness statement",
+      "title": "A skiff returned from Saint Vigga",
+      "summary": "Johan saw and heard an older diesel service skiff returning from Saint Vigga around 19:47.",
+      "source": "Johan Lykke"
+    },
+    {
+      "id": "c1_nils_planning_payment",
+      "type": "Financial pattern",
+      "title": "Nils funded three participants",
+      "summary": "Structured withdrawals from Nils's accounts align with payments or debt relief for Emil, Freja, and Oskar before Annika's abduction.",
+      "source": "Anneli Rask"
     }
   ],
   "locationUpdates": {}

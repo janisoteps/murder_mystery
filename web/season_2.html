@@ -32,6 +32,9 @@
       <button class="tab-button" type="button" data-view="board" aria-selected="false">
         Evidence board <span id="evidence-count" class="count-badge">1</span>
       </button>
+      <button class="tab-button" type="button" data-view="inventory" aria-selected="false">
+        Inventory <span id="inventory-count" class="count-badge">0</span>
+      </button>
     </nav>
 
     <main>
@@ -155,6 +158,22 @@
           <p id="board-empty" class="board-empty" hidden>No evidence has been recorded yet.</p>
         </div>
       </section>
+
+      <section id="inventory-view" class="view-panel" aria-labelledby="inventory-heading" hidden>
+        <header class="inventory-header">
+          <div>
+            <p class="eyebrow">Physical objects in investigator custody</p>
+            <h2 id="inventory-heading">Inventory</h2>
+          </div>
+          <p>Collected objects remain separate from deductions and testimony on the Evidence Board.</p>
+        </header>
+        <div id="inventory-grid" class="inventory-grid"></div>
+        <div id="inventory-empty" class="inventory-empty">
+          <span aria-hidden="true">◇</span>
+          <h3>No objects collected</h3>
+          <p>Objects collected during the investigation will appear here.</p>
+        </div>
+      </section>
     </main>
 
     <footer class="footer-bar">
@@ -168,11 +187,81 @@
         <div class="location-image-frame"><img id="location-slide-image" alt=""><span id="location-slide-label" class="slide-label"></span></div>
         <div class="slideshow-footer">
           <div><p class="eyebrow">Field photograph</p><h2 id="location-dialog-title"></h2><p id="location-slide-caption" class="slide-caption"></p></div>
-          <div class="slideshow-controls" aria-label="Location image controls">
-            <button id="previous-location-slide" class="slide-arrow" type="button" aria-label="Previous location image">←</button>
-            <div id="location-slide-dots" class="slide-dots" aria-label="Slides"></div>
-            <button id="next-location-slide" class="slide-arrow" type="button" aria-label="Next location image">→</button>
+          <div class="location-dialog-actions">
+            <button id="explore-location-button" class="explore-location-button" type="button" hidden>
+              <span>Explore in 3D</span>
+              <small>Live location</small>
+            </button>
+            <div class="slideshow-controls" aria-label="Location image controls">
+              <button id="previous-location-slide" class="slide-arrow" type="button" aria-label="Previous location image">←</button>
+              <div id="location-slide-dots" class="slide-dots" aria-label="Slides"></div>
+              <button id="next-location-slide" class="slide-arrow" type="button" aria-label="Next location image">→</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="scene-dialog" class="scene-dialog" aria-labelledby="scene-location-name">
+      <div class="scene-shell">
+        <div id="scene-canvas" class="scene-canvas" aria-label="Interactive three-dimensional location scene"></div>
+        <div class="scene-vignette" aria-hidden="true"></div>
+        <header class="scene-topbar">
+          <div class="scene-title-lockup">
+            <p id="scene-area-label" class="scene-kicker">Vesperholm · Exterior</p>
+            <h2 id="scene-location-name">Location</h2>
+          </div>
+          <div class="scene-topbar-actions">
+            <span class="scene-live-badge">Live mode · discoveries are saved</span>
+            <button id="close-scene-dialog" class="scene-close" type="button" aria-label="Leave the 3D location">Leave location</button>
+          </div>
+        </header>
+
+        <aside class="scene-investigators" aria-label="Choose active investigator">
+          <p>Active investigator</p>
+          <div id="scene-investigator-buttons" class="scene-investigator-buttons"></div>
+        </aside>
+
+        <aside class="scene-field-notes" aria-live="polite">
+          <p class="scene-field-notes-label">Field notes</p>
+          <p id="scene-message">The chapel door is ahead. Cross the rain-dark path and find a way inside.</p>
+          <div id="scene-discoveries" class="scene-discoveries" hidden>
+            <span>Discoveries this visit</span>
+            <div id="scene-discovery-items"></div>
+          </div>
+        </aside>
+
+        <div class="scene-controls-hint" aria-hidden="true">
+          <span><kbd>Arrow keys</kbd> to walk</span>
+          <span>Click the ground to move</span>
+          <span>Click prompts to interact</span>
+        </div>
+
+        <button id="scene-action" class="scene-action" type="button" hidden>
+          <span class="scene-action-key">Click</span>
+          <span><small id="scene-action-kind">Interact</small><strong id="scene-action-label"></strong></span>
+        </button>
+
+        <div id="scene-transition" class="scene-transition" aria-hidden="true">
+          <span class="scene-transition-mark">✦</span>
+          <p>Entering location</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="inventory-item-dialog" class="inventory-item-dialog" aria-labelledby="inventory-item-name">
+      <div class="inventory-item-shell">
+        <button id="close-inventory-item-dialog" class="dialog-close" type="button" aria-label="Close object details">×</button>
+        <div class="inventory-item-image-frame">
+          <img id="inventory-item-image" alt="">
+        </div>
+        <div class="inventory-item-details">
+          <p id="inventory-item-kind" class="eyebrow">Collected object</p>
+          <h2 id="inventory-item-name"></h2>
+          <p id="inventory-item-description"></p>
+          <dl>
+            <div><dt>Collected at</dt><dd id="inventory-item-location"></dd></div>
+          </dl>
         </div>
       </div>
     </dialog>
