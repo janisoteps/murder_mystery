@@ -31,9 +31,20 @@ const elements = {
   conversationVoice: document.querySelector("#conversation-voice"),
   conversationRate: document.querySelector("#conversation-rate"),
   evidenceCount: document.querySelector("#evidence-count"),
+  exploreLocationButton: document.querySelector("#explore-location-button"),
   handoffCopy: document.querySelector("#handoff-copy"),
   handoffTitle: document.querySelector("#handoff-title"),
   investigatorList: document.querySelector("#investigator-list"),
+  inventoryCount: document.querySelector("#inventory-count"),
+  inventoryEmpty: document.querySelector("#inventory-empty"),
+  inventoryGrid: document.querySelector("#inventory-grid"),
+  inventoryItemClose: document.querySelector("#close-inventory-item-dialog"),
+  inventoryItemDescription: document.querySelector("#inventory-item-description"),
+  inventoryItemDialog: document.querySelector("#inventory-item-dialog"),
+  inventoryItemImage: document.querySelector("#inventory-item-image"),
+  inventoryItemKind: document.querySelector("#inventory-item-kind"),
+  inventoryItemLocation: document.querySelector("#inventory-item-location"),
+  inventoryItemName: document.querySelector("#inventory-item-name"),
   knownPeople: document.querySelector("#known-people"),
   locationDescription: document.querySelector("#location-description"),
   locationDialog: document.querySelector("#location-dialog"),
@@ -62,6 +73,19 @@ const elements = {
   resetButton: document.querySelector("#reset-button"),
   saveNoteButton: document.querySelector("#save-note-button"),
   saveStatus: document.querySelector("#save-status"),
+  sceneAction: document.querySelector("#scene-action"),
+  sceneActionKind: document.querySelector("#scene-action-kind"),
+  sceneActionLabel: document.querySelector("#scene-action-label"),
+  sceneAreaLabel: document.querySelector("#scene-area-label"),
+  sceneCanvas: document.querySelector("#scene-canvas"),
+  sceneClose: document.querySelector("#close-scene-dialog"),
+  sceneDialog: document.querySelector("#scene-dialog"),
+  sceneInvestigatorButtons: document.querySelector("#scene-investigator-buttons"),
+  sceneLocationName: document.querySelector("#scene-location-name"),
+  sceneMessage: document.querySelector("#scene-message"),
+  sceneDiscoveries: document.querySelector("#scene-discoveries"),
+  sceneDiscoveryItems: document.querySelector("#scene-discovery-items"),
+  sceneTransition: document.querySelector("#scene-transition"),
   toast: document.querySelector("#toast"),
   tokenLayer: document.querySelector("#token-layer"),
   viewLocationButton: document.querySelector("#view-location-button")
@@ -88,7 +112,12 @@ const app = {
   dialogueTranscript: [],
   lastSpokenText: "",
   interactionPending: false,
-  editingNoteId: null
+  editingNoteId: null,
+  sceneController: null,
+  sceneInvestigators: [],
+  sceneLoading: false,
+  sceneFindings: [],
+  currentSceneLocationId: null
 };
 
 async function requestJson(url, options = {}) {
@@ -311,16 +340,6 @@ function allBoardCards() {
     ...item,
     isPlayerNote: false
   }));
-  const foundItems = (app.narratorState.items ?? []).map((item) => ({
-    id: item.id,
-    type: "Found item",
-    title: item.name,
-    summary: item.description,
-    source: locationById(item.foundAtLocationId)?.name ?? "Unknown location",
-    image: item.image,
-    isFoundItem: true,
-    isPlayerNote: false
-  }));
   const notes = app.playerState.board.notes.map((note) => ({
     id: note.id,
     type: "Player note",
@@ -329,7 +348,7 @@ function allBoardCards() {
     source: "Investigators",
     isPlayerNote: true
   }));
-  return [...evidence, ...foundItems, ...notes];
+  return [...evidence, ...notes];
 }
 
 function ensureBoardPositions(cards) {
@@ -416,6 +435,10 @@ function renderLocationSlide() {
   elements.locationSlideImage.alt = slide.alt;
   elements.locationSlideLabel.textContent = slide.label;
   elements.locationSlideCaption.textContent = `${app.activeLocationSlideIndex + 1} of ${slides.length} · ${slide.alt}`;
+  if (elements.exploreLocationButton) {
+    elements.exploreLocationButton.hidden = false;
+    elements.exploreLocationButton.disabled = app.sceneLoading;
+  }
   elements.previousLocationSlide.disabled = slides.length < 2;
   elements.nextLocationSlide.disabled = slides.length < 2;
   elements.locationSlideDots.replaceChildren();
@@ -432,6 +455,232 @@ function renderLocationSlide() {
     });
     elements.locationSlideDots.append(dot);
   });
+}
+
+function renderSceneInvestigatorButtons(activeId) {
+  if (!elements.sceneInvestigatorButtons) return;
+  elements.sceneInvestigatorButtons.replaceChildren();
+  for (const investigator of app.sceneInvestigators) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "scene-investigator-button";
+    button.classList.toggle("is-active", investigator.id === activeId);
+    button.style.setProperty("--investigator-color", investigator.color);
+    button.setAttribute("aria-pressed", String(investigator.id === activeId));
+    const portrait = document.createElement("img");
+    portrait.src = investigator.portrait;
+    portrait.alt = "";
+    const copy = document.createElement("span");
+    const name = document.createElement("strong");
+    name.textContent = investigator.name;
+    const role = document.createElement("small");
+    role.textContent = investigator.id === activeId ? "Currently leading" : "Take control";
+    copy.append(name, role);
+    button.append(portrait, copy);
+    button.addEventListener("click", () => app.sceneController?.setActiveInvestigator(investigator.id));
+    elements.sceneInvestigatorButtons.append(button);
+  }
+}
+
+async function saveSceneFinding(finding, investigatorId) {
+  const alreadyDiscovered = [
+    ...(app.narratorState.items ?? []),
+    ...(app.narratorState.evidence ?? [])
+  ].some((entry) => entry.id === finding.id);
+  if (alreadyDiscovered) return true;
+
+  try {
+    const payload = await requestJson("/api/scene/finding", {
+      method: "POST",
+      body: JSON.stringify({
+        findingId: finding.id,
+        investigatorId,
+        locationId: app.currentSceneLocationId
+      })
+    });
+    app.narratorState = payload.narratorState;
+    if (!app.sceneFindings.some((entry) => entry.id === finding.id)) {
+      app.sceneFindings.push(payload.finding);
+      elements.sceneDiscoveries.hidden = false;
+      const chip = document.createElement("span");
+      chip.className = "scene-finding-chip";
+      chip.textContent = payload.finding.name ?? payload.finding.title;
+      chip.title = payload.unchanged ? "Already secured" : "Saved to the live case";
+      elements.sceneDiscoveryItems.append(chip);
+    }
+    render();
+    showToast(payload.unchanged
+      ? `${finding.title} was already secured.`
+      : `${finding.title} saved to the live case.`);
+    return true;
+  } catch (error) {
+    elements.sceneMessage.textContent = error.message;
+    showToast(error.message);
+    return false;
+  }
+}
+
+function setScenePrompt(prompt) {
+  if (!elements.sceneAction) return;
+  elements.sceneAction.hidden = !prompt;
+  if (!prompt) return;
+  elements.sceneActionKind.textContent = prompt.kind;
+  elements.sceneActionLabel.textContent = prompt.label;
+}
+
+function setSceneTransition(active, nextArea) {
+  if (!elements.sceneTransition) return;
+  const copy = elements.sceneTransition.querySelector("p");
+  const location = locationById(app.currentSceneLocationId);
+  if (copy) copy.textContent = nextArea === "interior"
+    ? `Entering ${location?.name ?? "the building"}`
+    : `Returning outside ${location?.name ?? "the location"}`;
+  elements.sceneTransition.classList.toggle("is-active", active);
+}
+
+async function openLocationScene() {
+  if (!elements.sceneDialog || app.sceneLoading || app.sceneController) return;
+
+  const locationId = app.activeLocationId;
+  const location = locationById(locationId);
+
+  const locationInvestigators = app.game.investigators.filter(
+    (investigator) =>
+      app.playerState.characters?.[investigator.id]?.locationId === locationId
+  );
+
+  if (locationInvestigators.length === 0) {
+    showToast(`Move an investigator to ${location.name} before exploring it.`);
+    return;
+  }
+
+  app.sceneLoading = true;
+  app.sceneInvestigators = locationInvestigators;
+  app.currentSceneLocationId = locationId;
+  if (elements.exploreLocationButton) elements.exploreLocationButton.disabled = true;
+  app.sceneFindings = [];
+  elements.sceneDiscoveryItems?.replaceChildren();
+  if (elements.sceneDiscoveries) elements.sceneDiscoveries.hidden = true;
+  if (elements.locationDialog?.open) elements.locationDialog.close();
+  elements.sceneLocationName.textContent = location.name;
+  elements.sceneCanvas.setAttribute("aria-label", `Interactive three-dimensional scene of ${location.name}`);
+  elements.sceneDialog.showModal();
+
+  try {
+    const sceneModule = locationId === "saint_oda_archive"
+      ? await import("./scene/saint-oda.js")
+      : await import("./scene/vesperholm-locations.js");
+    const createScene = locationId === "saint_oda_archive"
+      ? sceneModule.createSaintOdaScene
+      : (options) => sceneModule.createVesperholmLocationScene(locationId, options);
+    app.sceneController = createScene({
+      container: elements.sceneCanvas,
+      investigators: app.sceneInvestigators,
+      people: peopleAtLocation(locationId),
+      discoveredFindingIds: [
+        ...(app.narratorState.items ?? []).map((item) => item.id),
+        ...(app.narratorState.evidence ?? []).map((item) => item.id)
+      ],
+      onAreaChange: (label) => {
+        elements.sceneAreaLabel.textContent = label;
+      },
+      onPrompt: setScenePrompt,
+      onMessage: (message) => {
+        elements.sceneMessage.textContent = message;
+      },
+      onFinding: saveSceneFinding,
+      onTalk: (investigatorId, npcId) => {
+        app.sceneController?.pause();
+        openBrowserDialogue(investigatorId, npcId);
+      },
+      onActiveChange: renderSceneInvestigatorButtons,
+      onTransition: setSceneTransition
+    });
+  } catch (error) {
+    app.sceneInvestigators = [];
+    app.currentSceneLocationId = null;
+    elements.sceneDialog.close();
+    showToast(`The 3D scene could not open: ${error.message}`);
+  } finally {
+    app.sceneLoading = false;
+    if (elements.exploreLocationButton) elements.exploreLocationButton.disabled = false;
+  }
+}
+
+function closeLocationScene() {
+  app.sceneController?.destroy();
+  app.sceneController = null;
+  app.sceneInvestigators = [];
+  app.currentSceneLocationId = null;
+  elements.sceneInvestigatorButtons?.replaceChildren();
+  app.sceneFindings = [];
+  setScenePrompt(null);
+  setSceneTransition(false, "exterior");
+  if (elements.sceneDialog?.open) elements.sceneDialog.close();
+}
+
+function inventoryItems() {
+  const collectedItems = (app.narratorState.items ?? []).map((item) => ({
+    ...item,
+    name: item.name ?? item.title,
+    description: item.description ?? item.summary,
+    foundAtLocationId: item.foundAtLocationId ?? null
+  }));
+  const physicalEvidence = (app.narratorState.evidence ?? [])
+    .filter((item) => item.inventoryItem)
+    .map((item) => ({
+      id: item.id,
+      name: item.inventoryItem.name ?? item.title,
+      description: item.inventoryItem.description ?? item.summary,
+      foundAtLocationId: item.inventoryItem.foundAtLocationId ?? null,
+      image: item.inventoryItem.image ?? item.image,
+      source: item.source,
+      evidenceReference: true
+    }));
+  const itemIds = new Set(collectedItems.map((item) => item.id));
+  return [...collectedItems, ...physicalEvidence.filter((item) => !itemIds.has(item.id))];
+}
+
+function openInventoryItem(itemId) {
+  const item = inventoryItems().find((entry) => entry.id === itemId);
+  if (!item || !elements.inventoryItemDialog) return;
+  const location = locationById(item.foundAtLocationId);
+  elements.inventoryItemName.textContent = item.name;
+  elements.inventoryItemKind.textContent = item.evidenceReference ? "Physical evidence" : "Collected object";
+  elements.inventoryItemDescription.textContent = item.description;
+  elements.inventoryItemLocation.textContent = location?.name ?? item.source ?? "Unknown location";
+  elements.inventoryItemImage.src = item.image ?? locationImages(location)[0]?.src ?? "";
+  elements.inventoryItemImage.alt = item.name;
+  if (!elements.inventoryItemDialog.open) elements.inventoryItemDialog.showModal();
+}
+
+function renderInventory() {
+  if (!elements.inventoryGrid) return;
+  const items = inventoryItems();
+  elements.inventoryGrid.replaceChildren();
+  elements.inventoryCount.textContent = String(items.length);
+  elements.inventoryEmpty.hidden = items.length > 0;
+
+  for (const item of items) {
+    const location = locationById(item.foundAtLocationId);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "inventory-card";
+    button.addEventListener("click", () => openInventoryItem(item.id));
+    const image = document.createElement("img");
+    image.src = item.image ?? locationImages(location)[0]?.src ?? "";
+    image.alt = "";
+    const copy = document.createElement("span");
+    const type = document.createElement("small");
+    type.textContent = item.evidenceReference ? "Physical evidence" : "Collected object";
+    const name = document.createElement("strong");
+    name.textContent = item.name;
+    const place = document.createElement("em");
+    place.textContent = location?.name ?? item.source ?? "Unknown location";
+    copy.append(type, name, place);
+    button.append(image, copy);
+    elements.inventoryGrid.append(button);
+  }
 }
 
 function openLocationDialog(locationId) {
@@ -805,6 +1054,7 @@ function render() {
   renderInvestigatorList();
   renderTokens();
   renderBoard();
+  renderInventory();
   renderArrivalHandoff();
   if (elements.conversationDialog?.open) populateConversationEvidence();
 }
@@ -1174,6 +1424,17 @@ function bindEvents() {
   elements.closeNoteDialog.addEventListener("click", closeNoteDialog);
   document.querySelector("#cancel-note-button").addEventListener("click", closeNoteDialog);
   elements.viewLocationButton.addEventListener("click", () => openLocationDialog(app.selectedLocationId));
+  elements.exploreLocationButton?.addEventListener("click", openLocationScene);
+  elements.sceneAction?.addEventListener("click", () => app.sceneController?.interact());
+  elements.sceneClose?.addEventListener("click", closeLocationScene);
+  elements.sceneDialog?.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeLocationScene();
+  });
+  elements.inventoryItemClose?.addEventListener("click", () => elements.inventoryItemDialog.close());
+  elements.inventoryItemDialog?.addEventListener("click", (event) => {
+    if (event.target === elements.inventoryItemDialog) elements.inventoryItemDialog.close();
+  });
   elements.closeLocationDialog.addEventListener("click", () => elements.locationDialog.close());
   elements.closeNpcDialog.addEventListener("click", () => elements.npcDialog.close());
   elements.previousLocationSlide.addEventListener("click", () => changeLocationSlide(-1));
@@ -1200,6 +1461,7 @@ function bindEvents() {
       window.speechSynthesis?.cancel();
       app.activeDialogueInvestigatorId = null;
       app.activeDialogueNpcId = null;
+      app.sceneController?.resume();
     });
     elements.conversationInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {

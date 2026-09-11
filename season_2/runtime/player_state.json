@@ -1,36 +1,36 @@
 {
-  "revision": 31,
+  "revision": 43,
   "clock": {
     "day": "Thursday",
-    "minutes": 1286
+    "minutes": 1394
   },
   "characters": {
     "linnea_berg": {
-      "locationId": "ferry_terminal",
+      "locationId": "rask_house",
       "status": "arrived",
       "condition": "unharmed"
     },
     "erik_halden": {
-      "locationId": "saint_oda_archive",
+      "locationId": "ferry_terminal",
       "status": "arrived",
       "condition": "unharmed"
     }
   },
   "latestEvent": {
-    "id": "arrival-0022",
+    "id": "arrival-0043",
     "type": "arrival",
     "characterIds": [
       "erik_halden"
     ],
     "fromLocations": {
-      "erik_halden": "signal_house"
+      "erik_halden": "moller_salvage"
     },
-    "destinationId": "saint_oda_archive",
+    "destinationId": "ferry_terminal",
     "clock": {
       "day": "Thursday",
-      "minutes": 1286
+      "minutes": 1394
     },
-    "recordedAt": "2026-08-23T19:07:08.218Z"
+    "recordedAt": "2026-09-10T19:52:24.740Z"
   },
   "board": {
     "positions": {
@@ -69,6 +69,18 @@
       "annika_sealed_note": {
         "x": 64,
         "y": 1136
+      },
+      "c4_oskar_clock_tool": {
+        "x": 1010,
+        "y": 768
+      },
+      "oskar_staging_admission": {
+        "x": 325,
+        "y": 250
+      },
+      "johan_wake_statement": {
+        "x": 553,
+        "y": 790
       }
     },
     "notes": [

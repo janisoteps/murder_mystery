@@ -1,0 +1,132 @@
+[
+  {
+    "id": "signal-telegraph-strip",
+    "kind": "item",
+    "type": "Station record",
+    "title": "Dated telegraph strip",
+    "description": "A narrow station printout carrying a sequence of harbor signals from the evening Annika died.",
+    "locationId": "signal_house",
+    "source": "Old Signal House",
+    "image": "/assets/season_2/locations/signal_house_interior.png"
+  },
+  {
+    "id": "clock_escapement_key",
+    "kind": "item",
+    "type": "Modified tool",
+    "title": "Clock escapement key",
+    "description": "A modified clock key whose stop marks can be compared with the Saint Vigga mechanism.",
+    "locationId": "saint_vigga_fort",
+    "source": "Saint Vigga Sea Fort",
+    "image": "/assets/season_2/items/clock_escapement_key.png"
+  },
+  {
+    "id": "laboratory-salinity-slide",
+    "kind": "item",
+    "type": "Laboratory sample",
+    "title": "Salinity comparison slide",
+    "description": "A prepared glass slide preserving the mineral profile used to distinguish rainwater from seawater.",
+    "locationId": "marine_laboratory",
+    "source": "Vesperholm Marine Laboratory",
+    "image": "/assets/season_2/locations/marine_laboratory_interior.png"
+  },
+  {
+    "id": "blue_cullet_fragment",
+    "kind": "item",
+    "type": "Material trace",
+    "title": "Blue cullet fragment",
+    "description": "A sharp cobalt reject fragment whose fracture surface is fresh beneath an artificially aged crust.",
+    "locationId": "glassworks_museum",
+    "source": "Vesper Glassworks Museum",
+    "image": "/assets/season_2/items/blue_cullet_fragment.png"
+  },
+  {
+    "id": "crushed_ampoule_seal",
+    "kind": "item",
+    "type": "Pharmaceutical trace",
+    "title": "Crushed ampoule seal",
+    "description": "A flattened medicine seal recovered beside the private dining service corridor.",
+    "locationId": "gull_house_hotel",
+    "source": "Gull House Hotel",
+    "image": "/assets/season_2/items/crushed_ampoule_seal.png"
+  },
+  {
+    "id": "contractor_card_l4",
+    "kind": "item",
+    "type": "Access credential",
+    "title": "Contractor access card L4",
+    "description": "A ferry-company contractor card with level-four service access and abrasion around its magnetic stripe.",
+    "locationId": "ferry_terminal",
+    "source": "North Channel Ferry Terminal",
+    "image": "/assets/season_2/items/contractor_card_l4.png"
+  },
+  {
+    "id": "clinic-batch-label",
+    "kind": "item",
+    "type": "Pharmaceutical record",
+    "title": "Removed batch label",
+    "description": "A peeled sedative batch label carrying adhesive fibres from the clinic's controlled-drug ledger.",
+    "locationId": "saltline_clinic",
+    "source": "Saltline Clinic",
+    "image": "/assets/season_2/locations/saltline_clinic_interior.png"
+  },
+  {
+    "id": "tidegate_water_vial",
+    "kind": "item",
+    "type": "Water sample",
+    "title": "Tidegate water vial",
+    "description": "A sealed freshwater sample taken from the Tidegate settling cistern.",
+    "locationId": "tidegate_station",
+    "source": "Tidegate Pumping Station",
+    "image": "/assets/season_2/items/tidegate_water_vial.png"
+  },
+  {
+    "id": "orange_sling_fragment",
+    "kind": "item",
+    "type": "Material trace",
+    "title": "Orange sling fragment",
+    "description": "A torn high-load sling fragment carrying black hull paint and Tidegate grit.",
+    "locationId": "moller_salvage",
+    "source": "Moller Salvage Yard",
+    "image": "/assets/season_2/items/orange_sling_fragment.png"
+  },
+  {
+    "id": "drawer-tag",
+    "kind": "item",
+    "type": "Archive fitting",
+    "title": "Loose brass drawer tag",
+    "description": "A numbered brass tag worked loose from the private maritime index cabinet, with fresh scratches around one rivet hole.",
+    "locationId": "saint_oda_archive",
+    "source": "Saint Oda Chapel and Archive",
+    "image": "/assets/season_2/locations/saint_oda_archive_interior.png"
+  },
+  {
+    "id": "d1_eidolon_redacted_finding",
+    "kind": "evidence",
+    "type": "Document examination",
+    "title": "Mismatched Eidolon inquiry folios",
+    "description": "Different fibre, trimming, and type pressure show that official 1995 inquiry pages were replaced after binding.",
+    "locationId": "saint_oda_archive",
+    "source": "Saint Oda Archive",
+    "requiresInvestigatorId": "linnea_berg"
+  },
+  {
+    "id": "north-light-chart-strip",
+    "kind": "item",
+    "type": "Weather record",
+    "title": "Pressure-drum chart strip",
+    "description": "A timestamped meteorological chart showing the evening squall and freshwater rainfall peak.",
+    "locationId": "north_light",
+    "source": "North Light Weather Station",
+    "image": "/assets/season_2/locations/north_light_interior.png"
+  },
+  {
+    "id": "rask-withdrawal-slip",
+    "kind": "item",
+    "type": "Financial record",
+    "title": "Structured withdrawal slip",
+    "description": "A bank counterfoil grouping three cash withdrawals beneath misleading repair references.",
+    "locationId": "rask_house",
+    "source": "Rask House",
+    "image": "/assets/season_2/locations/rask_house_interior.png"
+  }
+]

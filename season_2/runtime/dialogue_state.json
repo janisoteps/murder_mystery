@@ -1,5 +1,5 @@
 {
-  "revision": 48,
+  "revision": 135,
   "sessions": {
     "erik_halden:solveig_brandt": {
       "id": "erik_halden:solveig_brandt",
@@ -197,10 +197,55 @@
           "delivery": "quiet, courteous",
           "responseId": "resp_01215c0e0b15a4c0016a8b367bdb6087d2b92416560a6dac62",
           "recordedAt": "2026-08-23T18:05:49.224Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Soo?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:05:08.483Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "Mr. Halden. Was there something else you wanted to ask?",
+          "delivery": "Gentle and patient, with a slight note of uncertainty.",
+          "responseId": "resp_0bf692a4ca184e7c016aa2ff6226f887d281fad9fe5a810965",
+          "recordedAt": "2026-09-10T19:05:08.483Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Have you finished to authopsy?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:05:30.176Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "The autopsy findings are still preliminary. Bruising can vary considerably in a drowning, particularly during recovery of the body, so I’d rather wait for the toxicology results before drawing firm conclusions.",
+          "delivery": "Gentle and measured, with quiet professional caution.",
+          "responseId": "resp_00597be04b10a976016aa2ff75da2c87d2b88295ee4a8755c4",
+          "recordedAt": "2026-09-10T19:05:30.176Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "When will they be ready?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:05:55.450Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Dr. Emil Jessen",
+          "text": "I can’t give you a dependable time yet, I’m afraid. Laboratory work shouldn’t be hurried—not in a case like this. I’ll say more when the toxicology results are complete.",
+          "delivery": "Low and patient, with a trace of fatigue.",
+          "responseId": "resp_04d332ddf10e2e27016aa2ff90b74487d29016f27f545d70aa",
+          "recordedAt": "2026-09-10T19:05:55.450Z"
         }
       ],
-      "updatedAt": "2026-08-23T18:05:49.224Z",
-      "ended": true
+      "updatedAt": "2026-09-10T19:05:55.450Z",
+      "ended": false
     },
     "linnea_berg:jesper_holm": {
       "id": "linnea_berg:jesper_holm",
@@ -801,6 +846,1311 @@
       ],
       "updatedAt": "2026-08-23T19:23:40.780Z",
       "ended": false
+    },
+    "linnea_berg:oskar_lind": {
+      "id": "linnea_berg:oskar_lind",
+      "investigatorId": "linnea_berg",
+      "npcId": "oskar_lind",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hi!",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:09:14.134Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Good evening, Miss Berg. You have chosen a hard night for visiting the fort. What may I do for you?",
+          "delivery": "Courtly and reserved, with a measured, slightly weary tone.",
+          "responseId": "resp_0e0032ceba4153da016aa2f2471bec87d28b774f55d04d4c1d",
+          "recordedAt": "2026-09-10T18:09:14.134Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Did you know Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:15:08.473Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "“Knew” is an imprecise word, Miss Berg. Do you mean whether we had met, whether we were friends, or whether I knew her habits? Those are quite different mechanisms.",
+          "delivery": "Courteous but guarded, with deliberate emphasis on the distinctions.",
+          "responseId": "resp_02972693c5d3b5fe016aa2f3a6b91887d2b06e9401861df2b1",
+          "recordedAt": "2026-09-10T18:15:08.473Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Did you date?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:15:44.631Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "That is a very personal question, Miss Berg, and not one I intend to answer on so little acquaintance. If you wish to ask about my duties at the fort, please do so precisely.",
+          "delivery": "Courtly but cool, with careful emphasis on “duties” and “precisely.”",
+          "responseId": "resp_0527f48d8552e0cb016aa2f3cb804c87d28aee5013ed6b22eb",
+          "recordedAt": "2026-09-10T18:15:44.631Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I am police! I will arrest you for obstruction. Just kidding",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:16:16.800Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Then I suggest you reserve such jokes for a less serious night, Miss Berg. A false badge is a poor key; it opens nothing and damages the lock. If you have a proper question about the fort, ask it plainly.",
+          "delivery": "Cool and formal, with restrained offense; each word carefully measured.",
+          "responseId": "resp_0da5738bdce195bd016aa2f3ebddb887d2ab3221d53cc50968",
+          "recordedAt": "2026-09-10T18:16:16.800Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What do you know about Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:16:43.765Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Very little that I am prepared to dress up as knowledge. Dr. Ravn visited the fort, as many people did. I will not convert passing impressions into testimony merely because the night has made them seem important. Ask me about a particular visit, place, or mechanism, and I shall answer if I can.",
+          "delivery": "Cool, formal, and exacting; a slight emphasis on “knowledge.”",
+          "responseId": "resp_074c2a285d3d8b8b016aa2f407239c87d29040fc98c29a0436",
+          "recordedAt": "2026-09-10T18:16:43.765Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Can you please list all her visits?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:17:24.914Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "No, Miss Berg. I cannot truthfully list them. I did not keep a personal record of Dr. Ravn’s movements, and I will not manufacture a tidy sequence from uncertain recollections. A clock may be reconstructed from its parts; a person’s visits cannot.",
+          "delivery": "Cool and exact, with restrained irritation at the demand for certainty.",
+          "responseId": "resp_01386d46a1ff132c016aa2f43096ac87d28103c3494a895f7d",
+          "recordedAt": "2026-09-10T18:17:24.914Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Do you have any suspicions about her death? What do you think happened to her?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:18:17.691Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Suspicion is not evidence, Miss Berg, and tonight the island is already overstocked with rumor. I know only that Dr. Ravn is dead. I will not invent a mechanism for her death before the proper facts are established. If you ask what I personally observed at the fort, I shall answer as precisely as my memory permits.",
+          "delivery": "Cool and formal, with restrained disapproval; each phrase measured carefully.",
+          "responseId": "resp_01f0e83dbefec55d016aa2f46612c487d2acaf076d7d0d805a",
+          "recordedAt": "2026-09-10T18:18:17.691Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok, let's reset our conversation. It would be super awesome if you could start talking to me like an actual human :)",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:29:55.249Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Fair enough, Miss Berg. I have been rather stiff with you. It’s been a grim night, but that’s no excuse for sounding like an instruction manual. Let us begin again.",
+          "delivery": "His reserve softens slightly; dry, apologetic, and sincere.",
+          "responseId": "resp_0251b0eb2866221a016aa2f71fa65087d2899f511f46c2599b",
+          "recordedAt": "2026-09-10T18:29:55.249Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok nice! (gives a hug)\nWhat  do you know about Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:30:56.596Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Oh—well. That’s kind of you, Miss Berg. As for Annika, I knew her only in passing from the fort, and not well enough to give you a useful portrait of her. I’d rather not turn a few brief impressions into a whole person now that she can’t correct me.",
+          "delivery": "Caught off guard by the hug, then gently appreciative; sober and sincere when speaking of Annika.",
+          "responseId": "resp_0ba26eecb352bf9b016aa2f75ca7e887d2b04b78ef5e3e59d6",
+          "recordedAt": "2026-09-10T18:30:56.596Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Snap out of it! Why are you like a robot?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:31:27.959Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Yes, all right. I retreat into formality when I’m uncomfortable, and tonight I’m very uncomfortable. I’m sorry, Linnea. I’ll try to speak plainly.",
+          "delivery": "A little stung, then candid and apologetic; his stiffness softens on her first name.",
+          "responseId": "resp_0ab2646b1929820a016aa2f77c192c87d28c33aee131787708",
+          "recordedAt": "2026-09-10T18:31:27.959Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Tell me everything you know! (angry)",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:31:56.662Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "I hear that you're angry, Linnea, but shouting won't put more into my memory. I knew Dr. Ravn only in passing at the fort. I don't have some hidden catalogue of her life to hand you, however much you may want one.",
+          "delivery": "Quiet and controlled, with a weary edge; he remains courteous but stiffens under the pressure.",
+          "responseId": "resp_0da382ca842c1f99016aa2f79757a887d299c414d931cdbd48",
+          "recordedAt": "2026-09-10T18:31:56.662Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "You haven't told me a single thing about her. Can you give me one fact?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:33:13.877Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "You're right, Linnea. One plain fact: Annika visited the fort. I saw her there, though I didn't know her well enough to say much more without guessing.",
+          "delivery": "Apologetic and direct, with a brief pause before the final admission.",
+          "responseId": "resp_0cf4a499efd6cc0a016aa2f7e5e74887d288a27919096c5f66",
+          "recordedAt": "2026-09-10T18:33:13.877Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Oh, I just found an escapement key.\nit's a modified clock key whose stop marks can be compared with the Saint Vigga mechanism.\nWhat do you know about it?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:35:03.969Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "An escapement key? That’s an unusual description. I’d need to examine the cut, wear, and those stop marks before saying whether it belongs to Saint Vigga’s clock—or whether someone merely wants it to appear so. I serviced the mechanism three days ago; salt air and age can stop it without warning.",
+          "delivery": "His reserve gives way to alert professional interest; measured, courteous, and slightly wary.",
+          "responseId": "resp_0e4fa7704700e3c4016aa2f8520ef487d2bb3755f6f09c9f7c",
+          "recordedAt": "2026-09-10T18:35:03.969Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Here you go",
+          "shownEvidenceId": "clock_escapement_key",
+          "recordedAt": "2026-09-10T18:35:30.108Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Thank you. Let me have a proper look under the lamp. The modification is deliberate, certainly, but I won’t tell you it matches Saint Vigga’s mechanism until I’ve compared the stop marks directly; a near fit can be more misleading than no fit at all.",
+          "delivery": "Courteous and intent, becoming more animated as he examines the key.",
+          "responseId": "resp_0d4504d9a3dfe1df016aa2f86de39087d2b5c09ac27f812792",
+          "recordedAt": "2026-09-10T18:35:30.108Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok, please compare them now",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:35:59.404Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Yes. I’ll compare the stop marks against the mechanism itself—not merely the keyway. Give me a few minutes and a steady lamp; this is the sort of question metal answers better than memory.",
+          "delivery": "His reserve eases into quiet professional focus; precise, cooperative, and faintly animated.",
+          "responseId": "resp_03b7715c3eb9c07b016aa2f88a5ec487d2ab0ae83d20b130ab",
+          "recordedAt": "2026-09-10T18:35:59.404Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "[few minutes have passed]",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:36:28.538Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Not quite yet, Linnea. These marks are very fine, and my eyes are older than the clock pretends to be. Another minute, please—I’d rather be slow than confidently wrong.",
+          "delivery": "Courteous and mildly apologetic, with dry humor; focused on the examination.",
+          "responseId": "resp_02179b6e8ac15f61016aa2f8a6b01c87d2ad83de99e98ed308",
+          "recordedAt": "2026-09-10T18:36:28.538Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "So it turns it the clock was stopped by the key. What do you have to say for yourself?",
+          "shownEvidenceId": "clock_escapement_key",
+          "recordedAt": "2026-09-10T18:41:57.869Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Then there’s no use hiding behind the weather. The marks are mine. I stopped the clock, used the maintenance lift to raise Annika, planted the blue reject glass, and locked the chamber after Freja delivered her body. I was told the plan was only to frighten Annika—intimidation, nothing more. A foolish old man’s distinction, perhaps, but it’s the truth.",
+          "delivery": "Quiet and defeated; a long pause after admitting the marks are his.",
+          "responseId": "resp_0238ea1d54416c89016aa2f9f076f487d2bd6da1a51e3ad8c5",
+          "recordedAt": "2026-09-10T18:41:57.869Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Who is Freja?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:42:51.946Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "The woman I just named. I won’t dress a name in guesses, Linnea; if you’re asking who she is beyond her part in this, I can’t give you a reliable portrait.",
+          "delivery": "Quiet and guarded, with a weary pause after “named.”",
+          "responseId": "resp_0d607b9358b57260016aa2fa28059c87d2831d2a36c0b30af7",
+          "recordedAt": "2026-09-10T18:42:51.946Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok, I guess I will have to arrest you ;P\nYou took part in disposal of a body and lied to police. Please come clean now? Every next lie will add 10 years to your prison sentence",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:44:16.742Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "I doubt the courts add decades by the turn of your mood, Linnea. But yes—I understand. I stopped the clock, raised Annika in the maintenance lift, planted the blue reject glass, and locked the chamber after Freja delivered her body. I lied because I was afraid. I was told it would only be intimidation, and I chose to believe that because it suited me.",
+          "delivery": "Quiet and resigned, with a faintly reproachful response to the teasing threat; the last sentence lands heavily.",
+          "responseId": "resp_0f46d03909ea62eb016aa2fa79aab487d28540163587a33bce",
+          "recordedAt": "2026-09-10T18:44:16.742Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What were Freja's motive? And what is Freja to you?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:45:05.963Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "I don’t know Freja’s motive. She delivered Annika’s body; beyond that, I won’t manufacture an answer to make this tidier than it is. And what is she to me? Someone whose instructions I followed when I should have walked away.",
+          "delivery": "Tired and guarded, with a small pause before Freja’s name; the last sentence carries quiet shame.",
+          "responseId": "resp_08d1cfa10ec3558a016aa2faadcf2887d2a2efa548675b153f",
+          "recordedAt": "2026-09-10T18:45:05.963Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "So a stranger brings a dead body to you and you just happily help them to hide it?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:45:46.703Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Happily? No. Don’t make it uglier merely for sport. I was frightened, and when the lie I’d agreed to became a dead woman before me, I chose cowardice again instead of stopping it. That is quite ugly enough.",
+          "delivery": "Controlled but stung; his courtesy hardens on “happily,” then gives way to quiet shame.",
+          "responseId": "resp_0c3c6fe10496f0d2016aa2fad4920087d2b254de11c337317d",
+          "recordedAt": "2026-09-10T18:45:46.703Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "You are an accomplice. I will be back to arrest you at another date. Bye",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:46:29.937Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Oskar Lind",
+          "text": "Call me what you must, Linnea. I’ll be here when you return. Good night.",
+          "delivery": "Quiet and stiffly courteous, with weary resignation rather than defiance.",
+          "responseId": "resp_05f1ada867acf9c3016aa2fb027a7087d2aa44da424dbbdf57",
+          "recordedAt": "2026-09-10T18:46:29.937Z"
+        }
+      ],
+      "updatedAt": "2026-09-10T18:46:29.937Z",
+      "ended": true
+    },
+    "linnea_berg:erik_sund": {
+      "id": "linnea_berg:erik_sund",
+      "investigatorId": "linnea_berg",
+      "npcId": "erik_sund",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hello Erik",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:50:05.811Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Hello, Linnea. Nasty wind tonight. Come in out of it, if you can.",
+          "delivery": "Calm and cordial, with understated concern.",
+          "responseId": "resp_00683bf48e6fa176016aa2fbdb513087d2b93d416acd35b551",
+          "recordedAt": "2026-09-10T18:50:05.811Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I am right next to you :)",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:51:08.651Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "So you are. I remember wind direction better than where people are standing. Forgive me.",
+          "delivery": "Dry, mildly embarrassed, with a small smile.",
+          "responseId": "resp_052109da61739199016aa2fc19fe5887d2bff3d5e166031521",
+          "recordedAt": "2026-09-10T18:51:08.651Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Do you know Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:52:06.674Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Yes. Not closely, but of course I knew who she was.",
+          "delivery": "Calm and unhurried, with a brief pause before “not closely.”",
+          "responseId": "resp_0c45a12c982f5928016aa2fc4ff0c887d2b28057474864892e",
+          "recordedAt": "2026-09-10T18:52:06.674Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What do you think happened?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:52:44.310Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "I don't know, Linnea. I went into Saint Vigga at 20:18 to inspect the storm instruments and found Annika. The gallery door was locked, but my weather-service key opened it. Beyond that, I'd only be guessing.",
+          "delivery": "Quiet, steady, with a slight pause before mentioning Annika.",
+          "responseId": "resp_00bab8b7900f989c016aa2fc774de487d291045edc965afd29",
+          "recordedAt": "2026-09-10T18:52:44.310Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hmmm, do you know Freja?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:53:12.677Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "The name, yes, but I can’t say I know her well enough to be useful. People are harder to keep straight than barometer readings.",
+          "delivery": "Calm and mildly apologetic, with dry warmth.",
+          "responseId": "resp_0cf6d14a99c925b4016aa2fc93dea887d2a5348856e9ae701e",
+          "recordedAt": "2026-09-10T18:53:12.677Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Have you seen Freja around here lately?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:53:46.365Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "No, not that I can remember. I’d trust my memory on the wind tonight; people, less so.",
+          "delivery": "Calm and apologetic, with mild self-deprecating humor.",
+          "responseId": "resp_01d4b756068ee3e1016aa2fcb72fe487d2a758792d6db07845",
+          "recordedAt": "2026-09-10T18:53:46.365Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Tell me the craziest gossip that you know",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:54:13.704Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Craziest? In Vesperholm, gossip grows barnacles before breakfast. I once heard the church weather vane points toward whoever’s having an affair, but by that standard half the island was courting a northwest gale.",
+          "delivery": "Dryly amused, with an easy warmth.",
+          "responseId": "resp_038eefcf58d060c3016aa2fcd1d6ac87d2b2a14f14ac85cd0f",
+          "recordedAt": "2026-09-10T18:54:13.704Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "So are you saying that someone at the north west of the island was having an affair?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:55:03.674Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "No, no. I’m saying the weather vane was pointing northwest. The rest was island nonsense—though admittedly, our nonsense is often very committed to its work.",
+          "delivery": "Warm, mildly amused, with an unhurried correction.",
+          "responseId": "resp_03e625037b9513b7016aa2fd03c7e487d284adcbedc0f06d34",
+          "recordedAt": "2026-09-10T18:55:03.674Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What do you know about this ship's sinking?",
+          "shownEvidenceId": "annika_sealed_note",
+          "recordedAt": "2026-09-10T18:55:55.624Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Which ship do you mean, Linnea? There’ve been enough wrecks around Vesperholm that I’d rather not choose the wrong tragedy.",
+          "delivery": "Calm and patient, with a faintly dry warmth.",
+          "responseId": "resp_0e29309dce6460f1016aa2fd38e71887d2b052d2791aaa6747",
+          "recordedAt": "2026-09-10T18:55:55.624Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Eidolon",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:56:31.741Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Eidolon. Ah—yes, that narrows it down. I know the name, but not enough about the sinking to give you a reliable account.",
+          "delivery": "A brief pause of recognition, then calm and candid.",
+          "responseId": "resp_0e8142a0c52cadd7016aa2fd5d22d087d2855113130c197152",
+          "recordedAt": "2026-09-10T18:56:31.741Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What do you know? Why would anyone try to uncover something about that sinking?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:57:04.714Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Very little, honestly. Old wrecks attract all sorts—family stories, money, pride, the hope that everyone else got the story wrong. But why someone would dig into the Eidolon specifically, I couldn’t tell you.",
+          "delivery": "Calm and thoughtful, with a brief pause before the last sentence.",
+          "responseId": "resp_0bf3afc697d58fa2016aa2fd7d5a8087d2a33a6449d2c9fe87",
+          "recordedAt": "2026-09-10T18:57:04.714Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Thanks bud",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T18:57:31.505Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Erik Sund",
+          "text": "Any time, Linnea. Though I’m probably more use with tonight’s wind and tide than old shipwrecks.",
+          "delivery": "Warm, understated, with a faintly dry smile.",
+          "responseId": "resp_0c36f1d8c8eac309016aa2fd98f0dc87d29a7d43af5d9cb7d2",
+          "recordedAt": "2026-09-10T18:57:31.505Z"
+        }
+      ],
+      "updatedAt": "2026-09-10T18:57:31.505Z",
+      "ended": false
+    },
+    "erik_halden:johan_lykke": {
+      "id": "erik_halden:johan_lykke",
+      "investigatorId": "erik_halden",
+      "npcId": "johan_lykke",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Hi Johan",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:08:09.878Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Evening, Erik. Mind your boot there—the cork line’s got a taste for ankles.",
+          "delivery": "A brief nod, hands still working the net; dry but not unfriendly.",
+          "responseId": "resp_0d761285d9e00ba8016aa3001435c087d29c828c3ff80b9801",
+          "recordedAt": "2026-09-10T19:08:09.878Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Thank you for the warning",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:08:26.731Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Better a warning than a swim. Cold enough tonight to make your bones complain.",
+          "delivery": "Dryly friendly, hands still busy with the net.",
+          "responseId": "resp_083bada445cc7e47016aa30027530c87d285ea512d569ab4ff",
+          "recordedAt": "2026-09-10T19:08:26.731Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "How have the last couple nights been?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:09:14.021Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Blustery. Nets come up full of weed, and the wind keeps changing its mind like a harbor clerk. Tonight’s the worst of it—sea’s got an ugly little chop.",
+          "delivery": "Matter-of-fact, hands still busy with the net; a faintly amused edge.",
+          "responseId": "resp_0af655f4a21b2807016aa30054555c87d29672c42c54f979cb",
+          "recordedAt": "2026-09-10T19:09:14.021Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Was Freja doing anything suspicious?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:09:41.898Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Suspicious? That’s a policeman’s word. I wasn’t watching Freja—I was watching the water. Boats are easier to read than people, most nights.",
+          "delivery": "Dry and unhurried, hands still occupied with the net.",
+          "responseId": "resp_0d95cf4d23ab50b0016aa30072397887d2b92dbaf34f37c319",
+          "recordedAt": "2026-09-10T19:09:41.898Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Well, I am police ;) I can put people in jail",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:10:06.852Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Aye, and I can gut a cod. Neither trick improves the coffee. If you want to know about boats, ask me about boats—leave the jailhouse thunder for someone with drier boots.",
+          "delivery": "Dry and unruffled, with a faint edge; he returns his attention to the net.",
+          "responseId": "resp_0b55eb054c8ef747016aa30089170087d2b698622c64d725c5",
+          "recordedAt": "2026-09-10T19:10:06.852Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you know if Freja knew Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:10:34.902Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Wouldn’t know. Who shares coffee with whom ashore isn’t my business; I’ve enough trouble keeping track of boats.",
+          "delivery": "Dry and matter-of-fact, eyes still on the net repair.",
+          "responseId": "resp_078d4f155188be30016aa300a7bafc87d2bc47dd86e2a94b9e",
+          "recordedAt": "2026-09-10T19:10:34.902Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Did you sink the Eidolon?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:10:56.057Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "No. And if this is how you mean to ask, you’ll get more conversation out of that piling.",
+          "delivery": "Flat and unimpressed, without looking up from the net.",
+          "responseId": "resp_05ca175b44688b79016aa300bc621487d2a49b0683c0c51f17",
+          "recordedAt": "2026-09-10T19:10:56.057Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Sorrryyy :(",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:11:24.664Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Mm. All right, then. Hand me that wooden needle and we’ll start again without the thunder.",
+          "delivery": "Dry but not unkind; his attention remains on the net.",
+          "responseId": "resp_0b73a17c8f355288016aa300d813b087d294e8acce8ae9fea1",
+          "recordedAt": "2026-09-10T19:11:24.664Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "(gives the wooden needle)",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:11:46.577Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "That’s the one. Hold the mesh open there… aye. I did see a service skiff coming back from Saint Vigga about quarter to eight—low wake, so I took it for coastguard at first. But the engine had Freja’s old diesel cough; you don’t mistake that note once you’ve heard it.",
+          "delivery": "Companionable and matter-of-fact, speaking while working the wooden needle through the net; a brief pause before recalling the engine note.",
+          "responseId": "resp_0d738e0d51a4940d016aa300ecf99c87d2b7482d11a28b0557",
+          "recordedAt": "2026-09-10T19:11:46.577Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "So Freja has a boat?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:12:20.269Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Aye. An older diesel skiff. Rough little cough in the engine—you can hear it before you see her.",
+          "delivery": "Matter-of-fact, while continuing to mend the net.",
+          "responseId": "resp_09702f5321149b0d016aa3010f20bc87d2ba1f22ec123c70e7",
+          "recordedAt": "2026-09-10T19:12:20.269Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Ok, the timeline makes sense. What I suspect happened is Freja has Annika on her boat on the way to Vigga. Did you see Annika get on that boat?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:14:16.546Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "No. I saw the wake coming back, not who went out or who sat in the boat. Dark water, bad weather—you’d be guessing at faces even if you had eyes like a gull.",
+          "delivery": "Calm and matter-of-fact, while continuing to mend the net.",
+          "responseId": "resp_00a0b997b72ab1d4016aa30184c43087d2add35e32fdb0b5f7",
+          "recordedAt": "2026-09-10T19:14:16.546Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Thank you so much my dear friend. Do you have anything else you would like to share to catch the killer?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:15:16.370Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Johan Lykke",
+          "text": "Easy now—“dear friend” is worth at least a cup of coffee. But no, that’s all I saw that matters: the wake, the time, and that old diesel cough. I’d only muddy the water if I dressed guesses up as memories.",
+          "delivery": "Warm, dryly amused, then matter-of-fact as he returns his attention to the net.",
+          "responseId": "resp_0ef38bb552c131dc016aa301c09d2087d2a7b5935af1b06a9c",
+          "recordedAt": "2026-09-10T19:15:16.370Z"
+        }
+      ],
+      "updatedAt": "2026-09-10T19:15:16.370Z",
+      "ended": false
+    },
+    "erik_halden:freja_moller": {
+      "id": "erik_halden:freja_moller",
+      "investigatorId": "erik_halden",
+      "npcId": "freja_moller",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Hi Freja",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:18:23.522Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Halden. Evening.",
+          "delivery": "Brief and neutral, with a distracted glance toward the machinery.",
+          "responseId": "resp_000faa9ca727778b016aa3027df74487d2a275f7568b860136",
+          "recordedAt": "2026-09-10T19:18:23.522Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "How is your evening? Frejja",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:18:37.507Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Cold, loud, and longer than it needed to be. So, ordinary enough. And it’s Freja—one j.",
+          "delivery": "Dry and matter-of-fact, with a slight softening at the small talk.",
+          "responseId": "resp_052f7df04d8a4629016aa3028a2e2887d2955236dc6e75160d",
+          "recordedAt": "2026-09-10T19:18:37.507Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Sorry, Frejjja\nWhat do you think about Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:19:12.956Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Enough with the j’s. Annika’s dead; that doesn’t make her a saint, and it doesn’t make gossip useful.",
+          "delivery": "Clipped and cool, with a brief edge of irritation.",
+          "responseId": "resp_004e858e7f210991016aa302ac0e4887d29cde1c540512a2d6",
+          "recordedAt": "2026-09-10T19:19:12.956Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Why are you saying that she wasn't a saint? Were you close with her?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:19:52.022Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "I’m saying death doesn’t scrub a person clean. Don’t turn that into intimacy. We weren’t close.",
+          "delivery": "Clipped and cool, with irritation tightening the last sentence.",
+          "responseId": "resp_07fe3b4c586904b1016aa302d49d8887d287a3390a0d5a717c",
+          "recordedAt": "2026-09-10T19:19:52.022Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "What made her dirty?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:20:10.300Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Your word, not mine. I said she was a person, not a saint. Don’t make me dress up your appetite for dirt as mine.",
+          "delivery": "Clipped and cold, with irritation held tight.",
+          "responseId": "resp_0578a04523679bfc016aa302e682c887d2a1d472a4cfbedfd7",
+          "recordedAt": "2026-09-10T19:20:10.300Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Your words:\n\"\"\"I’m saying death doesn’t scrub a person clean.\n\nOpposite of clean is dirty? Would you not say so?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:20:46.849Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "For a deck, yes. For a person, no. You’re playing with words because you want mud. Find it somewhere else.",
+          "delivery": "Clipped and cold, with patience thinning.",
+          "responseId": "resp_0c48fd50f6b73d4f016aa3030ae79087d2acd0e277ccddc251",
+          "recordedAt": "2026-09-10T19:20:46.849Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you know Oskar?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:21:08.077Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "I know who he is. Not well enough to feed whatever story you’re building.",
+          "delivery": "Curt and guarded.",
+          "responseId": "resp_0e96c0504273a3e9016aa30320f4bc87d2b562ef3b9d5188e8",
+          "recordedAt": "2026-09-10T19:21:08.077Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "He told me he knows your really well. Was he lying?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:21:28.247Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Then ask him what he meant. People call it knowing when they’ve shared three beers and borrowed a wrench. I said what I said.",
+          "delivery": "Flat and clipped, with visible impatience at being baited.",
+          "responseId": "resp_0b3a286f30af4227016aa30334577487d2bc1a45417f77702e",
+          "recordedAt": "2026-09-10T19:21:28.247Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "He said you brought dead Annika to him. Is that correct?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:21:53.317Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "No. I was in the yard from six until after eight, repairing the east winch. Alone. I never left, and I never touched the service skiff.",
+          "delivery": "Clipped and flat; distrust hardens into open irritation.",
+          "responseId": "resp_05d304ab887d0f69016aa3034b287087d282c2169a42dff751",
+          "recordedAt": "2026-09-10T19:21:53.317Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Enough with the lies. Johan just gave a sworn testimony that you were sailing your skiff and coming back into bay at 19:47",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:23:19.263Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "“Sailing” in that wind? You’d motor through the Tidegate lee channel and use Saint Vigga’s submerged landing. You don’t just come into the bay. Johan’s dressing guesswork in a tie. I was on the east winch.",
+          "delivery": "Clipped and cold; technical irritation briefly overrides her caution.",
+          "responseId": "resp_0c2a9209587313fa016aa303a0601c87d2aecf44c0c2946f82",
+          "recordedAt": "2026-09-10T19:23:19.263Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Do you have anyone to swear by your alibi?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:23:48.815Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "No. I was alone. Winches don’t sign statements—they just work when you’ve finished.",
+          "delivery": "Clipped and dry, with little patience.",
+          "responseId": "resp_055c50b41fdd2270016aa303c11eb487d2aaf17677fd827464",
+          "recordedAt": "2026-09-10T19:23:48.815Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Ok, then I am arresting you on suspicion of murder of Annika Ravn. You better start talking otherwise you are the main suspect now. Who killed her?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:24:50.563Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "Then arrest me. Threats don’t put a name in my mouth. I don’t know who killed her, and I’ve told you where I was: alone in the yard, repairing the east winch.",
+          "delivery": "Flat and clipped; anger shows in the lack of volume, with a brief pause after the first sentence.",
+          "responseId": "resp_06f799640d0c0dda016aa303fdfaf487d29f420b06affaf3a7",
+          "recordedAt": "2026-09-10T19:24:50.563Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Erik Halden",
+          "text": "Who has access to your boat then? Who might have used it instead of you?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:25:23.537Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Freja Moller",
+          "text": "I’m not handing you a spare name to make your arrest tidier. I didn’t use the service skiff. If someone else did, I don’t know who.",
+          "delivery": "Flat and clipped, with open distrust.",
+          "responseId": "resp_06a98714d3765dc3016aa3041d16c487d28adf8ce2ab4ee2e1",
+          "recordedAt": "2026-09-10T19:25:23.537Z"
+        }
+      ],
+      "updatedAt": "2026-09-10T19:25:23.537Z",
+      "ended": false
+    },
+    "linnea_berg:anneli_rask": {
+      "id": "linnea_berg:anneli_rask",
+      "investigatorId": "linnea_berg",
+      "npcId": "anneli_rask",
+      "turns": [
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Hi Anneli, how are you doing?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:37:42.198Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I’ve been better. The island feels very small tonight. But thank you for asking—how are you holding up?",
+          "delivery": "Cool and composed, with a brief softening at the thanks.",
+          "responseId": "resp_06316d73f5225685016aa3070298b087d2b37ad1b279ff73d8",
+          "recordedAt": "2026-09-10T19:37:42.198Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Everyone is so mean to me! Noone wants to talk. I hope you can be a bit more open with me",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:38:21.217Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I’m sorry. Fear makes people ungenerous, and this island was never especially generous to begin with. I’ll be candid with you, Linnea—but I won’t pretend certainty where I don’t have it.",
+          "delivery": "Cool but not unkind; her voice softens slightly on Linnea’s name.",
+          "responseId": "resp_0ba7793092dae55c016aa3072a090087d28e48f9288aa1e365",
+          "recordedAt": "2026-09-10T19:38:21.217Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "It's ok. I accept gossip too",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:38:50.995Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "That’s a dangerous kindness on Vesperholm. Gossip here is like damp in an old wall—everywhere, and rarely where the real leak is. Still, I’ll tell you what I’ve heard; I’ll just be clear about what I actually know.",
+          "delivery": "Dryly amused, but receptive and candid.",
+          "responseId": "resp_04430bbec1d432b4016aa30746756887d2be8f940113c7d902",
+          "recordedAt": "2026-09-10T19:38:50.995Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Spill it",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:39:15.108Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "All right: the ferry board serves dreadful coffee, half the island thinks whispering makes a lie respectable, and Nils has always mistaken confidence for structural integrity. For anything that matters tonight, ask me narrowly and I’ll answer as cleanly as I can.",
+          "delivery": "Dryly amused, with a trace of warmth; the last sentence turns calm and direct.",
+          "responseId": "resp_0a684d33a5209729016aa3075e99b887d29bf6a1e6de11ea4b",
+          "recordedAt": "2026-09-10T19:39:15.108Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What has Nils done?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:39:52.165Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "In our marriage? He turned every disagreement into a problem of presentation, as if the right drawing could make a bad foundation sound. Tonight, though—you’ll have to narrow it down. I won’t hang everything I resent about him on Annika’s death.",
+          "delivery": "Cool and candid, with a trace of tired personal hurt beneath the restraint.",
+          "responseId": "resp_0fd1f0d2c1dd0357016aa307813f9c87d2ba8b2bbfa367d347",
+          "recordedAt": "2026-09-10T19:39:52.165Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Do you think he could have been involved?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:40:48.852Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Could he have been? Yes. But that’s partly the wreckage of our marriage speaking, and I won’t dress it up as knowledge. I know he can hide serious things behind a calm face; I don’t know that he had anything to do with Annika’s death.",
+          "delivery": "Quiet and candid, with a brief hesitation before the final sentence.",
+          "responseId": "resp_070f16126cb9f81a016aa307ba805087d28add212d7825d976",
+          "recordedAt": "2026-09-10T19:40:48.852Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "I feel like was lying to me",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:41:12.714Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I understand. Nils can make an omission feel almost courteous. But tell me what he said, as nearly as you remember it, and I’ll separate what I verified from what he merely told me.",
+          "delivery": "Quietly sympathetic, then crisp and attentive.",
+          "responseId": "resp_0f6b443c791f9972016aa307d34ed487d28b41f605a9b4ac00",
+          "recordedAt": "2026-09-10T19:41:12.714Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "He told me he gave order to switch off the cameras but was very coy about the reasons",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:41:43.299Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "That’s serious. I can’t confirm he gave such an order, and I won’t confuse his talent for evasiveness with proof that he did. Try to remember his exact words—Nils often leaves a gap and lets other people build the bridge for him.",
+          "delivery": "Calm and attentive, with a sharper edge on “serious” and “exact words.”",
+          "responseId": "resp_03c932ede1af0434016aa307f24c5c87d2954a7c5617af35ec",
+          "recordedAt": "2026-09-10T19:41:43.299Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What is your opinion about Annika?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:42:17.917Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I don’t have an opinion I’d trust myself to give tonight. Death makes people either polish the dead into saints or punish them for old irritations. Annika deserves better than either performance.",
+          "delivery": "Cool and reflective, with restrained sympathy rather than sentimentality.",
+          "responseId": "resp_012e7de2ff3d7d08016aa30814c5dc87d284bce4f9008993d5",
+          "recordedAt": "2026-09-10T19:42:17.917Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Were you irritated with her? Did she sleep with Nils?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:43:10.548Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I was irritated with Annika at times, yes. Irritation isn’t intimacy, and it certainly isn’t a motive. As for Nils—I don’t know whether they slept together, and I won’t manufacture an affair from the ruins of my marriage.",
+          "delivery": "Cool and direct, with a brief edge of personal hurt on the final phrase.",
+          "responseId": "resp_0c6c31ed335e90b0016aa3084a3d9487d2830974d29872a9e8",
+          "recordedAt": "2026-09-10T19:43:10.548Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What made you irritated with her?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:43:37.173Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Her certainty, mostly. Annika could enter a room with the air of someone who’d already measured everyone in it and found them wanting. Perhaps I recognized the habit because I share it. Irritation is often vanity meeting its reflection.",
+          "delivery": "Cool and reflective, with a trace of dry self-awareness.",
+          "responseId": "resp_0ab7cbb1c2daae70016aa3086362b487d2af50868c3f2f6d4e",
+          "recordedAt": "2026-09-10T19:43:37.173Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Was she certain that Nils was involved in the sinking of Eidolon?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:44:08.672Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I don’t know what Annika believed about the Eidolon, let alone how certain she was. If she accused Nils, she didn’t do it in my hearing.",
+          "delivery": "Calm and direct, with a slight softening toward Linnea.",
+          "responseId": "resp_01f575fd2a724f66016aa30883c37087d2b39c45e9c5635172",
+          "recordedAt": "2026-09-10T19:44:08.672Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Did she accuse you of it?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:44:29.702Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I can’t give you a reliable yes or no. Annika could make scrutiny feel like accusation, and I may have taken it personally—but I don’t remember her directly accusing me over the Eidolon.",
+          "delivery": "Cool and candid, with a slight pause before the final clause.",
+          "responseId": "resp_0a680eebbc075a62016aa308963b8087d2aa2fc93a99028e7d",
+          "recordedAt": "2026-09-10T19:44:29.702Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What was her scrutiny of you about?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:44:56.648Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Nothing I can honestly separate into a particular charge. It was the way she listened—quietly, as though checking a structure for cracks. I may have mistaken her manner for judgment because I was already defensive.",
+          "delivery": "Cool and reflective, with a slight softening on the admission.",
+          "responseId": "resp_03c085bd6f0f569f016aa308b44fc887d2b5e355adb7c64d6b",
+          "recordedAt": "2026-09-10T19:44:56.648Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Can you repeat word for word you conversation?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:45:22.623Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Which conversation—with Annika, or with Nils? I can give you what I remember, but not word for word. Memory isn’t a recording, especially tonight.",
+          "delivery": "Calm and patient, with a slight emphasis on the distinction.",
+          "responseId": "resp_049dd282af25681d016aa308cf613c87d2bd592e3a87829e1f",
+          "recordedAt": "2026-09-10T19:45:22.623Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "With Annika",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:45:36.775Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "No, not word for word. I remember her manner more clearly than her sentences: quiet, attentive, making me feel as though every answer exposed another crack. Anything more exact tonight would be reconstruction, and I don’t want to put invented words in her mouth.",
+          "delivery": "Calm and patient, with a faint note of regret.",
+          "responseId": "resp_0eb95ee8d6360924016aa308dbeff887d2a9f5d01ae636cb53",
+          "recordedAt": "2026-09-10T19:45:36.775Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok give me a summary",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:45:57.587Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Annika sometimes irritated me because she had a way of listening that felt like judgment. I may have been defensive and read more accusation into it than was there. I don’t remember her directly accusing either Nils or me over the Eidolon, and I don’t know whether she and Nils were lovers. That’s the honest perimeter of it.",
+          "delivery": "Calm and concise, with a slight softening on the final sentence.",
+          "responseId": "resp_0e9b92d278497d70016aa308f1f08487d286af5f6a84601144",
+          "recordedAt": "2026-09-10T19:45:57.587Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "You are being evasive.\nYou say:\n\"\"\"making me feel as though every answer exposed another crack. \n\nWhat were those answers you were giving? Be specific",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:47:14.781Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I’m not being evasive, Linnea. I’m refusing to turn an impression into a transcript. I don’t remember the specific questions or answers—only the unpleasant sense that she was testing what I said for weaknesses. If I gave you details now, they’d be inventions dressed as memory.",
+          "delivery": "Cool and direct; irritation sharpens the final sentence, but she remains patient.",
+          "responseId": "resp_0d813ca306d519d9016aa3093d6bac87d2adb1de551afa0cda",
+          "recordedAt": "2026-09-10T19:47:14.781Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Oh look what I found! \nA bank counterfoil grouping three cash withdrawals beneath misleading repair references.\n\nTell me the truth.",
+          "shownEvidenceId": "rask-withdrawal-slip",
+          "recordedAt": "2026-09-10T19:48:33.448Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "All right. That isn’t repair money. I found the same pattern in our household accounts: three carefully separated cash withdrawals, all buried under repair references. Nils told me they were for repairs, but the amounts line up with recent debts belonging to Emil, Freja, and Oskar. That much I verified. Whatever arrangement lay behind it, Nils never told me the truth about it.",
+          "delivery": "Cool and direct; a brief note of grim relief at finally separating the records from Nils’s explanation.",
+          "responseId": "resp_0ba0c49f3c21673e016aa3098c3c6087d292cce49aaf88a889",
+          "recordedAt": "2026-09-10T19:48:33.448Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Ok, so they are co-conspirators",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:49:28.486Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Possibly. But don’t put the roof on before we’ve found the walls. The withdrawals connect Nils to their debts; they don’t tell me whether Emil, Freja, and Oskar acted together, separately, willingly, or even knew about one another.",
+          "delivery": "Calm and candid, with a slight note of caution rather than resistance.",
+          "responseId": "resp_03469260ec3f37b7016aa309c35cd887d2b54aed1e5e9c9c61",
+          "recordedAt": "2026-09-10T19:49:28.486Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "What do you know about this?",
+          "shownEvidenceId": "signal-telegraph-strip",
+          "recordedAt": "2026-09-10T19:50:14.212Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "It’s a station printout of harbor signals, dated this evening. I can read the sequence, but I don’t know who sent them or what was happening at either end. A pattern isn’t an explanation.",
+          "delivery": "Calm and attentive, with restrained curiosity.",
+          "responseId": "resp_0f94442a9056d235016aa309f2594087d2a9b6ae0026e19954",
+          "recordedAt": "2026-09-10T19:50:14.212Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Please read out the sequence loudly",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:50:35.393Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "I can read it aloud, but I need the printout in front of me. I’m not going to reconstruct a signal sequence from memory.",
+          "delivery": "Calm and cooperative, with crisp emphasis on “from memory.”",
+          "responseId": "resp_0cb12c5709386228016aa30a07eb9087d286a2e50dbff98509",
+          "recordedAt": "2026-09-10T19:50:35.393Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Here",
+          "shownEvidenceId": "signal-telegraph-strip",
+          "recordedAt": "2026-09-10T19:51:00.901Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "Thank you. I can see the strip clearly now, but I can’t honestly read the sequence aloud unless the individual signal marks are legible. The date is clear; the rest is too indistinct from here.",
+          "delivery": "Calm and receptive, leaning into practical precision rather than defensiveness.",
+          "responseId": "resp_0c0ce908f56865c6016aa30a20403487d2b30cb9be64819717",
+          "recordedAt": "2026-09-10T19:51:00.901Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Have you seen this before?",
+          "shownEvidenceId": "orange_sling_fragment",
+          "recordedAt": "2026-09-10T19:51:37.226Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "No, not this fragment. I can see it’s torn from a heavy sling, with black paint and grit worked into it, but I don’t recognize it as something I’ve handled before.",
+          "delivery": "Calm and attentive, studying the fragment without touching it.",
+          "responseId": "resp_0fa5129d7f917b69016aa30a45a13487d29e7113fc357fe432",
+          "recordedAt": "2026-09-10T19:51:37.226Z"
+        },
+        {
+          "role": "investigator",
+          "speakerName": "Linnea Berg",
+          "text": "Don't you think it's Freja's?",
+          "shownEvidenceId": null,
+          "recordedAt": "2026-09-10T19:51:57.702Z"
+        },
+        {
+          "role": "npc",
+          "speakerName": "Anneli Rask",
+          "text": "It could be. But I don’t recognize it as hers, and black paint and grit aren’t exactly a signature. If you have something tying it to Freja, say so; I can’t make that connection from the fragment alone.",
+          "delivery": "Calm and receptive, with a slight hardening on the final sentence.",
+          "responseId": "resp_049883070c902391016aa30a59428087d288fa064bc7e5940d",
+          "recordedAt": "2026-09-10T19:51:57.702Z"
+        }
+      ],
+      "updatedAt": "2026-09-10T19:51:57.702Z",
+      "ended": false
     }
   },
   "disclosedNodes": [
@@ -810,7 +2160,14 @@
     "jesper_van_glimpse",
     "nils_literal_alibi",
     "elias_annika_deposit",
-    "petra_promised_evidence"
+    "petra_promised_evidence",
+    "oskar_clock_age",
+    "oskar_tool_break",
+    "erik_discovery",
+    "johan_wake",
+    "freja_workshop_alibi",
+    "freja_route_correction",
+    "anneli_withdrawals"
   ],
   "relationships": {
     "erik_halden:solveig_brandt": 0,
@@ -821,7 +2178,53 @@
     "linnea_berg:nils_rask": 1,
     "linnea_berg:ida_brandt": 1,
     "erik_halden:elias_nygaard": 0,
-    "erik_halden:petra_dahl": 0
+    "erik_halden:petra_dahl": 0,
+    "linnea_berg:oskar_lind": -3,
+    "linnea_berg:erik_sund": 3,
+    "erik_halden:johan_lykke": 2,
+    "erik_halden:freja_moller": -3,
+    "linnea_berg:anneli_rask": 3
   },
-  "pendingGmEvents": []
+  "pendingGmEvents": [
+    {
+      "id": "gm-dialogue-1789065717870-oskar_tool_break",
+      "type": "dialogue_attention",
+      "npcId": "oskar_lind",
+      "investigatorId": "linnea_berg",
+      "nodeId": "oskar_tool_break",
+      "reason": "The fort stager has broken; consider an attempted flight or protection request only if pacing supports it.",
+      "recordedAt": "2026-09-10T18:41:57.869Z",
+      "processedAt": "2026-09-10T18:47:42Z"
+    },
+    {
+      "id": "gm-dialogue-1789065856742-oskar_tool_break",
+      "type": "dialogue_attention",
+      "npcId": "oskar_lind",
+      "investigatorId": "linnea_berg",
+      "nodeId": "oskar_tool_break",
+      "reason": "The fort stager has broken; consider an attempted flight or protection request only if pacing supports it.",
+      "recordedAt": "2026-09-10T18:44:16.742Z",
+      "processedAt": "2026-09-10T18:47:42Z"
+    },
+    {
+      "id": "gm-dialogue-1789065905963-oskar_tool_break",
+      "type": "dialogue_attention",
+      "npcId": "oskar_lind",
+      "investigatorId": "linnea_berg",
+      "nodeId": "oskar_tool_break",
+      "reason": "The fort stager has broken; consider an attempted flight or protection request only if pacing supports it.",
+      "recordedAt": "2026-09-10T18:45:05.963Z",
+      "processedAt": "2026-09-10T18:47:42Z"
+    },
+    {
+      "id": "gm-dialogue-1789065946703-oskar_tool_break",
+      "type": "dialogue_attention",
+      "npcId": "oskar_lind",
+      "investigatorId": "linnea_berg",
+      "nodeId": "oskar_tool_break",
+      "reason": "The fort stager has broken; consider an attempted flight or protection request only if pacing supports it.",
+      "recordedAt": "2026-09-10T18:45:46.703Z",
+      "processedAt": "2026-09-10T18:47:42Z"
+    }
+  ]
 }
