@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11161a">
+    <link rel="icon" href="data:,">
+    <title>Mara Keller · Character Workshop</title>
+    <link rel="stylesheet" href="/season_3_character_test.css">
+  </head>
+  <body>
+    <main class="workshop-shell">
+      <div id="character-stage" class="character-stage" aria-label="Interactive three-dimensional character test scene"></div>
+      <div class="stage-vignette" aria-hidden="true"></div>
+
+      <header class="workshop-header">
+        <div>
+          <p class="eyebrow">Season 3 · spoiler-safe character review</p>
+          <h1>Mara Keller</h1>
+          <p class="subtitle">Rigged reference model · movement review</p>
+        </div>
+        <div class="header-actions">
+          <span id="render-status" class="render-status"><i></i> Live model</span>
+          <button id="reset-view" class="quiet-button" type="button">Reset view</button>
+        </div>
+      </header>
+
+      <aside class="review-panel" aria-label="Character controls">
+        <section>
+          <p class="panel-kicker">Movement</p>
+          <h2>Walk the model</h2>
+          <div class="key-map" aria-label="Keyboard movement controls">
+            <span></span><kbd>W</kbd><span></span>
+            <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+          </div>
+          <p class="panel-copy">Use WASD or arrow keys. You can also click the floor to walk to a point.</p>
+        </section>
+
+        <section>
+          <div class="control-heading">
+            <div>
+              <p class="panel-kicker">Equipment</p>
+              <h2>Hand flashlight</h2>
+            </div>
+            <span id="flashlight-state" class="control-state">Off</span>
+          </div>
+          <button id="flashlight-toggle" class="primary-button" type="button" aria-pressed="false">
+            <span class="button-icon" aria-hidden="true">◉</span>
+            <span>Switch flashlight on</span>
+            <kbd>F</kbd>
+          </button>
+        </section>
+
+        <section>
+          <div class="control-heading">
+            <div>
+              <p class="panel-kicker">Camera</p>
+              <h2>Inspection zoom</h2>
+            </div>
+            <output id="zoom-readout" class="control-state" for="zoom-range">55%</output>
+          </div>
+          <div class="zoom-row">
+            <button id="zoom-out" class="zoom-button" type="button" aria-label="Zoom out">−</button>
+            <input id="zoom-range" type="range" min="0" max="100" value="55" aria-label="Camera zoom">
+            <button id="zoom-in" class="zoom-button" type="button" aria-label="Zoom in">+</button>
+          </div>
+          <p class="panel-copy">Use the slider or mouse wheel. Drag the scene to rotate around Mara.</p>
+        </section>
+      </aside>
+
+      <aside class="model-notes" aria-label="Current model details">
+        <p class="panel-kicker">Reference pass 01</p>
+        <dl>
+          <div><dt>Scale</dt><dd>1.72 m</dd></div>
+          <div><dt>Period</dt><dd>November 1998</dd></div>
+          <div><dt>Materials</dt><dd>Embedded PBR</dd></div>
+          <div><dt>Rig</dt><dd>Leg-only walk</dd></div>
+        </dl>
+      </aside>
+
+      <div class="bottom-hint" aria-hidden="true">
+        <span><kbd>WASD</kbd> walk</span>
+        <span><kbd>F</kbd> flashlight</span>
+        <span><kbd>Wheel</kbd> zoom</span>
+        <span><kbd>Drag</kbd> orbit</span>
+      </div>
+
+      <div id="loading-state" class="loading-state" role="status">
+        <span class="loading-ring" aria-hidden="true"></span>
+        <strong>Preparing Mara’s model</strong>
+        <span>Loading the rigged model and textures…</span>
+      </div>
+
+      <div id="error-state" class="error-state" role="alert" hidden>
+        <strong>The 3D workshop could not start.</strong>
+        <span id="error-message"></span>
+      </div>
+    </main>
+
+    <script type="module" src="/scene/mara-keller-playground.js"></script>
+  </body>
+</html>

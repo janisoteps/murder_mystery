@@ -63,16 +63,18 @@ const HOST = "127.0.0.1";
 const PORT = Number.parseInt(process.env.MYSTERY_PORT ?? "8000", 10);
 const WEB_ROOT = path.join(ROOT, "web");
 const SEASON_ID = process.env.MYSTERY_SEASON ?? "season_0";
-const SUPPORTED_SEASONS = new Set(["season_0", "season_1", "season_2"]);
+const SUPPORTED_SEASONS = new Set(["season_0", "season_1", "season_2", "season_3"]);
 if (!SUPPORTED_SEASONS.has(SEASON_ID)) {
   throw new Error(`Unsupported MYSTERY_SEASON: ${SEASON_ID}`);
 }
 const SEASON_ROOT = path.join(ROOT, SEASON_ID);
-const DEFAULT_INDEX_PATH = SEASON_ID === "season_2"
-  ? "/season_2.html"
-  : SEASON_ID === "season_1"
-    ? "/season_1.html"
-    : "/index.html";
+const DEFAULT_INDEX_PATH = SEASON_ID === "season_3"
+  ? "/season_3_character_test.html"
+  : SEASON_ID === "season_2"
+    ? "/season_2.html"
+    : SEASON_ID === "season_1"
+      ? "/season_1.html"
+      : "/index.html";
 const PUBLIC_GAME_PATH = path.join(SEASON_ROOT, "public", "game.json");
 const RUNTIME_ROOT = path.join(SEASON_ROOT, "runtime");
 const INITIAL_PLAYER_STATE_PATH = path.join(SEASON_ROOT, "public", "initial_player_state.json");
@@ -95,6 +97,7 @@ const MIME_TYPES = new Map([
   [".ico", "image/x-icon"],
   [".js", "text/javascript; charset=utf-8"],
   [".json", "application/json; charset=utf-8"],
+  [".glb", "model/gltf-binary"],
   [".png", "image/png"],
   [".svg", "image/svg+xml"],
   [".webp", "image/webp"]
@@ -821,9 +824,13 @@ async function handleReset(response) {
 
 async function serveStatic(url, response, headOnly = false) {
   const pathname = decodeURIComponent(url.pathname === "/" ? DEFAULT_INDEX_PATH : url.pathname);
-  const targetPath = path.resolve(WEB_ROOT, `.${pathname}`);
+  const characterAssetPrefix = "/season-character/";
+  const characterAssetRequest = pathname.startsWith(characterAssetPrefix);
+  const staticRoot = characterAssetRequest ? path.join(SEASON_ROOT, "main_character") : WEB_ROOT;
+  const relativePath = characterAssetRequest ? pathname.slice(characterAssetPrefix.length) : `.${pathname}`;
+  const targetPath = path.resolve(staticRoot, relativePath);
 
-  if (targetPath !== WEB_ROOT && !targetPath.startsWith(`${WEB_ROOT}${path.sep}`)) {
+  if (targetPath !== staticRoot && !targetPath.startsWith(`${staticRoot}${path.sep}`)) {
     return sendJson(response, 403, { error: "Forbidden." });
   }
 
@@ -832,7 +839,7 @@ async function serveStatic(url, response, headOnly = false) {
     if (!stats.isFile()) return sendJson(response, 404, { error: "Not found." });
     response.writeHead(200, {
       "Cache-Control": "no-store",
-      "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
       "Content-Type": MIME_TYPES.get(path.extname(targetPath).toLowerCase()) ?? "application/octet-stream",
       "X-Content-Type-Options": "nosniff"
     });
