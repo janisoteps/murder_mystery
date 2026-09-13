@@ -2,6 +2,16 @@
 
 This repository contains a dependency-free Season 0 technical rehearsal, Season 1 (*Blackwater Static*), and Season 2 (*The Ninth Bell*). Each season has isolated public, runtime, and game-master state.
 
+## Review the Season 3 investigator
+
+Season 3 currently opens in a spoiler-safe character workshop for reviewing Mara Keller's detailed 3D model. No mystery scenes or clues are loaded.
+
+```sh
+npm run start:mara
+```
+
+Open `http://127.0.0.1:8000`. Walk with WASD or the arrow keys, or click the floor. Press `F` to toggle the hand flashlight. Use the mouse wheel or zoom slider to inspect the model closely, and drag the scene to orbit the camera.
+
 ## Run Season 2
 
 Season 2 uses the OpenAI Responses API for browser-based NPC conversations. Create a root `.env` file from the safe example:
