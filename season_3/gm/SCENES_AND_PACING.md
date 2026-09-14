@@ -45,15 +45,15 @@ Only `winter_garden` begins accessible. A locked marker may show the public plac
 
 | Destination | Physical/document lead | Spoken lead | Recovery route |
 |---|---|---|---|
-| Grand Hotel | appointment stub, linen label, or staff program | Lena, Emil, Jakob, or Tess explains the service connection | Lena provides ordinary orientation after opening handover |
+| Grand Hotel | appointment stub, linen label, or staff program | Lena, Emily, Jakob, or Tess explains the service connection | Lena provides ordinary orientation after opening handover |
 | Restoration Workshop | rail drawing, maintenance notice, or Hannes work tag | Nora, Jakob, Juri, or Lena identifies crew base | A01/A02 follow-up prompt gives location without naming hidden evidence |
 | Thermal Baths | service label, umbrella note, or hamper route | Marta, Amalia, hotel staff, or Jakob | Hotel directory after Grand Hotel is known |
 | East Residence | Schedule East-14 room list, measurement sketch reference, or resident notice | Rosa, Pavel, Richard, Vera, or Clara | Lena gives public address once residence becomes part of a recorded claim |
 | Architect's Lodging | Felix's letterhead, diary return address, or drawing tube tag | Clara, Nora, hotel reception, or Lena | Property information in official handover after relevance is established |
-| Funicular Station | delivery docket, goods label, or timetable | Emil, Oskar, Juri, or Tess | Public map after either hotel or village route is known |
+| Funicular Station | delivery docket, goods label, or timetable | Emily, Oskar, Juri, or Tess | Public map after either hotel or village route is known |
 | Village Café | public program, delivery card, or residence notice | Rosa, Oskar, Benno, Clara, or David | Unlocks with lower funicular landing as ordinary nearby geography |
 | Municipal Reading Room | registered-agreement reference or David's held-envelope note | David through Lena, Rosa, Pavel, Richard, or Felix's diary | Lena can contact municipal records after E01 is found |
-| Gardener's Cottage | press inventory, plant tag, or nursery return label | Jakob or Emil | Lena can arrange the normal tool-source question after A07 equivalent |
+| Gardener's Cottage | press inventory, plant tag, or nursery return label | Jakob or Emily | Lena can arrange the normal tool-source question after A07 equivalent |
 | Panorama Pavilion | concert/exhibition program, cloakroom note, or photograph envelope | Clara, Celia, Saskia, or Benno | Public event notice at hotel |
 | Police/Medical Room | custody notice or report request | Lena or Miriam | Automatically unlocks when first official result is requested |
 
@@ -79,7 +79,7 @@ The potting room is visible and searchable from the opening. A03 and A04 may est
 
 ### Human scenes
 
-Emil can describe finding Felix while shaken and still care about the returned plant. Jakob moves between preserving plants and helping Lena. Nora is at the Workshop once unlocked. Vera offers practical support and behaves as a credible operations director. Anton handles distressed guests. These behaviors must exist independently of guilt-signaling animations.
+Emily can describe finding Felix while shaken and still care about the returned plant. Jakob moves between preserving plants and helping Lena. Nora is at the Workshop once unlocked. Vera offers practical support and behaves as a credible operations director. Anton handles distressed guests. These behaviors must exist independently of guilt-signaling animations.
 
 ### Movement turn
 
@@ -221,7 +221,7 @@ Time advances through travel, substantial scene work, requested appointments, an
 
 **Public events:** scene secured; reception cancelled; excess supper moved to staff dining; guests contact families; Winter Garden remains closed except for investigation.
 
-**NPC bases:** Lena/Miriam/Winter Garden support; Vera/Anton/Irene/Benno/Tess at Hotel; Hannes/Nora/Juri at Workshop; Jakob/Emil between Winter Garden and Nursery; Clara/Saskia/Celia at Pavilion; Rosa/Pavel at Residence; Richard between Hotel and Residence; Marta/Amalia at Baths/Hotel; Oskar at Station; David off-duty.
+**NPC bases:** Lena/Miriam/Winter Garden support; Vera/Anton/Irene/Benno/Tess at Hotel; Hannes/Nora/Juri at Workshop; Jakob/Emily between Winter Garden and Nursery; Clara/Saskia/Celia at Pavilion; Rosa/Pavel at Residence; Richard between Hotel and Residence; Marta/Amalia at Baths/Hotel; Oskar at Station; David off-duty.
 
 **Knowledge propagation:** public discovery only. Private interviews stay private. Supper-table statements reach actual attendees.
 

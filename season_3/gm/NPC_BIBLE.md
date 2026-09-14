@@ -31,7 +31,7 @@ An authored account changes only after a specific event or discovery plausibly r
 
 She must not skip directly to a later account because the player privately found evidence.
 
-**Low-stakes scene.** At the cancelled supper, Vera makes sure Emil eats, reorganizes place cards, and answers practical questions about the restoration. Her care is sincere.
+**Low-stakes scene.** At the cancelled supper, Vera makes sure Emily eats, reorganizes place cards, and answers practical questions about the restoration. Her care is sincere.
 
 **Partly true case scene.** She describes the financial danger and Felix's habit of forcing decisions late. She truthfully says Hannes put hands on Felix, using that truth to conceal her later act.
 
@@ -165,11 +165,11 @@ Low-stakes scene: caring for stressed plants and arguing amiably about forms. Ca
 
 Voice: starts answering while finishing a task. “That one went downstairs because it was freezing. The form may complain tomorrow.”
 
-## Emil Novak — gardening apprentice, 23
+## Emily Novak — gardening apprentice, 23
 
-Open, fast-talking when trying to help, shaken but capable of ordinary humor. Hannes sent him on a real plant errand to clear the vestibule. Emil found the body later and blames himself for being away.
+Open, fast-talking when trying to help, shaken but capable of ordinary humor. Hannes sent her on a real plant errand to clear the vestibule. Emily found the body later and blames herself for being away.
 
-Low-stakes scene: propagation photographs and desire for more responsibility. Case scene: gives route and sequence readily but refuses invented minute precision. Reassurance may change his self-blame; it does not dispense a secret clue.
+Low-stakes scene: propagation photographs and desire for more responsibility. Case scene: gives route and sequence readily but refuses invented minute precision. Reassurance may change her self-blame; it does not dispense a secret clue.
 
 Voice: candid. “I can show you where it was. I can't give you a minute I didn't look at.”
 
@@ -185,7 +185,7 @@ Voice: plain. “I can tell you what I observed. The distinction you want needs 
 
 Sociable, mildly teasing, proud of the working railway. Knows movements he personally handled and limitations of tickets and schedules. He gives basic transport and directions without favors.
 
-Low-stakes scene: parcels, bad-weather stories, and desire to get home for dinner. Case scene: distinguishes a sold ticket from continuous observation and can verify Emil's delivery.
+Low-stakes scene: parcels, bad-weather stories, and desire to get home for dinner. Case scene: distinguishes a sold ticket from continuous observation and can verify Emily's delivery.
 
 Voice: easy. “I sold it at six. Whether he stepped straight into the car, I couldn't promise; I was wrestling with that parcel.”
 

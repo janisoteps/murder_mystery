@@ -1,5 +1,126 @@
 {
-  "id": "season_3_character_review",
-  "title": "Mara Keller Character Workshop",
-  "setting": "Spoiler-safe neutral review environment"
+  "id": "season_3",
+  "title": "The Winter Garden",
+  "subtitle": "Under glass, every footprint lasts.",
+  "setting": "Sonnenfels · Friday, 27 November 1998",
+  "map": {
+    "image": "/season-map/map_v1.png",
+    "alt": "Painted winter map of the Sonnenfels mountain resort and village",
+    "width": 1720,
+    "height": 960
+  },
+  "rules": {
+    "travelMinutes": 12,
+    "dayLabels": ["Friday", "Saturday", "Sunday"],
+    "dialogueEnabled": false
+  },
+  "investigators": [
+    {
+      "id": "mara_keller",
+      "name": "Mara Keller",
+      "initials": "MK",
+      "role": "Major-crimes investigator",
+      "description": "A Central European investigator experienced in scene reconstruction and long-form witness interviews.",
+      "color": "#a54f59",
+      "portrait": "/season-character/mara_keller_full_height_high_res_1.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": "winter_garden",
+      "name": "Winter Garden",
+      "kind": "Initial investigation site",
+      "description": "The glass heart of Sonnenfels, joining the hotel wings beneath iron ribs, palms, and winter condensation.",
+      "x": 900,
+      "y": 304
+    },
+    {
+      "id": "grand_hotel",
+      "name": "Grand Hotel",
+      "kind": "Guest rooms and hotel operations",
+      "description": "The restored sanatorium's grand public rooms, guest floors, offices, and service corridors.",
+      "x": 1030,
+      "y": 151
+    },
+    {
+      "id": "thermal_baths",
+      "name": "Thermal Baths",
+      "kind": "Historic bath halls",
+      "description": "Stone bathing rooms and steaming pools on the lower resort terrace.",
+      "x": 405,
+      "y": 423
+    },
+    {
+      "id": "east_residence",
+      "name": "East Residence",
+      "kind": "Occupied residential wing",
+      "description": "A domestic wing of individual flats overlooking the lower terraces.",
+      "x": 1248,
+      "y": 397
+    },
+    {
+      "id": "restoration_workshop",
+      "name": "Restoration Workshop",
+      "kind": "Contractor workshops and yard",
+      "description": "Timber sheds, covered work bays, and a service court behind the hotel.",
+      "x": 512,
+      "y": 180
+    },
+    {
+      "id": "architects_lodging",
+      "name": "Architect's Lodging",
+      "kind": "Detached resort lodging",
+      "description": "A modest chalet set apart from the main buildings beside the upper service road.",
+      "x": 157,
+      "y": 303
+    },
+    {
+      "id": "funicular_station",
+      "name": "Funicular Station",
+      "kind": "Mountain railway and goods landing",
+      "description": "The railway connection between Sonnenfels' upper terrace and the village below.",
+      "x": 368,
+      "y": 803
+    },
+    {
+      "id": "village_cafe",
+      "name": "Village Café",
+      "kind": "Café on the village square",
+      "description": "A warm ground-floor café facing the old village square and funicular road.",
+      "x": 792,
+      "y": 803
+    },
+    {
+      "id": "municipal_reading_room",
+      "name": "Municipal Reading Room",
+      "kind": "Civic records and reading room",
+      "description": "A small formal civic building with public records, local papers, and quiet reading tables.",
+      "x": 1047,
+      "y": 767
+    },
+    {
+      "id": "gardeners_cottage",
+      "name": "Gardener's Cottage",
+      "kind": "Cottage, nursery, and cold frames",
+      "description": "The working garden compound beside dormant beds and service greenhouses.",
+      "x": 1552,
+      "y": 482
+    },
+    {
+      "id": "panorama_pavilion",
+      "name": "Panorama Pavilion",
+      "kind": "Historic overlook pavilion",
+      "description": "A glazed Belle Époque hall standing alone above the eastern mountain view.",
+      "x": 1530,
+      "y": 129
+    },
+    {
+      "id": "police_medical_room",
+      "name": "Police & Medical Rooms",
+      "kind": "Local police and medical support",
+      "description": "A practical municipal building shared by local police and medical services.",
+      "x": 1392,
+      "y": 807
+    }
+  ]
 }

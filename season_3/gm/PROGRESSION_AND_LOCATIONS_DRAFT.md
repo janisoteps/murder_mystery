@@ -32,7 +32,7 @@ For a location, the routes separated by “or” below are alternatives. A clue 
 | Location ID | Primary route | Alternate route | In-world reason to visit |
 |---|---|---|---|
 | `winter_garden` | Starting location | Always returnable once released for inspection | Scene and common meeting point |
-| `grand_hotel` | B01 appointment/office reference or C02 service label | Lena or Emil explains where reception and staff offices are | Interview staff and follow service records |
+| `grand_hotel` | B01 appointment/office reference or C02 service label | Lena or Emily explains where reception and staff offices are | Interview staff and follow service records |
 | `restoration_workshop` | A03 work reference or B04 work slip | Nora, Jakob, or Lena identifies the crew's base | Understand gallery work, tools, and contractor routes |
 | `thermal_baths` | C02 linen label or C01 hamper destination | Marta, Jakob, or hotel staff gives a relevant baths lead | Follow objects and an apparent sighting |
 | `east_residence` | D02 room reference, hotel notice, or D01 annex attachment | Richard mentions his visit, or Rosa invites the investigator | Understand the disputed spaces and speak to residents |
@@ -40,7 +40,7 @@ For a location, the routes separated by “or” below are alternatives. A clue 
 | `funicular_station` | F02 goods-route reference on a workshop delivery | Juri or Oskar explains the goods handover | Check practical movements and transport claims |
 | `village_cafe` | Hotel public delivery card or residence meeting notice | Rosa, Oskar, or Benno gives directions | Village witnesses, informal contact, later public reactions |
 | `municipal_reading_room` | D01/D03 agreement filing reference or Felix's archive request | David's contact through Lena or Rosa identifies the records | Compare approved and later versions |
-| `gardeners_cottage` | A07 press inventory contact or E09 plant destination | Jakob or Emil invites an ordinary nursery visit | Compare normal tool/plant use and actual changes |
+| `gardeners_cottage` | A07 press inventory contact or E09 plant destination | Jakob or Emily invites an ordinary nursery visit | Compare normal tool/plant use and actual changes |
 | `panorama_pavilion` | Public concert/exhibition program in hotel | Clara, Celia, or Saskia identifies the rehearsal/exhibition rooms | Personal-folder thread, photographs, gallery witness |
 | `police_medical_room` | Lena explicitly provides the report/custody destination | Miriam explains where to collect examination results | Professional support, reports, and preserved exhibits |
 
@@ -164,7 +164,7 @@ Unlock reasons are retained in the journal. A return visit is available even if 
 
 **Physical actions.** Compare an ordinary press component, trace the relocated plant's container and soil, inspect inventory notes, help with a nonessential plant task, listen to Jakob while he continues work.
 
-**Life.** Growing lamps, condensation, kettles, labels corrected by hand, plants in various stages of recovery. Emil has his own small work area, making his ambitions visible.
+**Life.** Growing lamps, condensation, kettles, labels corrected by hand, plants in various stages of recovery. Emily has her own small work area, making her ambitions visible.
 
 **Narrative work.** A07 background, E09/E10, ordinary trolley uses, gardener observations, and emotional relief. Demonstrates that environmental traces have mundane causes as well as criminal ones.
 
@@ -211,7 +211,7 @@ Each person has one current physical location at a time. Dialogue can occur remo
 | Clara | Pavilion then hotel | Pavilion | Café meeting or private folder review by arrangement |
 | Nora | Workshop | Workshop | Gallery repair after scene release |
 | Jakob | Winter Garden | Garden/cottage | Attends plants between stated destinations |
-| Emil | Winter Garden | Nursery or garden | Ordinary labeled delivery task |
+| Emily | Winter Garden | Nursery or garden | Ordinary labeled delivery task |
 | Miriam | Winter Garden response | Police/medical room or ordinary practice | Report explanation and requested examination |
 | Oskar | Funicular Station until service ends | Station | Off-duty café contact; records remain available |
 | Juri | Workshop then service rounds | Workshop or station | Demonstration or explanation by arrangement |

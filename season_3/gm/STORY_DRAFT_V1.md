@@ -21,7 +21,7 @@ During a private meeting in the potting room, Vera struck Felix with a detachabl
 - 18:45: Felix refuses to delay disclosure. Vera strikes him from behind as he bends over the plan chest. He dies there. The blow is intentional, although she has not arrived with a prepared murder plan.
 - 18:50: Vera summons Anton via the internal telephone. She describes an accident and asks him to keep the guests away.
 - 18:55–19:05: They move Felix on a plant trolley and lay him below the upper gallery. Anton dislodges a planter; Vera removes a railing section already loosened for restoration work. They leave a supposed fall scene.
-- 19:12: Apprentice gardener Emil Novak enters and finds Felix. He raises the alarm.
+- 19:12: Apprentice gardener Emily Novak enters and finds Felix. She raises the alarm.
 - 20:00: The investigator arrives. The first accessible location is the winter garden.
 
 ## Investigation shape
@@ -42,7 +42,7 @@ A final reconstruction identifies the potting room as the scene, the crank as th
 - Richard: lender representative, brisk and socially clumsy; fears a failed project and his own lax checking of the approval.
 - Rosa: retired sanatorium cook and annex resident; funny, sociable, angry about being spoken for, not a helpless source of pathos.
 - Jakob: head gardener, exuberant about plants, disappointed by Felix but able to distinguish disappointment from hatred.
-- Emil: apprentice, eager to help, shaken by discovering the body; unsure of times, confident about what plants were moved.
+- Emily: apprentice, eager to help, shaken by discovering the body; unsure of times, confident about what plants were moved.
 - Clara: returning singer booked for reopening; dislikes being reduced to Felix's former partner and has genuine interest in the restoration.
 - Dr. Miriam Fuchs: local physician, straightforward about limits, arranges independent examination instead of providing magical precision.
 - Nora Baum: carpenter and restoration foreperson; direct, generous with explanations, admits leaving a railing temporarily unsecured.

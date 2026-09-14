@@ -100,7 +100,7 @@ Times below are authoring truth. Individual clocks and witnesses have stated pre
 
 **18:08.** Vera meets Irene and Hannes in the hotel service office. They agree to intercept Felix, recover the briefcase, and obtain a postponement. Vera says the staff meeting must not happen with those papers on the table. This conversation is not recorded. Its existence can be reconstructed from movements, a handwritten instruction slip, and the participants' admissions if obtained.
 
-**18:18.** Hannes asks Emil Novak to take a plant delivery down to the lower vestibule and moves the work screen. Emil is not instructed to lie and does not know the purpose of the errand. Hannes takes a potting-room key from the working key board, leaving the normal tag rather than a forged entry.
+**18:18.** Hannes asks Emily Novak to take a plant delivery down to the lower vestibule and moves the work screen. Emily is not instructed to lie and does not know the purpose of the errand. Hannes takes a potting-room key from the working key board, leaving the normal tag rather than a forged entry.
 
 **18:24–18:28.** Felix stops at the baths to speak to Marta about the staff meeting and retrieve a borrowed umbrella. Guest Amalia Roth sees him and exchanges a greeting. She later associates this encounter with her bath payment receipt, but that receipt is printed at 18:52 when she checks out, after changing and waiting. The time error is hers, not a hacked clock.
 
@@ -126,7 +126,7 @@ Times below are authoring truth. Individual clocks and witnesses have stated pre
 
 **19:04–19:06.** Anton returns to Felix, straightens his collar, and covers the upper chest with the coat. From the gallery stair, exhibition volunteer Celia Maurer sees someone bending over the body. She recognizes the porter uniform, not the face. She is initially unsure whether she saw an attempted rescue. Her observation is valuable without becoming a secret eyewitness to murder.
 
-**19:10–19:12.** Emil returns for the plant trolley and finds the body from the opposite approach. He shouts. Jakob Reiter and Dr. Miriam Fuchs arrive, followed by Vera. Miriam checks Felix and requests that the scene be left alone. Jakob moves a pot aside to let her kneel and later admits it plainly; this innocent disturbance must be recorded.
+**19:10–19:12.** Emily returns for the plant trolley and finds the body from the opposite approach. She shouts. Jakob Reiter and Dr. Miriam Fuchs arrive, followed by Vera. Miriam checks Felix and requests that the scene be left alone. Jakob moves a pot aside to let her kneel and later admits it plainly; this innocent disturbance must be recorded.
 
 **19:14–19:25.** Irene, hearing of the death, substitutes a meeting-note page saying that Felix accepted a postponement. She retains the original in a routine carbon-copy pad rather than destroying it. Hannes backdates his job entry. These acts create evidence of coordinated concealment without requiring perfect coordination or a meeting after the murder.
 
@@ -136,7 +136,7 @@ Times below are authoring truth. Individual clocks and witnesses have stated pre
 
 ## 9. What the opening lets the player do
 
-The first scene is a place, not a dossier dump. The player can orient themselves in the palm hall, look up toward the gallery, inspect the edge of the cordon, talk with Lena, and meet Emil or Jakob without demanding testimony. These actions establish geography and human stakes before the first theory.
+The first scene is a place, not a dossier dump. The player can orient themselves in the palm hall, look up toward the gallery, inspect the edge of the cordon, talk with Lena, and meet Emily or Jakob without demanding testimony. These actions establish geography and human stakes before the first theory.
 
 Photographs, a doctor-requested examination, the displaced planter, and the marked trolley route each create a legitimate line of inquiry. The player may discover the potting room immediately. Do not hide it until an act number is reached. It is part of the visible architecture, and an observant player is entitled to inspect it.
 
@@ -178,7 +178,7 @@ Resolving this branch reveals Felix's imperfect humanity and can make Clara an a
 
 ## 13. Reconstructing the coordinated coercion
 
-Once the player follows the briefcase and service route, several apparently mundane preparations align: the relocated screen, Emil's errand, the key handover, the torn appointment slip, and selected missing pages. These establish an organized meeting that was not as voluntary as Vera initially describes.
+Once the player follows the briefcase and service route, several apparently mundane preparations align: the relocated screen, Emily's errand, the key handover, the torn appointment slip, and selected missing pages. These establish an organized meeting that was not as voluntary as Vera initially describes.
 
 The people who left that meeting have different reasons to lie. Irene fears the copied approval and theft of papers. Hannes fears the physical coercion and later disposal. Vera needs the meeting itself to disappear. Their accounts do not become identical merely because they are accomplices.
 
@@ -212,7 +212,7 @@ Anton can become cooperative before Vera does, but he must not serve as the game
 
 ## 16. Neutral lives and independent story threads
 
-The hotel does not divide neatly into suspects and clue dispensers. Rosa and Pavel are negotiating where they will live. Jakob and Emil are trying to keep transplanted plants alive. Benno wants the reception food delivered before it is wasted. Saskia is deciding whether her reopening photographs should become news photographs. These concerns can create conversations, favors, and observations without becoming compulsory chores.
+The hotel does not divide neatly into suspects and clue dispensers. Rosa and Pavel are negotiating where they will live. Jakob and Emily are trying to keep transplanted plants alive. Benno wants the reception food delivered before it is wasted. Saskia is deciding whether her reopening photographs should become news photographs. These concerns can create conversations, favors, and observations without becoming compulsory chores.
 
 Oskar Meier, the funicular operator, is helping a late visitor reach the residence. Juri Weiss, the mechanic, wants a faulty door properly repaired before a public tour. Marta is protecting guests' privacy while trying to reunite coats with their owners. David wants the investigator to distinguish an archived agreement from the popular story everyone repeats about it.
 
@@ -266,7 +266,7 @@ The next action after saving this expanded package is to report readiness for th
 
 The hotel has prepared more food than anyone now feels able to eat. Benno sets a staff table in the service dining room and asks people to take something before it goes cold. This scene can happen while the investigator follows another lead; it is not a mandatory cutscene.
 
-Vera notices that Emil has not eaten and puts a plate within his reach. The gesture is sincere. Anton begins a familiar joke and loses the ending. Irene straightens a stack of unused place cards because it gives her hands something ordinary to do. Nora asks where the night crew should report in the morning.
+Vera notices that Emily has not eaten and puts a plate within her reach. The gesture is sincere. Anton begins a familiar joke and loses the ending. Irene straightens a stack of unused place cards because it gives her hands something ordinary to do. Nora asks where the night crew should report in the morning.
 
 Nobody must deliver a clue for the scene to justify existing. If the investigator joins them, ordinary talk can establish who worked where and how each person understands the reopening. If the investigator asks a direct case question, the mood changes proportionately rather than causing the entire table to become hostile.
 

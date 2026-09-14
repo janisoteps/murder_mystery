@@ -129,7 +129,7 @@ Times are authoring truth. Player-facing sources have different precision. Accep
 
 **18:08–18:15.** Vera, Irene, and Hannes agree on the coercion plan in the service office. Irene writes a short routing note on the back of an invoice stub. She later tears it in half; one part remains under the blotter.
 
-**18:18.** Hannes sends gardening apprentice Emil Novak to deliver a cold-sensitive plant to the lower funicular goods room. The errand is real and harmless; its timing clears the vestibule. Hannes unfolds the work screen and moves the maintenance notice from the gallery stair to the service approach.
+**18:18.** Hannes sends gardening apprentice Emily Novak to deliver a cold-sensitive plant to the lower funicular goods room. The errand is real and harmless; its timing clears the vestibule. Hannes unfolds the work screen and moves the maintenance notice from the gallery stair to the service approach.
 
 **18:24.** Felix stops briefly at the baths for a borrowed umbrella. Amalia greets him before going to change. Marta remembers the umbrella and the order of Amalia's later checkout.
 
@@ -167,7 +167,7 @@ Vera wipes the plate's visible face and returns it to the press upside down. Blo
 
 **19:07.** Anton returns to the service laundry basket for Vera's torn cardigan. Instead of carrying out her earlier instruction, he locks it in his private porter trunk.
 
-**19:10–19:12.** Emil returns for the plant trolley and discovers Felix. He shouts. Jakob and Dr. Miriam Fuchs arrive, followed by Vera and others. Miriam checks Felix and asks that nobody move him. Jakob shifts one pot so she can kneel and reports doing so.
+**19:10–19:12.** Emily returns for the plant trolley and discovers Felix. She shouts. Jakob and Dr. Miriam Fuchs arrive, followed by Vera and others. Miriam checks Felix and asks that nobody move him. Jakob shifts one pot so she can kneel and reports doing so.
 
 ### First concealment after discovery
 
@@ -262,7 +262,7 @@ The murder case and the future of Sonnenfels are separate outcomes. Vera's remov
 
 Richard must report the lender's failure to verify the schedule. Irene and Hannes face consequences for their own actions. Anton's cooperation, timing, and preservation of evidence affect how his conduct is understood but do not erase it.
 
-Clara decides what happens to Felix's personal material. Nora corrects the safety record. Jakob and Emil restore ordinary life to the winter garden after evidence is released. Rosa and Pavel retain agency in the residence negotiations.
+Clara decides what happens to Felix's personal material. Nora corrects the safety record. Jakob and Emily restore ordinary life to the winter garden after evidence is released. Rosa and Pavel retain agency in the residence negotiations.
 
 Optional human outcomes depend on what the investigator disclosed, promises actually made, and how private material was handled. They never change the culprit or replace the proof standard.
 

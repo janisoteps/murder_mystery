@@ -190,19 +190,19 @@ The sample utterances below demonstrate rhythm; they are not repeated stock repl
 
 **Arc.** Helps preserve a shared place while accepting that some changes Felix proposed were sensible. Basic botanical comparisons are available without a plant-care task.
 
-## 12. Emil Novak — gardening apprentice, 23
+## 12. Emily Novak — gardening apprentice, 23
 
 **Public presence.** Open, eager, occasionally talks too fast when trying to be useful. Shaken by the discovery, but capable of jokes and ordinary concern later.
 
-**Life.** Taking photographs of his first successful propagation experiments. Wants Jakob to trust him with more than carrying pots. Is annoyed that an errand he performed competently has become a source of self-blame.
+**Life.** Taking photographs of her first successful propagation experiments. Wants Jakob to trust her with more than carrying pots. Is annoyed that an errand she performed competently has become a source of self-blame.
 
-**Knowledge.** Hannes's request, the shifted screen, trolley availability, discovery route, and which plants were where. Does not know why the errand was arranged.
+**Knowledge.** Hannes's request, the shifted screen, trolley availability, discovery route, and which plants were where. She does not know why the errand was arranged.
 
-**Disclosure.** Gives the useful sequence readily. If pressed for exact minutes he explains his uncertainty rather than selecting whatever number the player suggests.
+**Disclosure.** Gives the useful sequence readily. If pressed for exact minutes she explains her uncertainty rather than selecting whatever number the player suggests.
 
 **Voice.** “I can show you where it was. The time—I'm sorry, I wasn't looking at the clock. I was trying not to drop it.”
 
-**Arc.** Learns that being used as an unwitting part of a plan is different from causing the death. The player can reassure him without receiving a compulsory new clue as payment.
+**Arc.** Learns that being used as an unwitting part of a plan is different from causing the death. The player can reassure her without receiving a compulsory new clue as payment.
 
 ## 13. Dr. Miriam Fuchs — local physician, 55
 

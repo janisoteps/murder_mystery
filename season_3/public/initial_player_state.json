@@ -1,13 +1,27 @@
 {
   "revision": 0,
   "clock": {
-    "dayIndex": 0,
-    "hour": 0,
-    "minute": 0
+    "day": "Friday",
+    "minutes": 1205
   },
-  "characters": {},
-  "notes": [],
-  "connections": [],
-  "boardPositions": {},
+  "characters": {
+    "mara_keller": {
+      "locationId": "winter_garden",
+      "status": "arrived"
+    }
+  },
+  "unlockedLocationIds": ["winter_garden"],
+  "unlockHistory": [
+    {
+      "locationId": "winter_garden",
+      "sourceType": "initial_arrival",
+      "sourceId": "opening_handover"
+    }
+  ],
+  "board": {
+    "positions": {},
+    "notes": [],
+    "connections": []
+  },
   "latestEvent": null
 }
