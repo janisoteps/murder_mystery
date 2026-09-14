@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111921">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/season_3.css">
+    <title>The Winter Garden · Sonnenfels Map</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="case-identity">
+          <span class="case-mark" aria-hidden="true">WG</span>
+          <div>
+            <p class="eyebrow">Season three · active investigation</p>
+            <h1>The Winter Garden</h1>
+          </div>
+        </div>
+
+        <div class="case-meta">
+          <div>
+            <span>Location</span>
+            <strong>Sonnenfels</strong>
+          </div>
+          <div>
+            <span>Case time</span>
+            <strong id="case-clock">Friday · 20:05</strong>
+          </div>
+          <a class="workshop-link" href="/season_3_character_test.html">Character workshop</a>
+          <a class="workshop-link" href="/season_3_winter_garden_floor_plan.html">Floor plan review</a>
+        </div>
+      </header>
+
+      <main class="map-layout">
+        <section class="map-column" aria-labelledby="map-heading">
+          <div class="map-heading">
+            <div>
+              <p class="eyebrow">Field map · late November 1998</p>
+              <h2 id="map-heading">Sonnenfels after snowfall</h2>
+            </div>
+            <p>Locations become available when Mara finds a physical lead or learns where to go from someone in Sonnenfels.</p>
+          </div>
+
+          <div class="map-frame" id="map-frame">
+            <svg id="sonnenfels-map" class="sonnenfels-map" viewBox="0 0 1720 960" role="img" aria-labelledby="map-title map-description">
+              <title id="map-title">Investigation map of Sonnenfels</title>
+              <desc id="map-description">The Winter Garden is accessible. Eleven other destinations remain undiscovered.</desc>
+              <defs>
+                <filter id="map-shadow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#04090d" flood-opacity=".9"></feDropShadow>
+                </filter>
+                <filter id="label-shadow" x="-40%" y="-100%" width="180%" height="300%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#020609" flood-opacity="1"></feDropShadow>
+                </filter>
+                <radialGradient id="active-marker-fill" cx="38%" cy="32%" r="72%">
+                  <stop offset="0" stop-color="#fff0bd"></stop>
+                  <stop offset=".55" stop-color="#d6a957"></stop>
+                  <stop offset="1" stop-color="#81572f"></stop>
+                </radialGradient>
+              </defs>
+              <rect width="1720" height="960" fill="#17222c"></rect>
+              <image id="map-image" href="/season-map/map_v1.png" x="0" y="0" width="1720" height="960" preserveAspectRatio="xMidYMid meet"></image>
+              <g id="location-layer" aria-label="Investigation destinations"></g>
+              <g id="investigator-layer" aria-label="Mara Keller's position"></g>
+            </svg>
+
+            <div class="map-loading" id="map-loading" role="status">
+              <span></span>
+              Preparing the Sonnenfels field map…
+            </div>
+
+            <div class="map-legend" aria-label="Map legend">
+              <span><i class="legend-token">MK</i>Mara Keller</span>
+              <span><i class="legend-dot available"></i>Accessible</span>
+              <span><i class="legend-lock" aria-hidden="true"></i>Undiscovered</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="location-panel" aria-live="polite">
+          <div class="panel-topline">
+            <span id="location-state" class="location-state is-current">Current location</span>
+            <span id="location-number" class="location-number">SF–01</span>
+          </div>
+          <p id="location-kind" class="eyebrow">Initial investigation site</p>
+          <h2 id="location-name">Winter Garden</h2>
+          <p id="location-description" class="location-description">The glass heart of Sonnenfels, joining the hotel wings beneath iron ribs, palms, and winter condensation.</p>
+
+          <div class="availability-card">
+            <span class="availability-icon" aria-hidden="true">◆</span>
+            <div>
+              <strong id="availability-title">Investigation begins here</strong>
+              <p id="availability-copy">Mara arrived at this location with the initial police handover.</p>
+            </div>
+          </div>
+
+          <button id="travel-button" class="travel-button" type="button" disabled>Mara is here</button>
+
+          <div class="investigator-card">
+            <div class="investigator-portrait">
+              <img src="/season-character/mara_keller_full_height_high_res_1.png" alt="">
+            </div>
+            <div>
+              <span>Lead investigator</span>
+              <strong>Mara Keller</strong>
+              <small>Scene reconstruction · witness interviews</small>
+            </div>
+          </div>
+
+          <p id="status-message" class="status-message">Only the Winter Garden is currently accessible.</p>
+        </aside>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" hidden></div>
+    <script type="module" src="/season_3_map.js"></script>
+  </body>
+</html>

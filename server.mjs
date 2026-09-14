@@ -69,7 +69,7 @@ if (!SUPPORTED_SEASONS.has(SEASON_ID)) {
 }
 const SEASON_ROOT = path.join(ROOT, SEASON_ID);
 const DEFAULT_INDEX_PATH = SEASON_ID === "season_3"
-  ? "/season_3_character_test.html"
+  ? "/season_3.html"
   : SEASON_ID === "season_2"
     ? "/season_2.html"
     : SEASON_ID === "season_1"
@@ -264,6 +264,10 @@ async function handleTravel(request, response) {
 
   if (!destination) {
     return sendJson(response, 400, { error: "Unknown destination." });
+  }
+
+  if (Array.isArray(state.unlockedLocationIds) && !state.unlockedLocationIds.includes(destination.id)) {
+    return sendJson(response, 409, { error: "That destination has not been discovered yet." });
   }
 
   if (requestedIds.length === 0 || requestedIds.some((id) => !knownCharacterIds.has(id))) {
@@ -824,10 +828,13 @@ async function handleReset(response) {
 
 async function serveStatic(url, response, headOnly = false) {
   const pathname = decodeURIComponent(url.pathname === "/" ? DEFAULT_INDEX_PATH : url.pathname);
-  const characterAssetPrefix = "/season-character/";
-  const characterAssetRequest = pathname.startsWith(characterAssetPrefix);
-  const staticRoot = characterAssetRequest ? path.join(SEASON_ROOT, "main_character") : WEB_ROOT;
-  const relativePath = characterAssetRequest ? pathname.slice(characterAssetPrefix.length) : `.${pathname}`;
+  const seasonAssetMappings = [
+    { prefix: "/season-character/", root: path.join(SEASON_ROOT, "main_character") },
+    { prefix: "/season-map/", root: path.join(SEASON_ROOT, "map") }
+  ];
+  const assetMapping = seasonAssetMappings.find(({ prefix }) => pathname.startsWith(prefix));
+  const staticRoot = assetMapping?.root ?? WEB_ROOT;
+  const relativePath = assetMapping ? pathname.slice(assetMapping.prefix.length) : `.${pathname}`;
   const targetPath = path.resolve(staticRoot, relativePath);
 
   if (targetPath !== staticRoot && !targetPath.startsWith(`${staticRoot}${path.sep}`)) {
