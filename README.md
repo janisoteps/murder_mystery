@@ -2,15 +2,15 @@
 
 This repository contains a dependency-free Season 0 technical rehearsal, Season 1 (*Blackwater Static*), and Season 2 (*The Ninth Bell*). Each season has isolated public, runtime, and game-master state.
 
-## Review the Season 3 investigator
+## Review Season 3
 
-Season 3 currently opens in a spoiler-safe character workshop for reviewing Mara Keller's detailed 3D model. No mystery scenes or clues are loaded.
+Season 3 currently opens on the spoiler-safe Sonnenfels map. Only the Winter Garden begins accessible; the remaining destinations use the discovery-controlled locked state that future scene clues and NPC leads will update.
 
 ```sh
-npm run start:mara
+npm run start:season3
 ```
 
-Open `http://127.0.0.1:8000`. Walk with WASD or the arrow keys, or click the floor. Press `F` to toggle the hand flashlight. Use the mouse wheel or zoom slider to inspect the model closely, and drag the scene to orbit the camera.
+Open `http://127.0.0.1:8000`. Mara's earlier 3D review workshop remains available at `http://127.0.0.1:8000/season_3_character_test.html`: walk with WASD or the arrow keys, press `F` for the flashlight, and use the mouse wheel or slider to zoom.
 
 ## Run Season 2
 
